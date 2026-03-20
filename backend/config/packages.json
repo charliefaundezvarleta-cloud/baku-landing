@@ -1,0 +1,96 @@
+{
+  "packages": {
+    "starter_saas": {
+      "name": "Starter SaaS",
+      "industry": "saas",
+      "tier": "standard",
+      "exclusivity": "shared",
+      "lead_count": 250,
+      "price_usd": 297,
+      "enrichment_level": "basic",
+      "description": "250 leads B2B del sector SaaS con nombre, email y empresa verificados."
+    },
+    "growth_tech": {
+      "name": "Growth Tech",
+      "industry": "technology",
+      "tier": "premium",
+      "exclusivity": "exclusive",
+      "lead_count": 500,
+      "price_usd": 697,
+      "enrichment_level": "full",
+      "description": "500 leads tecnología enriquecidos con LinkedIn, teléfono y señales de intención."
+    },
+    "enterprise_pack": {
+      "name": "Enterprise Pack",
+      "industry": "multi",
+      "tier": "enterprise",
+      "exclusivity": "exclusive",
+      "lead_count": 1000,
+      "price_usd": 1497,
+      "enrichment_level": "enterprise",
+      "description": "1,000 leads multi-industria con datos completos: tecnografía, org chart y trigger events."
+    },
+    "retail_essentials": {
+      "name": "Retail Essentials",
+      "industry": "retail",
+      "tier": "standard",
+      "exclusivity": "shared",
+      "lead_count": 300,
+      "price_usd": 347,
+      "enrichment_level": "basic",
+      "description": "300 leads del sector retail con datos básicos verificados."
+    },
+    "real_estate_pro": {
+      "name": "Real Estate Pro",
+      "industry": "real_estate",
+      "tier": "premium",
+      "exclusivity": "exclusive",
+      "lead_count": 400,
+      "price_usd": 597,
+      "enrichment_level": "full",
+      "description": "400 leads inmobiliarios enriquecidos con datos de contacto completos."
+    },
+    "fintech_growth": {
+      "name": "Fintech Growth",
+      "industry": "fintech",
+      "tier": "premium",
+      "exclusivity": "shared",
+      "lead_count": 500,
+      "price_usd": 797,
+      "enrichment_level": "full",
+      "description": "500 leads fintech con LinkedIn, teléfono y señales de intención."
+    }
+  },
+  "tiers": {
+    "standard": {
+      "enrichment_level": "basic",
+      "fields": ["name", "email", "title", "company", "country", "company_size", "email_status"],
+      "email_verification": "basic",
+      "max_credits_per_lead": 1
+    },
+    "premium": {
+      "enrichment_level": "full",
+      "fields": ["name", "email", "title", "company", "country", "company_size", "email_status", "linkedin_url", "phone", "intent_signals", "company_domain"],
+      "email_verification": "verified",
+      "max_credits_per_lead": 2
+    },
+    "enterprise": {
+      "enrichment_level": "enterprise",
+      "fields": ["name", "email", "title", "company", "country", "company_size", "email_status", "linkedin_url", "phone", "intent_signals", "company_domain", "technologies", "funding_data", "employee_count", "revenue_range", "org_chart_level"],
+      "email_verification": "verified",
+      "max_credits_per_lead": 3
+    }
+  },
+  "exclusivity": {
+    "shared": {
+      "description": "Leads pueden ser vendidos a múltiples clientes",
+      "max_resells": 3,
+      "price_multiplier": 1.0
+    },
+    "exclusive": {
+      "description": "Leads vendidos a un solo cliente",
+      "max_resells": 1,
+      "price_multiplier": 1.5
+    }
+  }
+}

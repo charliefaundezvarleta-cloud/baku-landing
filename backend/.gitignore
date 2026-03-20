@@ -1,0 +1,12 @@
+# Output files (generated packages)
+output/*.csv
+output/*.json
+
+# Environment
+.env
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/

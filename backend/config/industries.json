@@ -1,0 +1,76 @@
+{
+  "industries": {
+    "saas": {
+      "name": "SaaS",
+      "apollo_keyword_tags": ["SaaS", "Software as a Service", "Cloud Software"],
+      "default_titles": ["VP Sales", "Head of Growth", "CRO", "Sales Director", "Head of Marketing", "CMO"],
+      "default_seniorities": ["director", "vp", "c_suite", "manager"],
+      "default_employee_ranges": ["11,50", "51,200", "201,500"],
+      "technology_signals": ["salesforce", "hubspot", "intercom", "stripe"]
+    },
+    "technology": {
+      "name": "Tecnología",
+      "apollo_keyword_tags": ["Technology", "Software", "IT Services", "Information Technology"],
+      "default_titles": ["CTO", "VP Engineering", "Head of Product", "IT Director", "VP Sales"],
+      "default_seniorities": ["director", "vp", "c_suite"],
+      "default_employee_ranges": ["51,200", "201,500", "501,1000"],
+      "technology_signals": ["aws", "google_cloud", "azure", "kubernetes"]
+    },
+    "retail": {
+      "name": "Retail",
+      "apollo_keyword_tags": ["Retail", "E-Commerce", "Consumer Goods", "Direct to Consumer"],
+      "default_titles": ["Head of E-Commerce", "VP Marketing", "Director of Sales", "CMO", "Head of Digital"],
+      "default_seniorities": ["director", "vp", "c_suite", "manager"],
+      "default_employee_ranges": ["51,200", "201,500", "501,1000"],
+      "technology_signals": ["shopify", "magento", "woocommerce", "google_analytics"]
+    },
+    "real_estate": {
+      "name": "Real Estate",
+      "apollo_keyword_tags": ["Real Estate", "Property Management", "Commercial Real Estate", "PropTech"],
+      "default_titles": ["Broker", "Managing Director", "VP Sales", "Head of Acquisitions", "Director of Leasing"],
+      "default_seniorities": ["director", "vp", "c_suite", "owner"],
+      "default_employee_ranges": ["1,10", "11,50", "51,200"],
+      "technology_signals": []
+    },
+    "fintech": {
+      "name": "Fintech",
+      "apollo_keyword_tags": ["Fintech", "Financial Technology", "Payments", "Banking Technology"],
+      "default_titles": ["Head of Partnerships", "VP Business Development", "CRO", "Head of Sales", "CPO"],
+      "default_seniorities": ["director", "vp", "c_suite"],
+      "default_employee_ranges": ["11,50", "51,200", "201,500"],
+      "technology_signals": ["stripe", "plaid", "aws", "snowflake"]
+    },
+    "healthcare": {
+      "name": "Salud",
+      "apollo_keyword_tags": ["Healthcare", "Health Tech", "Medical Devices", "Digital Health"],
+      "default_titles": ["VP Operations", "Head of Business Development", "CMO", "Director of Partnerships"],
+      "default_seniorities": ["director", "vp", "c_suite"],
+      "default_employee_ranges": ["51,200", "201,500", "501,1000"],
+      "technology_signals": ["salesforce", "epic_systems", "cerner"]
+    },
+    "logistics": {
+      "name": "Logística",
+      "apollo_keyword_tags": ["Logistics", "Supply Chain", "Transportation", "Freight"],
+      "default_titles": ["VP Operations", "Head of Supply Chain", "Director of Logistics", "COO"],
+      "default_seniorities": ["director", "vp", "c_suite"],
+      "default_employee_ranges": ["51,200", "201,500", "501,1000"],
+      "technology_signals": ["sap", "oracle", "salesforce"]
+    },
+    "education": {
+      "name": "Educación",
+      "apollo_keyword_tags": ["Education", "EdTech", "E-Learning", "Higher Education"],
+      "default_titles": ["VP Academic Affairs", "Head of Partnerships", "Director of Enrollment", "CTO"],
+      "default_seniorities": ["director", "vp", "c_suite"],
+      "default_employee_ranges": ["11,50", "51,200", "201,500"],
+      "technology_signals": ["canvas", "blackboard", "google_workspace"]
+    },
+    "multi": {
+      "name": "Multi-industria",
+      "apollo_keyword_tags": [],
+      "default_titles": ["CEO", "CRO", "VP Sales", "Head of Growth", "CMO", "VP Business Development"],
+      "default_seniorities": ["director", "vp", "c_suite"],
+      "default_employee_ranges": ["51,200", "201,500", "501,1000"],
+      "technology_signals": []
+    }
+  }
+}
