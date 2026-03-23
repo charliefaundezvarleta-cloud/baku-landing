@@ -3,71 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paquetes de Leads B2B — Agencia BAKU</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Paquetes de Leads B2B — BAKU</title>
+    <meta name="description" content="Paquetes de prospectos B2B segmentados por industria. Leads verificados, enriquecidos y listos para activar en tu CRM.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Paquetes de Leads B2B — BAKU">
+    <meta property="og:description" content="Leads B2B verificados, segmentados por industria. Elige tu paquete y activa en 24-48h.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.agenciabaku.com/leads.html">
+
+    <!-- Fonts: Space Grotesk (brand primary) + Space Mono (data/code) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
-        * {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
         :root {
-            --black: #0a0a0a;
-            --card: #111111;
-            --card-hover: #161616;
-            --border: rgba(255,255,255,0.07);
-            --border-strong: rgba(255,255,255,0.12);
+            /* Baku Brand Tokens — Midnight + Cream + Butter Yellow */
+            --midnight: #0a0a0a;
+            --surface: #111111;
+            --surface-hover: #161616;
+            --surface-elevated: #1a1a1a;
+            --border: rgba(255,255,255,0.06);
+            --border-hover: rgba(255,255,255,0.12);
+            --border-strong: rgba(255,255,255,0.18);
+            --cream: #f5f0e8;
             --white: #ffffff;
-            --off-white: #e8e8e8;
-            --muted: #888888;
-            --accent: #ffffff;
+            --off-white: #d4d4d4;
+            --muted: #777777;
+            --butter: #F0E4A8;
+            --butter-dim: rgba(240,228,168,0.08);
+            --butter-glow: rgba(240,228,168,0.15);
+
+            /* 8px grid spacing system */
+            --sp-1: 4px;
+            --sp-2: 8px;
+            --sp-3: 16px;
+            --sp-4: 24px;
+            --sp-5: 32px;
+            --sp-6: 48px;
+            --sp-7: 64px;
+            --sp-8: 96px;
+
+            /* Radii */
             --radius: 16px;
             --radius-sm: 10px;
+            --radius-xs: 6px;
+            --radius-full: 100px;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--black);
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: var(--midnight);
             color: var(--white);
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Navigation */
+        /* ===== NAVIGATION ===== */
         nav {
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 100;
-            padding: 0 40px;
+            padding: 0 var(--sp-6);
             height: 64px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(10,10,10,0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: rgba(10,10,10,0.88);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
             border-bottom: 1px solid var(--border);
         }
 
         .nav-logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: var(--sp-2);
             text-decoration: none;
         }
 
         .nav-logo-mark {
             width: 32px; height: 32px;
-            border: 1.5px solid rgba(255,255,255,0.3);
+            border: 1.5px solid rgba(255,255,255,0.25);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 800;
+            font-weight: 700;
             font-size: 13px;
             letter-spacing: -0.5px;
             color: var(--white);
@@ -76,22 +108,22 @@
         .nav-brand {
             font-weight: 700;
             font-size: 15px;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             color: var(--white);
         }
 
         .nav-tagline {
-            font-size: 11px;
+            font-size: 10px;
             color: var(--muted);
-            letter-spacing: 0.12em;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
-            font-weight: 400;
+            font-weight: 500;
         }
 
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 32px;
+            gap: var(--sp-5);
             list-style: none;
         }
 
@@ -103,65 +135,112 @@
             transition: color 0.2s;
         }
 
-        .nav-links a:hover { color: var(--white); }
+        .nav-links a:hover { color: var(--cream); }
 
         .nav-links a.active {
-            color: var(--white);
-            border-bottom: 2px solid var(--white);
-            padding-bottom: 0.25rem;
+            color: var(--butter);
         }
 
         .nav-cta {
             background: var(--white);
-            color: var(--black) !important;
+            color: var(--midnight) !important;
             padding: 8px 20px;
-            border-radius: 100px;
+            border-radius: var(--radius-full);
             font-size: 13px !important;
             font-weight: 600 !important;
-            text-decoration: none;
-            transition: opacity 0.2s !important;
+            transition: all 0.2s !important;
         }
 
         .nav-cta:hover {
-            background-color: var(--off-white);
+            background-color: var(--butter) !important;
+            color: var(--midnight) !important;
         }
 
-        /* Hero Section */
+        /* ===== HERO ===== */
         .hero {
-            padding: 140px 40px 80px;
+            padding: 160px var(--sp-6) var(--sp-8);
             text-align: center;
-            border-bottom: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 400px;
+            background: radial-gradient(ellipse, var(--butter-dim) 0%, transparent 70%);
+            pointer-events: none;
         }
 
         .hero-label {
-            font-size: 0.85rem;
-            color: var(--muted);
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-bottom: 1.5rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--butter);
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            margin-bottom: var(--sp-4);
+            position: relative;
         }
 
         .hero-headline {
-            font-size: 3.5rem;
+            font-size: clamp(2.4rem, 5vw, 4rem);
             font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
+            line-height: 1.1;
+            margin-bottom: var(--sp-4);
+            letter-spacing: -0.03em;
+            color: var(--cream);
+            position: relative;
         }
 
         .hero-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--muted);
-            max-width: 700px;
+            max-width: 560px;
             margin: 0 auto;
             font-weight: 400;
+            line-height: 1.7;
+            position: relative;
         }
 
-        /* Filter Bar */
-        .filter-section {
-            padding: 2.5rem 2rem;
+        /* ===== STATS BAR ===== */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: var(--sp-7);
+            padding: var(--sp-6) var(--sp-6);
+            border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
-            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--butter);
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-top: var(--sp-1);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        /* ===== FILTER BAR ===== */
+        .filter-section {
+            padding: var(--sp-6) var(--sp-6);
+            border-bottom: 1px solid var(--border);
         }
 
         .filter-container {
@@ -170,84 +249,90 @@
         }
 
         .filter-group {
-            margin-bottom: 2rem;
+            margin-bottom: var(--sp-4);
         }
 
-        .filter-group:last-child {
-            margin-bottom: 0;
-        }
+        .filter-group:last-child { margin-bottom: 0; }
 
         .filter-label {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--off-white);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-bottom: var(--sp-3);
+            color: var(--muted);
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
             display: block;
         }
 
         .filter-pills {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.75rem;
+            gap: var(--sp-2);
         }
 
         .pill {
-            padding: 0.6rem 1.2rem;
-            border: 1px solid var(--border-strong);
+            padding: 10px 20px;
+            border: 1px solid var(--border-hover);
             background-color: transparent;
-            color: var(--white);
-            border-radius: 50px;
+            color: var(--off-white);
+            border-radius: var(--radius-full);
             cursor: pointer;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
-            transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
+            transition: all 0.2s ease;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         .pill:hover {
-            border-color: var(--white);
-            background-color: rgba(255, 255, 255, 0.05);
+            border-color: var(--butter);
+            color: var(--butter);
+            background-color: var(--butter-dim);
         }
 
         .pill.active {
-            background-color: var(--white);
-            color: var(--black);
-            border-color: var(--white);
+            background-color: var(--butter);
+            color: var(--midnight);
+            border-color: var(--butter);
+            font-weight: 600;
         }
 
-        /* Packages Grid */
+        /* ===== PACKAGES GRID ===== */
         .packages-section {
-            padding: 4rem 2rem;
+            padding: var(--sp-8) var(--sp-6);
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .packages-header {
-            margin-bottom: 3rem;
+            margin-bottom: var(--sp-7);
         }
 
         .packages-title {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: var(--sp-2);
+            letter-spacing: -0.02em;
+            color: var(--cream);
         }
 
         .packages-subtitle {
             color: var(--muted);
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .packages-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: var(--sp-4);
         }
 
+        /* ===== PACKAGE CARD ===== */
         .package-card {
-            background-color: var(--card);
+            background-color: var(--surface);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            padding: 2rem;
+            padding: var(--sp-5);
             position: relative;
             transition: all 0.3s ease;
             display: flex;
@@ -256,159 +341,194 @@
         }
 
         .package-card:hover {
-            background-color: var(--card-hover);
-            border-color: var(--border-strong);
-            transform: translateY(-4px);
+            background-color: var(--surface-hover);
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
         }
 
-        .package-card.hidden {
-            display: none;
+        .package-card.featured {
+            border-color: rgba(240,228,168,0.2);
+            background: linear-gradient(180deg, rgba(240,228,168,0.04) 0%, var(--surface) 40%);
         }
+
+        .package-card.featured:hover {
+            border-color: rgba(240,228,168,0.35);
+        }
+
+        .package-card.hidden { display: none; }
 
         .package-badge {
             position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            font-size: 0.75rem;
+            top: var(--sp-4);
+            right: var(--sp-4);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
             font-weight: 700;
-            padding: 0.4rem 0.8rem;
-            border-radius: 50px;
-            letter-spacing: 0.5px;
+            padding: 6px 12px;
+            border-radius: var(--radius-full);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
         .badge-exclusivo {
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: var(--white);
+            background-color: var(--butter-dim);
+            border: 1px solid rgba(240,228,168,0.25);
+            color: var(--butter);
         }
 
         .badge-compartido {
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-strong);
+            background-color: rgba(255,255,255,0.04);
+            border: 1px solid var(--border-hover);
             color: var(--off-white);
         }
 
         .package-header {
-            margin-bottom: 1.5rem;
-            padding-top: 1rem;
+            margin-bottom: var(--sp-3);
+            padding-top: var(--sp-2);
         }
 
         .package-name {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 700;
-            margin-bottom: 0.75rem;
+            margin-bottom: var(--sp-2);
+            letter-spacing: -0.01em;
         }
 
         .package-industry {
             display: inline-block;
-            font-size: 0.8rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
             color: var(--muted);
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 0.4rem 0.8rem;
-            border-radius: var(--radius-sm);
-            margin-bottom: 1rem;
+            background-color: rgba(255,255,255,0.04);
+            padding: 5px 10px;
+            border-radius: var(--radius-xs);
+            letter-spacing: 0.04em;
         }
 
         .package-meta {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
+            margin-bottom: var(--sp-3);
+            padding-bottom: var(--sp-3);
             border-bottom: 1px solid var(--border);
-            font-size: 0.95rem;
         }
 
         .lead-count {
-            font-weight: 600;
-            color: var(--white);
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            color: var(--cream);
+            font-size: 0.9rem;
         }
 
         .quality-indicator {
             display: flex;
-            gap: 0.4rem;
+            gap: 3px;
             align-items: center;
         }
 
         .quality-bar {
             width: 4px;
-            height: 16px;
-            background-color: var(--border-strong);
+            height: 18px;
+            background-color: rgba(255,255,255,0.08);
             border-radius: 2px;
-            transition: background-color 0.3s ease;
         }
 
         .quality-bar.active {
-            background-color: var(--white);
+            background-color: var(--butter);
         }
 
         .package-includes {
             list-style: none;
-            margin-bottom: 2rem;
+            margin-bottom: var(--sp-4);
             flex-grow: 1;
         }
 
         .package-includes li {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--off-white);
-            margin-bottom: 0.75rem;
-            padding-left: 1.5rem;
+            margin-bottom: 10px;
+            padding-left: var(--sp-4);
             position: relative;
+            line-height: 1.4;
         }
 
         .package-includes li:before {
-            content: "✓";
+            content: "→";
             position: absolute;
             left: 0;
-            color: var(--white);
+            color: var(--butter);
             font-weight: 700;
+            font-size: 0.8rem;
         }
 
         .package-footer {
             border-top: 1px solid var(--border);
-            padding-top: 1.5rem;
+            padding-top: var(--sp-4);
         }
 
         .package-price {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--sp-3);
         }
 
         .package-price-label {
-            font-size: 0.8rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
             color: var(--muted);
             display: block;
-            margin-bottom: 0.25rem;
+            margin-bottom: 2px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .package-price-value {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--cream);
+        }
+
+        .package-price-unit {
+            font-size: 0.85rem;
+            color: var(--muted);
+            font-weight: 400;
         }
 
         .package-cta {
             width: 100%;
-            padding: 1rem;
+            padding: 14px;
             background-color: var(--white);
-            color: var(--black);
+            color: var(--midnight);
             border: none;
             border-radius: var(--radius-sm);
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-            font-family: 'Inter', sans-serif;
+            transition: all 0.2s ease;
+            font-family: 'Space Grotesk', sans-serif;
             text-decoration: none;
             display: block;
             text-align: center;
+            letter-spacing: -0.01em;
         }
 
         .package-cta:hover {
-            background-color: var(--off-white);
+            background-color: var(--butter);
         }
 
-        /* How it works section */
+        .package-card.featured .package-cta {
+            background-color: var(--butter);
+            color: var(--midnight);
+        }
+
+        .package-card.featured .package-cta:hover {
+            background-color: var(--cream);
+        }
+
+        /* ===== HOW IT WORKS ===== */
         .how-it-works {
-            padding: 4rem 2rem;
+            padding: var(--sp-8) var(--sp-6);
             border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            background-color: rgba(0, 0, 0, 0.2);
         }
 
         .how-it-works-container {
@@ -416,46 +536,70 @@
             margin: 0 auto;
         }
 
-        .section-title {
-            font-size: 2rem;
+        .section-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--butter);
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
             font-weight: 700;
-            margin-bottom: 3rem;
             text-align: center;
+            margin-bottom: var(--sp-3);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: var(--sp-7);
+            text-align: center;
+            letter-spacing: -0.02em;
+            color: var(--cream);
         }
 
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: var(--sp-5);
         }
 
         .step {
             text-align: center;
+            padding: var(--sp-5);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--surface);
+            transition: border-color 0.2s;
+        }
+
+        .step:hover {
+            border-color: var(--border-hover);
         }
 
         .step-number {
-            font-size: 1rem;
-            color: var(--muted);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--butter);
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            margin-bottom: var(--sp-3);
         }
 
         .step-title {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            margin-bottom: 0.75rem;
+            margin-bottom: var(--sp-2);
+            color: var(--cream);
         }
 
         .step-description {
             color: var(--muted);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             line-height: 1.6;
         }
 
-        /* Comparison Table */
+        /* ===== COMPARISON TABLE ===== */
         .comparison-section {
-            padding: 4rem 2rem;
+            padding: var(--sp-8) var(--sp-6);
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -463,168 +607,215 @@
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 2rem;
+            margin-top: var(--sp-4);
         }
 
         .comparison-table th,
         .comparison-table td {
-            padding: 1.2rem;
+            padding: var(--sp-3) var(--sp-4);
             text-align: left;
             border-bottom: 1px solid var(--border);
         }
 
         .comparison-table th {
-            background-color: rgba(255, 255, 255, 0.03);
+            background-color: rgba(240,228,168,0.03);
             font-weight: 700;
-            font-size: 0.95rem;
-            color: var(--off-white);
+            font-size: 0.85rem;
+            color: var(--cream);
+            letter-spacing: 0.02em;
+        }
+
+        .comparison-table th:not(:first-child) {
+            text-align: center;
+        }
+
+        .comparison-table td:not(:first-child) {
+            text-align: center;
         }
 
         .comparison-table td {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--off-white);
         }
 
-        .comparison-table tr:hover {
-            background-color: rgba(255, 255, 255, 0.02);
+        .comparison-table tbody tr {
+            transition: background-color 0.15s;
+        }
+
+        .comparison-table tbody tr:hover {
+            background-color: rgba(255,255,255,0.02);
         }
 
         .check {
-            color: var(--white);
+            color: var(--butter);
             font-weight: 700;
         }
 
         .dash {
-            color: var(--muted);
+            color: rgba(255,255,255,0.15);
         }
 
-        /* FAQ Section */
+        /* ===== FAQ ===== */
         .faq-section {
-            padding: 4rem 2rem;
+            padding: var(--sp-8) var(--sp-6);
             border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            background-color: rgba(0, 0, 0, 0.2);
         }
 
         .faq-container {
-            max-width: 800px;
+            max-width: 720px;
             margin: 0 auto;
         }
 
         .faq-item {
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--sp-2);
             border: 1px solid var(--border);
             border-radius: var(--radius-sm);
             overflow: hidden;
+            transition: border-color 0.2s;
+        }
+
+        .faq-item:hover {
+            border-color: var(--border-hover);
         }
 
         .faq-question {
-            padding: 1.5rem;
-            background-color: var(--card);
+            padding: var(--sp-4);
+            background-color: var(--surface);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.2s;
             border: none;
             width: 100%;
             text-align: left;
-            font-family: 'Inter', sans-serif;
-            color: var(--white);
-            font-size: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--cream);
+            font-size: 0.95rem;
         }
 
         .faq-question:hover {
-            background-color: var(--card-hover);
+            background-color: var(--surface-hover);
         }
 
         .faq-toggle {
-            font-size: 1.2rem;
+            font-size: 0.9rem;
             transition: transform 0.3s ease;
+            color: var(--muted);
         }
 
-        .faq-toggle.open {
-            transform: rotate(180deg);
-        }
+        .faq-toggle.open { transform: rotate(180deg); }
 
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
-            background-color: rgba(255, 255, 255, 0.02);
         }
 
-        .faq-answer.open {
-            max-height: 300px;
-        }
+        .faq-answer.open { max-height: 300px; }
 
         .faq-answer-content {
-            padding: 1.5rem;
+            padding: 0 var(--sp-4) var(--sp-4);
             color: var(--off-white);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             line-height: 1.7;
         }
 
-        /* CTA Banner */
+        /* ===== CTA BANNER ===== */
         .cta-banner {
-            padding: 3rem 2rem;
+            padding: var(--sp-8) var(--sp-6);
             text-align: center;
             border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            height: 300px;
+            background: radial-gradient(ellipse, var(--butter-dim) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta-banner-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--butter);
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: var(--sp-3);
+            position: relative;
         }
 
         .cta-banner-headline {
             font-size: 1.8rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--sp-4);
+            letter-spacing: -0.02em;
+            color: var(--cream);
+            position: relative;
+        }
+
+        .cta-banner-sub {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: var(--sp-5);
+            position: relative;
         }
 
         .cta-banner-buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: var(--sp-3);
             justify-content: center;
             flex-wrap: wrap;
+            position: relative;
         }
 
         .btn {
-            padding: 1rem 2rem;
+            padding: 14px 32px;
             border-radius: var(--radius-sm);
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             cursor: pointer;
             text-decoration: none;
-            transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
+            transition: all 0.2s ease;
+            font-family: 'Space Grotesk', sans-serif;
             border: none;
             display: inline-block;
         }
 
         .btn-primary {
-            background-color: var(--white);
-            color: var(--black);
+            background-color: var(--butter);
+            color: var(--midnight);
         }
 
         .btn-primary:hover {
-            background-color: var(--off-white);
+            background-color: var(--cream);
         }
 
         .btn-secondary {
             background-color: transparent;
-            color: var(--white);
-            border: 1px solid var(--border-strong);
+            color: var(--cream);
+            border: 1px solid var(--border-hover);
         }
 
         .btn-secondary:hover {
-            border-color: var(--white);
-            background-color: rgba(255, 255, 255, 0.05);
+            border-color: var(--butter);
+            color: var(--butter);
+            background-color: var(--butter-dim);
         }
 
-        /* Footer */
+        /* ===== FOOTER ===== */
         footer {
-            padding: 3rem 2rem;
+            padding: var(--sp-7) var(--sp-6) var(--sp-5);
             border-top: 1px solid var(--border);
-            background-color: rgba(0, 0, 0, 0.5);
         }
 
         .footer-container {
@@ -634,55 +825,126 @@
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-bottom: 2rem;
+            grid-template-columns: 1.5fr repeat(3, 1fr);
+            gap: var(--sp-5);
+            margin-bottom: var(--sp-5);
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: var(--sp-2);
+            margin-bottom: var(--sp-3);
+        }
+
+        .footer-brand-mark {
+            width: 28px; height: 28px;
+            border: 1.5px solid rgba(255,255,255,0.2);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 11px;
+            color: var(--white);
+        }
+
+        .footer-brand-name {
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.08em;
+        }
+
+        .footer-description {
+            font-size: 0.8rem;
+            color: var(--muted);
+            line-height: 1.6;
+            max-width: 280px;
         }
 
         .footer-column h4 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: var(--sp-3);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--cream);
         }
 
-        .footer-column ul {
-            list-style: none;
-        }
+        .footer-column ul { list-style: none; }
 
         .footer-column a {
             color: var(--muted);
             text-decoration: none;
-            font-size: 0.9rem;
-            margin-bottom: 0.75rem;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
             display: block;
-            transition: color 0.3s ease;
+            transition: color 0.2s;
         }
 
-        .footer-column a:hover {
-            color: var(--white);
-        }
+        .footer-column a:hover { color: var(--butter); }
 
         .footer-divider {
             border-top: 1px solid var(--border);
-            padding-top: 2rem;
-            text-align: center;
+            padding-top: var(--sp-4);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             color: var(--muted);
-            font-size: 0.85rem;
+            font-size: 0.75rem;
         }
 
-        /* Responsive */
+        .footer-legal {
+            display: flex;
+            gap: var(--sp-4);
+        }
+
+        .footer-legal a {
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-legal a:hover { color: var(--cream); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .packages-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
-            .hero-headline {
-                font-size: 2.2rem;
+            nav {
+                padding: 0 var(--sp-4);
             }
 
-            .nav-links {
-                gap: 1.5rem;
-                font-size: 0.85rem;
+            .hero {
+                padding: 130px var(--sp-4) var(--sp-7);
             }
+
+            .hero-headline { font-size: 2rem; }
+
+            .stats-bar {
+                gap: var(--sp-5);
+                padding: var(--sp-5) var(--sp-4);
+            }
+
+            .stat-value { font-size: 1.4rem; }
+
+            .nav-links {
+                gap: var(--sp-3);
+            }
+
+            .nav-tagline { display: none; }
 
             .packages-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .packages-section,
+            .comparison-section {
+                padding: var(--sp-7) var(--sp-4);
             }
 
             .steps-grid {
@@ -690,53 +952,51 @@
             }
 
             .footer-content {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr 1fr;
             }
 
-            .filter-pills {
-                gap: 0.5rem;
-            }
-
-            .pill {
-                font-size: 0.8rem;
-                padding: 0.5rem 1rem;
+            .filter-section {
+                padding: var(--sp-5) var(--sp-4);
             }
 
             .cta-banner-buttons {
                 flex-direction: column;
+                align-items: center;
             }
 
-            .btn {
-                width: 100%;
-            }
+            .btn { width: 100%; max-width: 320px; text-align: center; }
         }
 
         @media (max-width: 480px) {
             nav {
+                height: auto;
                 flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
+                gap: var(--sp-2);
+                padding: var(--sp-2) var(--sp-3);
             }
 
             .nav-links {
-                flex-direction: column;
-                gap: 1rem;
-                width: 100%;
-                text-align: center;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: var(--sp-2);
             }
 
-            .hero-headline {
-                font-size: 1.8rem;
+            .hero-headline { font-size: 1.7rem; }
+
+            .stats-bar {
+                flex-wrap: wrap;
+                gap: var(--sp-4);
             }
 
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
+            .stat { flex: 1 1 40%; }
+
+            .footer-content { grid-template-columns: 1fr; }
+            .footer-divider { flex-direction: column; gap: var(--sp-2); text-align: center; }
 
             .comparison-table th,
             .comparison-table td {
-                padding: 0.8rem;
-                font-size: 0.8rem;
+                padding: var(--sp-2) var(--sp-2);
+                font-size: 0.75rem;
             }
         }
     </style>
@@ -756,36 +1016,57 @@
             <li><a href="/#servicios">Servicios</a></li>
             <li><a href="/leads.html" class="active">Paquetes</a></li>
             <li><a href="/#contacto">Contacto</a></li>
-            <li><a href="/#contacto" class="nav-cta">Agendar conversación</a></li>
+            <li><a href="/#contacto" class="nav-cta">Agendar llamada</a></li>
         </ul>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero">
-        <div class="hero-label">BAKU — Paquetes de Leads</div>
-        <h1 class="hero-headline">Leads listos. Elige, compra, cierra.</h1>
-        <p class="hero-subtitle">Paquetes de prospectos B2B armados con criterio, segmentados por industria y listos para activar. Sin esperas, sin contratos largos.</p>
+        <div class="hero-label">Marketplace de Leads B2B</div>
+        <h1 class="hero-headline">Elige. Compra. Cierra.</h1>
+        <p class="hero-subtitle">Paquetes de prospectos B2B armados con criterio, segmentados por industria y listos para cargar en tu CRM.</p>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="stat">
+            <div class="stat-value">95%+</div>
+            <div class="stat-label">Deliverabilidad</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">24-48h</div>
+            <div class="stat-label">Entrega</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">9</div>
+            <div class="stat-label">Industrias</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">3</div>
+            <div class="stat-label">Niveles de calidad</div>
+        </div>
     </section>
 
     <!-- Filter Section -->
     <section class="filter-section">
         <div class="filter-container">
             <div class="filter-group">
-                <label class="filter-label">INDUSTRIA</label>
+                <label class="filter-label">Industria</label>
                 <div class="filter-pills">
-                    <button class="pill" data-filter="industria" data-value="Tecnología">Tecnología</button>
                     <button class="pill" data-filter="industria" data-value="SaaS">SaaS</button>
+                    <button class="pill" data-filter="industria" data-value="Tecnología">Tecnología</button>
                     <button class="pill" data-filter="industria" data-value="Retail">Retail</button>
                     <button class="pill" data-filter="industria" data-value="Real Estate">Real Estate</button>
-                    <button class="pill" data-filter="industria" data-value="Servicios Financieros">Servicios Financieros</button>
+                    <button class="pill" data-filter="industria" data-value="Fintech">Fintech</button>
                     <button class="pill" data-filter="industria" data-value="Salud">Salud</button>
                     <button class="pill" data-filter="industria" data-value="Logística">Logística</button>
                     <button class="pill" data-filter="industria" data-value="Educación">Educación</button>
+                    <button class="pill" data-filter="industria" data-value="Multi-industria">Multi-industria</button>
                 </div>
             </div>
 
             <div class="filter-group">
-                <label class="filter-label">CALIDAD</label>
+                <label class="filter-label">Calidad</label>
                 <div class="filter-pills">
                     <button class="pill" data-filter="calidad" data-value="Estándar">Estándar</button>
                     <button class="pill" data-filter="calidad" data-value="Premium">Premium</button>
@@ -794,10 +1075,10 @@
             </div>
 
             <div class="filter-group">
-                <label class="filter-label">TIPO</label>
+                <label class="filter-label">Exclusividad</label>
                 <div class="filter-pills">
-                    <button class="pill" data-filter="tipo" data-value="Exclusivos">Exclusivos</button>
-                    <button class="pill" data-filter="tipo" data-value="Compartidos">Compartidos</button>
+                    <button class="pill" data-filter="tipo" data-value="Exclusivo">Exclusivo</button>
+                    <button class="pill" data-filter="tipo" data-value="Compartido">Compartido</button>
                 </div>
             </div>
         </div>
@@ -806,17 +1087,17 @@
     <!-- Packages Grid -->
     <section class="packages-section">
         <div class="packages-header">
-            <h2 class="packages-title">Nuestros Paquetes</h2>
-            <p class="packages-subtitle">Selecciona los filtros arriba para encontrar el paquete ideal para tu equipo</p>
+            <h2 class="packages-title">Paquetes disponibles</h2>
+            <p class="packages-subtitle">Filtra por industria, calidad o exclusividad para encontrar el paquete ideal</p>
         </div>
 
         <div class="packages-grid">
-            <!-- Package 1: Starter SaaS -->
-            <div class="package-card" data-industria="SaaS" data-industria-alt="Tecnología" data-calidad="Estándar" data-tipo="Compartidos">
+            <!-- Starter SaaS — Standard / Shared / 250 leads / $297 -->
+            <div class="package-card" data-industria="SaaS" data-calidad="Estándar" data-tipo="Compartido">
                 <div class="package-badge badge-compartido">Compartido</div>
                 <div class="package-header">
                     <h3 class="package-name">Starter SaaS</h3>
-                    <span class="package-industry">Tecnología / SaaS</span>
+                    <span class="package-industry">SaaS</span>
                 </div>
                 <div class="package-meta">
                     <span class="lead-count">250 leads</span>
@@ -829,20 +1110,21 @@
                 <ul class="package-includes">
                     <li>Nombre + email corporativo</li>
                     <li>Cargo y empresa</li>
-                    <li>País y tamaño empresa</li>
+                    <li>País y tamaño de empresa</li>
                     <li>Verificación básica de email</li>
                 </ul>
                 <div class="package-footer">
                     <div class="package-price">
                         <span class="package-price-label">desde</span>
-                        USD $297
+                        <span class="package-price-value">$297</span>
+                        <span class="package-price-unit"> USD</span>
                     </div>
                     <a href="/#contacto" class="package-cta">Solicitar paquete</a>
                 </div>
             </div>
 
-            <!-- Package 2: Growth Tech -->
-            <div class="package-card" data-industria="Tecnología" data-calidad="Premium" data-tipo="Exclusivos">
+            <!-- Growth Tech — Premium / Exclusive / 500 leads / $697 -->
+            <div class="package-card featured" data-industria="Tecnología" data-calidad="Premium" data-tipo="Exclusivo">
                 <div class="package-badge badge-exclusivo">Exclusivo</div>
                 <div class="package-header">
                     <h3 class="package-name">Growth Tech</h3>
@@ -861,19 +1143,20 @@
                     <li>LinkedIn verificado</li>
                     <li>Teléfono directo</li>
                     <li>Señales de intención de compra</li>
-                    <li>Enriquecimiento de cuenta</li>
+                    <li>Dominio de empresa</li>
                 </ul>
                 <div class="package-footer">
                     <div class="package-price">
                         <span class="package-price-label">desde</span>
-                        USD $697
+                        <span class="package-price-value">$697</span>
+                        <span class="package-price-unit"> USD</span>
                     </div>
                     <a href="/#contacto" class="package-cta">Solicitar paquete</a>
                 </div>
             </div>
 
-            <!-- Package 3: Enterprise Pack -->
-            <div class="package-card" data-industria="Multi-industria" data-calidad="Enterprise" data-tipo="Exclusivos">
+            <!-- Enterprise Pack — Enterprise / Exclusive / 1000 leads / $1,497 -->
+            <div class="package-card featured" data-industria="Multi-industria" data-calidad="Enterprise" data-tipo="Exclusivo">
                 <div class="package-badge badge-exclusivo">Exclusivo</div>
                 <div class="package-header">
                     <h3 class="package-name">Enterprise Pack</h3>
@@ -889,22 +1172,23 @@
                 </div>
                 <ul class="package-includes">
                     <li>Todo Growth +</li>
-                    <li>Datos de tecnografía</li>
+                    <li>Tecnografía completa</li>
                     <li>Org chart parcial</li>
                     <li>Trigger events recientes</li>
-                    <li>Account scoring + Soporte dedicado</li>
+                    <li>Account scoring + soporte dedicado</li>
                 </ul>
                 <div class="package-footer">
                     <div class="package-price">
                         <span class="package-price-label">desde</span>
-                        USD $1,497
+                        <span class="package-price-value">$1,497</span>
+                        <span class="package-price-unit"> USD</span>
                     </div>
                     <a href="/#contacto" class="package-cta">Solicitar paquete</a>
                 </div>
             </div>
 
-            <!-- Package 4: Retail Essentials -->
-            <div class="package-card" data-industria="Retail" data-calidad="Estándar" data-tipo="Compartidos">
+            <!-- Retail Essentials — Standard / Shared / 300 leads / $347 -->
+            <div class="package-card" data-industria="Retail" data-calidad="Estándar" data-tipo="Compartido">
                 <div class="package-badge badge-compartido">Compartido</div>
                 <div class="package-header">
                     <h3 class="package-name">Retail Essentials</h3>
@@ -919,22 +1203,23 @@
                     </div>
                 </div>
                 <ul class="package-includes">
-                    <li>Nombre + email</li>
+                    <li>Nombre + email corporativo</li>
                     <li>Cargo y empresa</li>
-                    <li>Ubicación geográfica</li>
-                    <li>Segmento retail</li>
+                    <li>País y tamaño de empresa</li>
+                    <li>Verificación básica de email</li>
                 </ul>
                 <div class="package-footer">
                     <div class="package-price">
                         <span class="package-price-label">desde</span>
-                        USD $347
+                        <span class="package-price-value">$347</span>
+                        <span class="package-price-unit"> USD</span>
                     </div>
                     <a href="/#contacto" class="package-cta">Solicitar paquete</a>
                 </div>
             </div>
 
-            <!-- Package 5: Real Estate Pro -->
-            <div class="package-card" data-industria="Real Estate" data-calidad="Premium" data-tipo="Exclusivos">
+            <!-- Real Estate Pro — Premium / Exclusive / 400 leads / $597 -->
+            <div class="package-card" data-industria="Real Estate" data-calidad="Premium" data-tipo="Exclusivo">
                 <div class="package-badge badge-exclusivo">Exclusivo</div>
                 <div class="package-header">
                     <h3 class="package-name">Real Estate Pro</h3>
@@ -950,26 +1235,27 @@
                 </div>
                 <ul class="package-includes">
                     <li>Contacto directo verificado</li>
-                    <li>Tipo de operación</li>
-                    <li>Zona geográfica</li>
-                    <li>Volumen de operaciones</li>
                     <li>LinkedIn verificado</li>
+                    <li>Teléfono directo</li>
+                    <li>Señales de intención de compra</li>
+                    <li>Dominio de empresa</li>
                 </ul>
                 <div class="package-footer">
                     <div class="package-price">
                         <span class="package-price-label">desde</span>
-                        USD $597
+                        <span class="package-price-value">$597</span>
+                        <span class="package-price-unit"> USD</span>
                     </div>
                     <a href="/#contacto" class="package-cta">Solicitar paquete</a>
                 </div>
             </div>
 
-            <!-- Package 6: Fintech Growth -->
-            <div class="package-card" data-industria="Servicios Financieros" data-calidad="Premium" data-tipo="Exclusivos">
-                <div class="package-badge badge-exclusivo">Exclusivo</div>
+            <!-- Fintech Growth — Premium / SHARED / 500 leads / $797 -->
+            <div class="package-card" data-industria="Fintech" data-calidad="Premium" data-tipo="Compartido">
+                <div class="package-badge badge-compartido">Compartido</div>
                 <div class="package-header">
                     <h3 class="package-name">Fintech Growth</h3>
-                    <span class="package-industry">Servicios Financieros</span>
+                    <span class="package-industry">Fintech</span>
                 </div>
                 <div class="package-meta">
                     <span class="lead-count">500 leads</span>
@@ -981,15 +1267,16 @@
                 </div>
                 <ul class="package-includes">
                     <li>Decision makers verificados</li>
-                    <li>Stack tecnológico</li>
-                    <li>Revenue estimado</li>
-                    <li>Señales de compra</li>
-                    <li>Datos de compliance</li>
+                    <li>LinkedIn verificado</li>
+                    <li>Teléfono directo</li>
+                    <li>Señales de intención de compra</li>
+                    <li>Dominio de empresa</li>
                 </ul>
                 <div class="package-footer">
                     <div class="package-price">
                         <span class="package-price-label">desde</span>
-                        USD $797
+                        <span class="package-price-value">$797</span>
+                        <span class="package-price-unit"> USD</span>
                     </div>
                     <a href="/#contacto" class="package-cta">Solicitar paquete</a>
                 </div>
@@ -1000,22 +1287,23 @@
     <!-- How it Works -->
     <section class="how-it-works">
         <div class="how-it-works-container">
-            <h2 class="section-title">¿Cómo funciona?</h2>
+            <div class="section-label">Proceso</div>
+            <h2 class="section-title">Tres pasos. Sin fricción.</h2>
             <div class="steps-grid">
                 <div class="step">
                     <div class="step-number">01</div>
                     <h3 class="step-title">Elige tu paquete</h3>
-                    <p class="step-description">Selecciona industria, calidad y cantidad según tu objetivo comercial.</p>
+                    <p class="step-description">Selecciona industria, nivel de enriquecimiento y cantidad de leads.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">02</div>
-                    <h3 class="step-title">Validamos y preparamos</h3>
-                    <p class="step-description">Verificamos cada lead, enriquecemos datos y filtramos por calidad antes de entregarte.</p>
+                    <h3 class="step-title">Validamos y enriquecemos</h3>
+                    <p class="step-description">Verificamos cada lead contra fuentes activas y enriquecemos según el tier elegido.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">03</div>
                     <h3 class="step-title">Recibe y activa</h3>
-                    <p class="step-description">Recibes tu base en 24-48h lista para cargar en tu CRM y comenzar a prospectar.</p>
+                    <p class="step-description">CSV o integración directa a tu CRM. Listo para prospectar en 24-48h.</p>
                 </div>
             </div>
         </div>
@@ -1023,11 +1311,12 @@
 
     <!-- Comparison Table -->
     <section class="comparison-section">
-        <h2 class="section-title">¿Qué incluye cada nivel?</h2>
+        <div class="section-label">Niveles</div>
+        <h2 class="section-title">Qué incluye cada nivel</h2>
         <table class="comparison-table">
             <thead>
                 <tr>
-                    <th>Feature</th>
+                    <th>Campo</th>
                     <th>Estándar</th>
                     <th>Premium</th>
                     <th>Enterprise</th>
@@ -1036,63 +1325,75 @@
             <tbody>
                 <tr>
                     <td>Email verificado</td>
-                    <td><span class="check">✓</span></td>
-                    <td><span class="check">✓</span></td>
-                    <td><span class="check">✓</span></td>
+                    <td><span class="check">&#10003;</span></td>
+                    <td><span class="check">&#10003;</span></td>
+                    <td><span class="check">&#10003;</span></td>
                 </tr>
                 <tr>
                     <td>Cargo + empresa</td>
-                    <td><span class="check">✓</span></td>
-                    <td><span class="check">✓</span></td>
-                    <td><span class="check">✓</span></td>
+                    <td><span class="check">&#10003;</span></td>
+                    <td><span class="check">&#10003;</span></td>
+                    <td><span class="check">&#10003;</span></td>
+                </tr>
+                <tr>
+                    <td>País + tamaño empresa</td>
+                    <td><span class="check">&#10003;</span></td>
+                    <td><span class="check">&#10003;</span></td>
+                    <td><span class="check">&#10003;</span></td>
                 </tr>
                 <tr>
                     <td>LinkedIn verificado</td>
-                    <td><span class="dash">—</span></td>
-                    <td><span class="check">✓</span></td>
-                    <td><span class="check">✓</span></td>
+                    <td><span class="dash">&mdash;</span></td>
+                    <td><span class="check">&#10003;</span></td>
+                    <td><span class="check">&#10003;</span></td>
                 </tr>
                 <tr>
                     <td>Teléfono directo</td>
-                    <td><span class="dash">—</span></td>
-                    <td><span class="check">✓</span></td>
-                    <td><span class="check">✓</span></td>
+                    <td><span class="dash">&mdash;</span></td>
+                    <td><span class="check">&#10003;</span></td>
+                    <td><span class="check">&#10003;</span></td>
                 </tr>
                 <tr>
                     <td>Señales de intención</td>
-                    <td><span class="dash">—</span></td>
-                    <td><span class="check">✓</span></td>
-                    <td><span class="check">✓</span></td>
+                    <td><span class="dash">&mdash;</span></td>
+                    <td><span class="check">&#10003;</span></td>
+                    <td><span class="check">&#10003;</span></td>
+                </tr>
+                <tr>
+                    <td>Dominio de empresa</td>
+                    <td><span class="dash">&mdash;</span></td>
+                    <td><span class="check">&#10003;</span></td>
+                    <td><span class="check">&#10003;</span></td>
                 </tr>
                 <tr>
                     <td>Tecnografía</td>
-                    <td><span class="dash">—</span></td>
-                    <td><span class="dash">—</span></td>
-                    <td><span class="check">✓</span></td>
+                    <td><span class="dash">&mdash;</span></td>
+                    <td><span class="dash">&mdash;</span></td>
+                    <td><span class="check">&#10003;</span></td>
+                </tr>
+                <tr>
+                    <td>Funding + revenue range</td>
+                    <td><span class="dash">&mdash;</span></td>
+                    <td><span class="dash">&mdash;</span></td>
+                    <td><span class="check">&#10003;</span></td>
+                </tr>
+                <tr>
+                    <td>Org chart level</td>
+                    <td><span class="dash">&mdash;</span></td>
+                    <td><span class="dash">&mdash;</span></td>
+                    <td><span class="check">&#10003;</span></td>
                 </tr>
                 <tr>
                     <td>Account scoring</td>
-                    <td><span class="dash">—</span></td>
-                    <td><span class="dash">—</span></td>
-                    <td><span class="check">✓</span></td>
+                    <td><span class="dash">&mdash;</span></td>
+                    <td><span class="dash">&mdash;</span></td>
+                    <td><span class="check">&#10003;</span></td>
                 </tr>
                 <tr>
                     <td>Soporte dedicado</td>
-                    <td><span class="dash">—</span></td>
-                    <td><span class="dash">—</span></td>
-                    <td><span class="check">✓</span></td>
-                </tr>
-                <tr>
-                    <td>Exclusividad</td>
-                    <td><span class="dash">—</span></td>
-                    <td><span class="check">✓</span></td>
-                    <td><span class="check">✓</span></td>
-                </tr>
-                <tr>
-                    <td>Entrega</td>
-                    <td>3-5 días</td>
-                    <td>2-3 días</td>
-                    <td>24-48h</td>
+                    <td><span class="dash">&mdash;</span></td>
+                    <td><span class="dash">&mdash;</span></td>
+                    <td><span class="check">&#10003;</span></td>
                 </tr>
             </tbody>
         </table>
@@ -1101,16 +1402,17 @@
     <!-- FAQ Section -->
     <section class="faq-section">
         <div class="faq-container">
-            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <div class="section-label">FAQ</div>
+            <h2 class="section-title">Preguntas frecuentes</h2>
 
             <div class="faq-item">
                 <button class="faq-question">
                     <span>¿Qué significa "exclusivo" vs "compartido"?</span>
-                    <span class="faq-toggle">▼</span>
+                    <span class="faq-toggle">&#9660;</span>
                 </button>
                 <div class="faq-answer">
                     <div class="faq-answer-content">
-                        Leads Exclusivos son utilizados por un único cliente, garantizando que nadie más en tu industria tendrá acceso a los mismos prospectos. Leads Compartidos pueden ser vendidos a otros clientes, pero son validados y segmentados para minimizar solapamientos. Los Exclusivos son ideales si buscas máxima cobertura en tu mercado objetivo.
+                        Los leads exclusivos se entregan a un solo cliente. Los compartidos pueden venderse hasta a 3 clientes, pero siempre con segmentación para minimizar solapamientos. Si necesitas cobertura total de tu mercado, elige exclusivo.
                     </div>
                 </div>
             </div>
@@ -1118,23 +1420,23 @@
             <div class="faq-item">
                 <button class="faq-question">
                     <span>¿En qué formato recibo los leads?</span>
-                    <span class="faq-toggle">▼</span>
+                    <span class="faq-toggle">&#9660;</span>
                 </button>
                 <div class="faq-answer">
                     <div class="faq-answer-content">
-                        Entregamos los leads en múltiples formatos: CSV, Excel, API, o integración directa a tu CRM (Salesforce, HubSpot, Pipedrive, etc.). Tú eliges el formato que mejor se adapte a tu flujo de trabajo. Todos los archivos incluyen campos estandarizados y verificados.
+                        CSV, Excel, JSON o integración directa a tu CRM (Salesforce, HubSpot, Pipedrive). Todos los archivos con campos estandarizados y verificados.
                     </div>
                 </div>
             </div>
 
             <div class="faq-item">
                 <button class="faq-question">
-                    <span>¿Tienen garantía de entregabilidad?</span>
-                    <span class="faq-toggle">▼</span>
+                    <span>¿Tienen garantía de deliverabilidad?</span>
+                    <span class="faq-toggle">&#9660;</span>
                 </button>
                 <div class="faq-answer">
                     <div class="faq-answer-content">
-                        Sí. Todos nuestros leads están verificados y validados antes de entrega. Garantizamos un mínimo de 95% de deliverabilidad en emails. Si experimentas problemas, nuestro equipo de soporte investigará y re-verificará los leads según sea necesario.
+                        Garantizamos 95%+ de deliverabilidad en emails. Todos los leads son verificados antes de entrega. Si hay problemas, re-verificamos sin costo.
                     </div>
                 </div>
             </div>
@@ -1142,11 +1444,11 @@
             <div class="faq-item">
                 <button class="faq-question">
                     <span>¿Puedo pedir un paquete personalizado?</span>
-                    <span class="faq-toggle">▼</span>
+                    <span class="faq-toggle">&#9660;</span>
                 </button>
                 <div class="faq-answer">
                     <div class="faq-answer-content">
-                        Absolutamente. Si ninguno de nuestros paquetes predefinidos se ajusta exactamente a tus necesidades, podemos crear un paquete personalizado con criterios específicos: industrias, geografías, tamaño de empresa, tecnologías, o cualquier otro parámetro que requieras. Contacta a nuestro equipo para obtener un quote.
+                        Sí. Armamos paquetes a medida con criterios específicos: industrias, geografías, tamaño de empresa, tecnologías o cualquier otro parámetro. Contacta al equipo para un quote.
                     </div>
                 </div>
             </div>
@@ -1154,11 +1456,11 @@
             <div class="faq-item">
                 <button class="faq-question">
                     <span>¿Cuánto demora la entrega?</span>
-                    <span class="faq-toggle">▼</span>
+                    <span class="faq-toggle">&#9660;</span>
                 </button>
                 <div class="faq-answer">
                     <div class="faq-answer-content">
-                        Los paquetes Estándar se entregan en 3-5 días hábiles, Premium en 2-3 días, y Enterprise en 24-48 horas. Estos tiempos incluyen validación, enriquecimiento y preparación de datos. En casos urgentes, contáctanos para conocer nuestras opciones de entrega acelerada.
+                        Estándar: 3-5 días hábiles. Premium: 2-3 días. Enterprise: 24-48 horas. Incluye validación, enriquecimiento y preparación completa.
                     </div>
                 </div>
             </div>
@@ -1167,10 +1469,12 @@
 
     <!-- CTA Banner -->
     <section class="cta-banner">
+        <div class="cta-banner-label">Personalizado</div>
         <h2 class="cta-banner-headline">¿Necesitas algo más específico?</h2>
+        <p class="cta-banner-sub">Armamos paquetes a medida para cualquier industria, geografía o criterio.</p>
         <div class="cta-banner-buttons">
             <a href="/#contacto" class="btn btn-primary">Contactar equipo</a>
-            <button class="btn btn-secondary" onclick="document.querySelector('.packages-section').scrollIntoView({behavior: 'smooth'})">Volver a paquetes</button>
+            <button class="btn btn-secondary" onclick="document.querySelector('.packages-section').scrollIntoView({behavior: 'smooth'})">Ver paquetes</button>
         </div>
     </section>
 
@@ -1179,11 +1483,18 @@
         <div class="footer-container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h4>Sobre BAKU</h4>
+                    <div class="footer-brand">
+                        <div class="footer-brand-mark">B</div>
+                        <span class="footer-brand-name">BAKU</span>
+                    </div>
+                    <p class="footer-description">Leads B2B verificados, enriquecidos y listos para activar. Sin improvisaciones.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Producto</h4>
                     <ul>
                         <li><a href="/">Inicio</a></li>
                         <li><a href="/#servicios">Servicios</a></li>
-                        <li><a href="/leads.html">Paquetes de Leads</a></li>
+                        <li><a href="/leads.html">Paquetes</a></li>
                         <li><a href="/#contacto">Contacto</a></li>
                     </ul>
                 </div>
@@ -1191,8 +1502,7 @@
                     <h4>Recursos</h4>
                     <ul>
                         <li><a href="#">Blog</a></li>
-                        <li><a href="#">Casos de éxito</a></li>
-                        <li><a href="#">Webinars</a></li>
+                        <li><a href="#">Casos de uso</a></li>
                         <li><a href="#">Documentación</a></li>
                     </ul>
                 </div>
@@ -1200,23 +1510,16 @@
                     <h4>Compañía</h4>
                     <ul>
                         <li><a href="#">Sobre nosotros</a></li>
-                        <li><a href="#">Equipo</a></li>
                         <li><a href="#">Carreras</a></li>
-                        <li><a href="#">Prensa</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">Privacidad</a></li>
-                        <li><a href="#">Términos</a></li>
-                        <li><a href="#">Cookies</a></li>
-                        <li><a href="#">Compliance</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-divider">
-                <p>&copy; 2026 Agencia BAKU. All rights reserved. | Hecho en Argentina 🇦🇷</p>
+                <span>&copy; 2026 BAKU. Todos los derechos reservados.</span>
+                <div class="footer-legal">
+                    <a href="#">Privacidad</a>
+                    <a href="#">Términos</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -1226,7 +1529,6 @@
         const filterPills = document.querySelectorAll('.pill');
         const packageCards = document.querySelectorAll('.package-card');
 
-        // Track active filters
         let activeFilters = {
             industria: [],
             calidad: [],
@@ -1238,7 +1540,6 @@
                 const filterType = this.getAttribute('data-filter');
                 const filterValue = this.getAttribute('data-value');
 
-                // Toggle active state
                 if (this.classList.contains('active')) {
                     this.classList.remove('active');
                     activeFilters[filterType] = activeFilters[filterType].filter(v => v !== filterValue);
@@ -1247,78 +1548,53 @@
                     activeFilters[filterType].push(filterValue);
                 }
 
-                // Filter packages
                 filterPackages();
             });
         });
 
         function filterPackages() {
-            packageCards.forEach(card => {
-                let showCard = true;
+            let visibleCount = 0;
 
-                // Check industria filter
+            packageCards.forEach(card => {
+                let show = true;
+
                 if (activeFilters.industria.length > 0) {
-                    const cardIndustrias = [
-                        card.getAttribute('data-industria'),
-                        card.getAttribute('data-industria-alt')
-                    ].filter(Boolean);
-                    const hasMatchingIndustria = activeFilters.industria.some(filter => cardIndustrias.includes(filter));
-                    if (!hasMatchingIndustria) showCard = false;
+                    const cardIndustria = card.getAttribute('data-industria');
+                    if (!activeFilters.industria.includes(cardIndustria)) show = false;
                 }
 
-                // Check calidad filter
                 if (activeFilters.calidad.length > 0) {
                     const cardCalidad = card.getAttribute('data-calidad');
-                    if (!activeFilters.calidad.includes(cardCalidad)) showCard = false;
+                    if (!activeFilters.calidad.includes(cardCalidad)) show = false;
                 }
 
-                // Check tipo filter
                 if (activeFilters.tipo.length > 0) {
                     const cardTipo = card.getAttribute('data-tipo');
-                    if (!activeFilters.tipo.includes(cardTipo)) showCard = false;
+                    if (!activeFilters.tipo.includes(cardTipo)) show = false;
                 }
 
-                card.classList.toggle('hidden', !showCard);
+                card.classList.toggle('hidden', !show);
+                if (show) visibleCount++;
             });
         }
 
-        // FAQ accordion functionality
-        const faqQuestions = document.querySelectorAll('.faq-question');
-
-        faqQuestions.forEach(question => {
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', function() {
                 const answer = this.nextElementSibling;
                 const toggle = this.querySelector('.faq-toggle');
 
-                // Close other open items
-                faqQuestions.forEach(otherQuestion => {
-                    if (otherQuestion !== question) {
-                        const otherAnswer = otherQuestion.nextElementSibling;
-                        const otherToggle = otherQuestion.querySelector('.faq-toggle');
-                        otherAnswer.classList.remove('open');
-                        otherToggle.classList.remove('open');
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    if (q !== question) {
+                        q.nextElementSibling.classList.remove('open');
+                        q.querySelector('.faq-toggle').classList.remove('open');
                     }
                 });
 
-                // Toggle current item
                 answer.classList.toggle('open');
                 toggle.classList.toggle('open');
             });
         });
-
-        // Smooth scroll for CTA buttons with hash
-        document.addEventListener('DOMContentLoaded', function() {
-            // Check if there's a contact anchor and scroll to it
-            if (window.location.hash === '#contacto') {
-                const element = document.querySelector('#contacto');
-                if (element) {
-                    setTimeout(() => {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
-                }
-            }
-        });
     </script>
 </body>
 </html>
-
