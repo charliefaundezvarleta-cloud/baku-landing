@@ -12,44 +12,34 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.agenciabaku.com/leads.html">
 
-    <!-- Fonts: Space Grotesk (brand primary) + Space Mono (data/code) -->
+    <!-- Fonts: Space Grotesk + Space Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            /* Baku Brand Tokens — Midnight + Cream + Butter Yellow */
-            --midnight: #0a0a0a;
+            /* Monochrome palette */
+            --black: #0a0a0a;
             --surface: #111111;
             --surface-hover: #161616;
             --surface-elevated: #1a1a1a;
             --border: rgba(255,255,255,0.06);
             --border-hover: rgba(255,255,255,0.12);
-            --border-strong: rgba(255,255,255,0.18);
-            --cream: #f5f0e8;
+            --border-strong: rgba(255,255,255,0.20);
             --white: #ffffff;
             --off-white: #d4d4d4;
             --muted: #777777;
-            --butter: #F0E4A8;
-            --butter-dim: rgba(240,228,168,0.08);
-            --butter-glow: rgba(240,228,168,0.15);
+            --dim: #555555;
+            --accent: #ffffff;
+            --accent-dim: rgba(255,255,255,0.06);
+            --accent-glow: rgba(255,255,255,0.10);
 
-            /* 8px grid spacing system */
-            --sp-1: 4px;
-            --sp-2: 8px;
-            --sp-3: 16px;
-            --sp-4: 24px;
-            --sp-5: 32px;
-            --sp-6: 48px;
-            --sp-7: 64px;
-            --sp-8: 96px;
+            /* 8px spacing grid */
+            --sp-1: 4px; --sp-2: 8px; --sp-3: 16px; --sp-4: 24px;
+            --sp-5: 32px; --sp-6: 48px; --sp-7: 64px; --sp-8: 96px;
 
             /* Radii */
             --radius: 16px;
@@ -62,14 +52,14 @@
 
         body {
             font-family: 'Space Grotesk', sans-serif;
-            background-color: var(--midnight);
+            background-color: var(--black);
             color: var(--white);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* ===== NAVIGATION ===== */
+        /* ===== NAV ===== */
         nav {
             position: fixed;
             top: 0; left: 0; right: 0;
@@ -135,56 +125,36 @@
             transition: color 0.2s;
         }
 
-        .nav-links a:hover { color: var(--cream); }
-
-        .nav-links a.active {
-            color: var(--butter);
-        }
+        .nav-links a:hover { color: var(--white); }
+        .nav-links a.active { color: var(--white); }
 
         .nav-cta {
             background: var(--white);
-            color: var(--midnight) !important;
+            color: var(--black) !important;
             padding: 8px 20px;
             border-radius: var(--radius-full);
             font-size: 13px !important;
             font-weight: 600 !important;
-            transition: all 0.2s !important;
+            transition: opacity 0.2s !important;
         }
 
-        .nav-cta:hover {
-            background-color: var(--butter) !important;
-            color: var(--midnight) !important;
-        }
+        .nav-cta:hover { opacity: 0.85; }
 
         /* ===== HERO ===== */
         .hero {
             padding: 160px var(--sp-6) var(--sp-8);
             text-align: center;
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 80px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 600px;
-            height: 400px;
-            background: radial-gradient(ellipse, var(--butter-dim) 0%, transparent 70%);
-            pointer-events: none;
         }
 
         .hero-label {
             font-family: 'Space Mono', monospace;
             font-size: 0.8rem;
-            color: var(--butter);
+            color: var(--muted);
             font-weight: 700;
             letter-spacing: 0.18em;
             text-transform: uppercase;
             margin-bottom: var(--sp-4);
-            position: relative;
         }
 
         .hero-headline {
@@ -193,8 +163,7 @@
             line-height: 1.1;
             margin-bottom: var(--sp-4);
             letter-spacing: -0.03em;
-            color: var(--cream);
-            position: relative;
+            color: var(--white);
         }
 
         .hero-subtitle {
@@ -204,7 +173,6 @@
             margin: 0 auto;
             font-weight: 400;
             line-height: 1.7;
-            position: relative;
         }
 
         /* ===== STATS BAR ===== */
@@ -217,15 +185,13 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .stat {
-            text-align: center;
-        }
+        .stat { text-align: center; }
 
         .stat-value {
             font-family: 'Space Mono', monospace;
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--butter);
+            color: var(--white);
             letter-spacing: -0.02em;
         }
 
@@ -248,10 +214,7 @@
             margin: 0 auto;
         }
 
-        .filter-group {
-            margin-bottom: var(--sp-4);
-        }
-
+        .filter-group { margin-bottom: var(--sp-4); }
         .filter-group:last-child { margin-bottom: 0; }
 
         .filter-label {
@@ -259,7 +222,7 @@
             font-size: 0.7rem;
             font-weight: 700;
             margin-bottom: var(--sp-3);
-            color: var(--muted);
+            color: var(--dim);
             letter-spacing: 0.16em;
             text-transform: uppercase;
             display: block;
@@ -285,15 +248,15 @@
         }
 
         .pill:hover {
-            border-color: var(--butter);
-            color: var(--butter);
-            background-color: var(--butter-dim);
+            border-color: var(--white);
+            color: var(--white);
+            background-color: var(--accent-dim);
         }
 
         .pill.active {
-            background-color: var(--butter);
-            color: var(--midnight);
-            border-color: var(--butter);
+            background-color: var(--white);
+            color: var(--black);
+            border-color: var(--white);
             font-weight: 600;
         }
 
@@ -304,16 +267,13 @@
             margin: 0 auto;
         }
 
-        .packages-header {
-            margin-bottom: var(--sp-7);
-        }
+        .packages-header { margin-bottom: var(--sp-7); }
 
         .packages-title {
             font-size: 1.8rem;
             font-weight: 700;
             margin-bottom: var(--sp-2);
             letter-spacing: -0.02em;
-            color: var(--cream);
         }
 
         .packages-subtitle {
@@ -347,12 +307,12 @@
         }
 
         .package-card.featured {
-            border-color: rgba(240,228,168,0.2);
-            background: linear-gradient(180deg, rgba(240,228,168,0.04) 0%, var(--surface) 40%);
+            border-color: var(--border-strong);
+            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, var(--surface) 40%);
         }
 
         .package-card.featured:hover {
-            border-color: rgba(240,228,168,0.35);
+            border-color: rgba(255,255,255,0.30);
         }
 
         .package-card.hidden { display: none; }
@@ -370,14 +330,14 @@
             text-transform: uppercase;
         }
 
-        .badge-exclusivo {
-            background-color: var(--butter-dim);
-            border: 1px solid rgba(240,228,168,0.25);
-            color: var(--butter);
+        .badge-exclusive {
+            background-color: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.20);
+            color: var(--white);
         }
 
-        .badge-compartido {
-            background-color: rgba(255,255,255,0.04);
+        .badge-shared {
+            background-color: rgba(255,255,255,0.03);
             border: 1px solid var(--border-hover);
             color: var(--off-white);
         }
@@ -417,7 +377,7 @@
         .lead-count {
             font-family: 'Space Mono', monospace;
             font-weight: 700;
-            color: var(--cream);
+            color: var(--white);
             font-size: 0.9rem;
         }
 
@@ -435,7 +395,7 @@
         }
 
         .quality-bar.active {
-            background-color: var(--butter);
+            background-color: var(--white);
         }
 
         .package-includes {
@@ -457,7 +417,7 @@
             content: "→";
             position: absolute;
             left: 0;
-            color: var(--butter);
+            color: var(--muted);
             font-weight: 700;
             font-size: 0.8rem;
         }
@@ -467,9 +427,7 @@
             padding-top: var(--sp-4);
         }
 
-        .package-price {
-            margin-bottom: var(--sp-3);
-        }
+        .package-price { margin-bottom: var(--sp-3); }
 
         .package-price-label {
             font-family: 'Space Mono', monospace;
@@ -485,7 +443,6 @@
             font-size: 2rem;
             font-weight: 700;
             letter-spacing: -0.03em;
-            color: var(--cream);
         }
 
         .package-price-unit {
@@ -498,13 +455,13 @@
             width: 100%;
             padding: 14px;
             background-color: var(--white);
-            color: var(--midnight);
+            color: var(--black);
             border: none;
             border-radius: var(--radius-sm);
             font-weight: 600;
             font-size: 0.9rem;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: opacity 0.2s ease;
             font-family: 'Space Grotesk', sans-serif;
             text-decoration: none;
             display: block;
@@ -512,18 +469,7 @@
             letter-spacing: -0.01em;
         }
 
-        .package-cta:hover {
-            background-color: var(--butter);
-        }
-
-        .package-card.featured .package-cta {
-            background-color: var(--butter);
-            color: var(--midnight);
-        }
-
-        .package-card.featured .package-cta:hover {
-            background-color: var(--cream);
-        }
+        .package-cta:hover { opacity: 0.85; }
 
         /* ===== HOW IT WORKS ===== */
         .how-it-works {
@@ -539,7 +485,7 @@
         .section-label {
             font-family: 'Space Mono', monospace;
             font-size: 0.7rem;
-            color: var(--butter);
+            color: var(--dim);
             letter-spacing: 0.18em;
             text-transform: uppercase;
             font-weight: 700;
@@ -553,7 +499,6 @@
             margin-bottom: var(--sp-7);
             text-align: center;
             letter-spacing: -0.02em;
-            color: var(--cream);
         }
 
         .steps-grid {
@@ -571,14 +516,12 @@
             transition: border-color 0.2s;
         }
 
-        .step:hover {
-            border-color: var(--border-hover);
-        }
+        .step:hover { border-color: var(--border-hover); }
 
         .step-number {
             font-family: 'Space Mono', monospace;
             font-size: 0.75rem;
-            color: var(--butter);
+            color: var(--muted);
             font-weight: 700;
             letter-spacing: 0.12em;
             margin-bottom: var(--sp-3);
@@ -588,7 +531,6 @@
             font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: var(--sp-2);
-            color: var(--cream);
         }
 
         .step-description {
@@ -618,17 +560,14 @@
         }
 
         .comparison-table th {
-            background-color: rgba(240,228,168,0.03);
+            background-color: rgba(255,255,255,0.02);
             font-weight: 700;
             font-size: 0.85rem;
-            color: var(--cream);
+            color: var(--white);
             letter-spacing: 0.02em;
         }
 
-        .comparison-table th:not(:first-child) {
-            text-align: center;
-        }
-
+        .comparison-table th:not(:first-child),
         .comparison-table td:not(:first-child) {
             text-align: center;
         }
@@ -638,22 +577,11 @@
             color: var(--off-white);
         }
 
-        .comparison-table tbody tr {
-            transition: background-color 0.15s;
-        }
+        .comparison-table tbody tr { transition: background-color 0.15s; }
+        .comparison-table tbody tr:hover { background-color: rgba(255,255,255,0.02); }
 
-        .comparison-table tbody tr:hover {
-            background-color: rgba(255,255,255,0.02);
-        }
-
-        .check {
-            color: var(--butter);
-            font-weight: 700;
-        }
-
-        .dash {
-            color: rgba(255,255,255,0.15);
-        }
+        .check { color: var(--white); font-weight: 700; }
+        .dash { color: rgba(255,255,255,0.15); }
 
         /* ===== FAQ ===== */
         .faq-section {
@@ -674,9 +602,7 @@
             transition: border-color 0.2s;
         }
 
-        .faq-item:hover {
-            border-color: var(--border-hover);
-        }
+        .faq-item:hover { border-color: var(--border-hover); }
 
         .faq-question {
             padding: var(--sp-4);
@@ -691,13 +617,11 @@
             width: 100%;
             text-align: left;
             font-family: 'Space Grotesk', sans-serif;
-            color: var(--cream);
+            color: var(--white);
             font-size: 0.95rem;
         }
 
-        .faq-question:hover {
-            background-color: var(--surface-hover);
-        }
+        .faq-question:hover { background-color: var(--surface-hover); }
 
         .faq-toggle {
             font-size: 0.9rem;
@@ -727,31 +651,16 @@
             padding: var(--sp-8) var(--sp-6);
             text-align: center;
             border-top: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-banner::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 500px;
-            height: 300px;
-            background: radial-gradient(ellipse, var(--butter-dim) 0%, transparent 70%);
-            pointer-events: none;
         }
 
         .cta-banner-label {
             font-family: 'Space Mono', monospace;
             font-size: 0.7rem;
-            color: var(--butter);
+            color: var(--dim);
             letter-spacing: 0.18em;
             text-transform: uppercase;
             font-weight: 700;
             margin-bottom: var(--sp-3);
-            position: relative;
         }
 
         .cta-banner-headline {
@@ -759,15 +668,12 @@
             font-weight: 700;
             margin-bottom: var(--sp-4);
             letter-spacing: -0.02em;
-            color: var(--cream);
-            position: relative;
         }
 
         .cta-banner-sub {
             color: var(--muted);
             font-size: 0.95rem;
             margin-bottom: var(--sp-5);
-            position: relative;
         }
 
         .cta-banner-buttons {
@@ -775,7 +681,6 @@
             gap: var(--sp-3);
             justify-content: center;
             flex-wrap: wrap;
-            position: relative;
         }
 
         .btn {
@@ -792,24 +697,21 @@
         }
 
         .btn-primary {
-            background-color: var(--butter);
-            color: var(--midnight);
+            background-color: var(--white);
+            color: var(--black);
         }
 
-        .btn-primary:hover {
-            background-color: var(--cream);
-        }
+        .btn-primary:hover { opacity: 0.85; }
 
         .btn-secondary {
             background-color: transparent;
-            color: var(--cream);
+            color: var(--white);
             border: 1px solid var(--border-hover);
         }
 
         .btn-secondary:hover {
-            border-color: var(--butter);
-            color: var(--butter);
-            background-color: var(--butter-dim);
+            border-color: var(--white);
+            background-color: var(--accent-dim);
         }
 
         /* ===== FOOTER ===== */
@@ -868,7 +770,6 @@
             margin-bottom: var(--sp-3);
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: var(--cream);
         }
 
         .footer-column ul { list-style: none; }
@@ -882,7 +783,7 @@
             transition: color 0.2s;
         }
 
-        .footer-column a:hover { color: var(--butter); }
+        .footer-column a:hover { color: var(--white); }
 
         .footer-divider {
             border-top: 1px solid var(--border);
@@ -905,104 +806,44 @@
             transition: color 0.2s;
         }
 
-        .footer-legal a:hover { color: var(--cream); }
+        .footer-legal a:hover { color: var(--white); }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
-            .packages-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .packages-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
-            nav {
-                padding: 0 var(--sp-4);
-            }
-
-            .hero {
-                padding: 130px var(--sp-4) var(--sp-7);
-            }
-
+            nav { padding: 0 var(--sp-4); }
+            .hero { padding: 130px var(--sp-4) var(--sp-7); }
             .hero-headline { font-size: 2rem; }
-
-            .stats-bar {
-                gap: var(--sp-5);
-                padding: var(--sp-5) var(--sp-4);
-            }
-
+            .stats-bar { gap: var(--sp-5); padding: var(--sp-5) var(--sp-4); }
             .stat-value { font-size: 1.4rem; }
-
-            .nav-links {
-                gap: var(--sp-3);
-            }
-
+            .nav-links { gap: var(--sp-3); }
             .nav-tagline { display: none; }
-
-            .packages-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .packages-section,
-            .comparison-section {
-                padding: var(--sp-7) var(--sp-4);
-            }
-
-            .steps-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .filter-section {
-                padding: var(--sp-5) var(--sp-4);
-            }
-
-            .cta-banner-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
+            .packages-grid { grid-template-columns: 1fr; }
+            .packages-section, .comparison-section { padding: var(--sp-7) var(--sp-4); }
+            .steps-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr 1fr; }
+            .filter-section { padding: var(--sp-5) var(--sp-4); }
+            .cta-banner-buttons { flex-direction: column; align-items: center; }
             .btn { width: 100%; max-width: 320px; text-align: center; }
         }
 
         @media (max-width: 480px) {
-            nav {
-                height: auto;
-                flex-direction: column;
-                gap: var(--sp-2);
-                padding: var(--sp-2) var(--sp-3);
-            }
-
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: var(--sp-2);
-            }
-
+            nav { height: auto; flex-direction: column; gap: var(--sp-2); padding: var(--sp-2) var(--sp-3); }
+            .nav-links { flex-wrap: wrap; justify-content: center; gap: var(--sp-2); }
             .hero-headline { font-size: 1.7rem; }
-
-            .stats-bar {
-                flex-wrap: wrap;
-                gap: var(--sp-4);
-            }
-
+            .stats-bar { flex-wrap: wrap; gap: var(--sp-4); }
             .stat { flex: 1 1 40%; }
-
             .footer-content { grid-template-columns: 1fr; }
             .footer-divider { flex-direction: column; gap: var(--sp-2); text-align: center; }
-
-            .comparison-table th,
-            .comparison-table td {
-                padding: var(--sp-2) var(--sp-2);
-                font-size: 0.75rem;
-            }
+            .comparison-table th, .comparison-table td { padding: var(--sp-2); font-size: 0.75rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Nav -->
     <nav>
         <a href="/" class="nav-logo">
             <div class="nav-logo-mark">B</div>
@@ -1027,7 +868,7 @@
         <p class="hero-subtitle">Paquetes de prospectos B2B armados con criterio, segmentados por industria y listos para cargar en tu CRM.</p>
     </section>
 
-    <!-- Stats Bar -->
+    <!-- Stats -->
     <section class="stats-bar">
         <div class="stat">
             <div class="stat-value">95%+</div>
@@ -1047,54 +888,58 @@
         </div>
     </section>
 
-    <!-- Filter Section -->
+    <!-- Filters -->
     <section class="filter-section">
         <div class="filter-container">
             <div class="filter-group">
                 <label class="filter-label">Industria</label>
                 <div class="filter-pills">
-                    <button class="pill" data-filter="industria" data-value="SaaS">SaaS</button>
-                    <button class="pill" data-filter="industria" data-value="Tecnología">Tecnología</button>
-                    <button class="pill" data-filter="industria" data-value="Retail">Retail</button>
-                    <button class="pill" data-filter="industria" data-value="Real Estate">Real Estate</button>
-                    <button class="pill" data-filter="industria" data-value="Fintech">Fintech</button>
-                    <button class="pill" data-filter="industria" data-value="Salud">Salud</button>
-                    <button class="pill" data-filter="industria" data-value="Logística">Logística</button>
-                    <button class="pill" data-filter="industria" data-value="Educación">Educación</button>
-                    <button class="pill" data-filter="industria" data-value="Multi-industria">Multi-industria</button>
+                    <button class="pill" data-filter="industry" data-value="saas">SaaS</button>
+                    <button class="pill" data-filter="industry" data-value="technology">Tecnología</button>
+                    <button class="pill" data-filter="industry" data-value="retail">Retail</button>
+                    <button class="pill" data-filter="industry" data-value="real_estate">Real Estate</button>
+                    <button class="pill" data-filter="industry" data-value="fintech">Fintech</button>
+                    <button class="pill" data-filter="industry" data-value="healthcare">Salud</button>
+                    <button class="pill" data-filter="industry" data-value="logistics">Logística</button>
+                    <button class="pill" data-filter="industry" data-value="education">Educación</button>
+                    <button class="pill" data-filter="industry" data-value="multi">Multi-industria</button>
                 </div>
             </div>
-
             <div class="filter-group">
                 <label class="filter-label">Calidad</label>
                 <div class="filter-pills">
-                    <button class="pill" data-filter="calidad" data-value="Estándar">Estándar</button>
-                    <button class="pill" data-filter="calidad" data-value="Premium">Premium</button>
-                    <button class="pill" data-filter="calidad" data-value="Enterprise">Enterprise</button>
+                    <button class="pill" data-filter="tier" data-value="standard">Estándar</button>
+                    <button class="pill" data-filter="tier" data-value="premium">Premium</button>
+                    <button class="pill" data-filter="tier" data-value="enterprise">Enterprise</button>
                 </div>
             </div>
-
             <div class="filter-group">
                 <label class="filter-label">Exclusividad</label>
                 <div class="filter-pills">
-                    <button class="pill" data-filter="tipo" data-value="Exclusivo">Exclusivo</button>
-                    <button class="pill" data-filter="tipo" data-value="Compartido">Compartido</button>
+                    <button class="pill" data-filter="exclusivity" data-value="exclusive">Exclusivo</button>
+                    <button class="pill" data-filter="exclusivity" data-value="shared">Compartido</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Packages Grid -->
+    <!-- Packages -->
     <section class="packages-section">
         <div class="packages-header">
             <h2 class="packages-title">Paquetes disponibles</h2>
             <p class="packages-subtitle">Filtra por industria, calidad o exclusividad para encontrar el paquete ideal</p>
         </div>
 
-        <div class="packages-grid">
-            <!-- Starter SaaS — Standard / Shared / 250 leads / $297 -->
-            <div class="package-card" data-industria="SaaS" data-calidad="Estándar" data-tipo="Compartido">
-                <div class="package-badge badge-compartido">Compartido</div>
+        <div class="packages-grid" id="packages-grid">
+            <!-- starter_saas: standard / shared / 250 / $297 -->
+            <div class="package-card"
+                 data-package="starter_saas"
+                 data-industry="saas"
+                 data-tier="standard"
+                 data-exclusivity="shared"
+                 data-leads="250"
+                 data-price="297">
+                <div class="package-badge badge-shared">Compartido</div>
                 <div class="package-header">
                     <h3 class="package-name">Starter SaaS</h3>
                     <span class="package-industry">SaaS</span>
@@ -1123,9 +968,15 @@
                 </div>
             </div>
 
-            <!-- Growth Tech — Premium / Exclusive / 500 leads / $697 -->
-            <div class="package-card featured" data-industria="Tecnología" data-calidad="Premium" data-tipo="Exclusivo">
-                <div class="package-badge badge-exclusivo">Exclusivo</div>
+            <!-- growth_tech: premium / exclusive / 500 / $697 -->
+            <div class="package-card featured"
+                 data-package="growth_tech"
+                 data-industry="technology"
+                 data-tier="premium"
+                 data-exclusivity="exclusive"
+                 data-leads="500"
+                 data-price="697">
+                <div class="package-badge badge-exclusive">Exclusivo</div>
                 <div class="package-header">
                     <h3 class="package-name">Growth Tech</h3>
                     <span class="package-industry">Tecnología</span>
@@ -1155,9 +1006,15 @@
                 </div>
             </div>
 
-            <!-- Enterprise Pack — Enterprise / Exclusive / 1000 leads / $1,497 -->
-            <div class="package-card featured" data-industria="Multi-industria" data-calidad="Enterprise" data-tipo="Exclusivo">
-                <div class="package-badge badge-exclusivo">Exclusivo</div>
+            <!-- enterprise_pack: enterprise / exclusive / 1000 / $1497 -->
+            <div class="package-card featured"
+                 data-package="enterprise_pack"
+                 data-industry="multi"
+                 data-tier="enterprise"
+                 data-exclusivity="exclusive"
+                 data-leads="1000"
+                 data-price="1497">
+                <div class="package-badge badge-exclusive">Exclusivo</div>
                 <div class="package-header">
                     <h3 class="package-name">Enterprise Pack</h3>
                     <span class="package-industry">Multi-industria</span>
@@ -1187,9 +1044,15 @@
                 </div>
             </div>
 
-            <!-- Retail Essentials — Standard / Shared / 300 leads / $347 -->
-            <div class="package-card" data-industria="Retail" data-calidad="Estándar" data-tipo="Compartido">
-                <div class="package-badge badge-compartido">Compartido</div>
+            <!-- retail_essentials: standard / shared / 300 / $347 -->
+            <div class="package-card"
+                 data-package="retail_essentials"
+                 data-industry="retail"
+                 data-tier="standard"
+                 data-exclusivity="shared"
+                 data-leads="300"
+                 data-price="347">
+                <div class="package-badge badge-shared">Compartido</div>
                 <div class="package-header">
                     <h3 class="package-name">Retail Essentials</h3>
                     <span class="package-industry">Retail</span>
@@ -1218,9 +1081,15 @@
                 </div>
             </div>
 
-            <!-- Real Estate Pro — Premium / Exclusive / 400 leads / $597 -->
-            <div class="package-card" data-industria="Real Estate" data-calidad="Premium" data-tipo="Exclusivo">
-                <div class="package-badge badge-exclusivo">Exclusivo</div>
+            <!-- real_estate_pro: premium / exclusive / 400 / $597 -->
+            <div class="package-card"
+                 data-package="real_estate_pro"
+                 data-industry="real_estate"
+                 data-tier="premium"
+                 data-exclusivity="exclusive"
+                 data-leads="400"
+                 data-price="597">
+                <div class="package-badge badge-exclusive">Exclusivo</div>
                 <div class="package-header">
                     <h3 class="package-name">Real Estate Pro</h3>
                     <span class="package-industry">Real Estate</span>
@@ -1250,9 +1119,15 @@
                 </div>
             </div>
 
-            <!-- Fintech Growth — Premium / SHARED / 500 leads / $797 -->
-            <div class="package-card" data-industria="Fintech" data-calidad="Premium" data-tipo="Compartido">
-                <div class="package-badge badge-compartido">Compartido</div>
+            <!-- fintech_growth: premium / shared / 500 / $797 -->
+            <div class="package-card"
+                 data-package="fintech_growth"
+                 data-industry="fintech"
+                 data-tier="premium"
+                 data-exclusivity="shared"
+                 data-leads="500"
+                 data-price="797">
+                <div class="package-badge badge-shared">Compartido</div>
                 <div class="package-header">
                     <h3 class="package-name">Fintech Growth</h3>
                     <span class="package-industry">Fintech</span>
@@ -1282,6 +1157,12 @@
                 </div>
             </div>
         </div>
+
+        <!-- No results message -->
+        <div id="no-results" style="display:none; text-align:center; padding:var(--sp-7) 0; color:var(--muted);">
+            <p style="font-size:1.1rem; margin-bottom:var(--sp-2);">No hay paquetes con esa combinación de filtros.</p>
+            <button onclick="clearFilters()" style="background:none; border:1px solid var(--border-hover); color:var(--white); padding:10px 24px; border-radius:var(--radius-full); cursor:pointer; font-family:'Space Grotesk',sans-serif; font-size:0.85rem; font-weight:600; transition:all 0.2s;">Limpiar filtros</button>
+        </div>
     </section>
 
     <!-- How it Works -->
@@ -1303,7 +1184,7 @@
                 <div class="step">
                     <div class="step-number">03</div>
                     <h3 class="step-title">Recibe y activa</h3>
-                    <p class="step-description">CSV o integración directa a tu CRM. Listo para prospectar en 24-48h.</p>
+                    <p class="step-description">CSV, JSON o integración directa a tu CRM. Listo para prospectar en 24-48h.</p>
                 </div>
             </div>
         </div>
@@ -1323,83 +1204,26 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Email verificado</td>
-                    <td><span class="check">&#10003;</span></td>
-                    <td><span class="check">&#10003;</span></td>
-                    <td><span class="check">&#10003;</span></td>
-                </tr>
-                <tr>
-                    <td>Cargo + empresa</td>
-                    <td><span class="check">&#10003;</span></td>
-                    <td><span class="check">&#10003;</span></td>
-                    <td><span class="check">&#10003;</span></td>
-                </tr>
-                <tr>
-                    <td>País + tamaño empresa</td>
-                    <td><span class="check">&#10003;</span></td>
-                    <td><span class="check">&#10003;</span></td>
-                    <td><span class="check">&#10003;</span></td>
-                </tr>
-                <tr>
-                    <td>LinkedIn verificado</td>
-                    <td><span class="dash">&mdash;</span></td>
-                    <td><span class="check">&#10003;</span></td>
-                    <td><span class="check">&#10003;</span></td>
-                </tr>
-                <tr>
-                    <td>Teléfono directo</td>
-                    <td><span class="dash">&mdash;</span></td>
-                    <td><span class="check">&#10003;</span></td>
-                    <td><span class="check">&#10003;</span></td>
-                </tr>
-                <tr>
-                    <td>Señales de intención</td>
-                    <td><span class="dash">&mdash;</span></td>
-                    <td><span class="check">&#10003;</span></td>
-                    <td><span class="check">&#10003;</span></td>
-                </tr>
-                <tr>
-                    <td>Dominio de empresa</td>
-                    <td><span class="dash">&mdash;</span></td>
-                    <td><span class="check">&#10003;</span></td>
-                    <td><span class="check">&#10003;</span></td>
-                </tr>
-                <tr>
-                    <td>Tecnografía</td>
-                    <td><span class="dash">&mdash;</span></td>
-                    <td><span class="dash">&mdash;</span></td>
-                    <td><span class="check">&#10003;</span></td>
-                </tr>
-                <tr>
-                    <td>Funding + revenue range</td>
-                    <td><span class="dash">&mdash;</span></td>
-                    <td><span class="dash">&mdash;</span></td>
-                    <td><span class="check">&#10003;</span></td>
-                </tr>
-                <tr>
-                    <td>Org chart level</td>
-                    <td><span class="dash">&mdash;</span></td>
-                    <td><span class="dash">&mdash;</span></td>
-                    <td><span class="check">&#10003;</span></td>
-                </tr>
-                <tr>
-                    <td>Account scoring</td>
-                    <td><span class="dash">&mdash;</span></td>
-                    <td><span class="dash">&mdash;</span></td>
-                    <td><span class="check">&#10003;</span></td>
-                </tr>
-                <tr>
-                    <td>Soporte dedicado</td>
-                    <td><span class="dash">&mdash;</span></td>
-                    <td><span class="dash">&mdash;</span></td>
-                    <td><span class="check">&#10003;</span></td>
-                </tr>
+                <tr><td>Email verificado</td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
+                <tr><td>Cargo + empresa</td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
+                <tr><td>País + tamaño empresa</td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
+                <tr><td>Estado del email</td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
+                <tr><td>LinkedIn verificado</td><td><span class="dash">&mdash;</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
+                <tr><td>Teléfono directo</td><td><span class="dash">&mdash;</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
+                <tr><td>Señales de intención</td><td><span class="dash">&mdash;</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
+                <tr><td>Dominio de empresa</td><td><span class="dash">&mdash;</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
+                <tr><td>Tecnografía</td><td><span class="dash">&mdash;</span></td><td><span class="dash">&mdash;</span></td><td><span class="check">&#10003;</span></td></tr>
+                <tr><td>Funding + revenue range</td><td><span class="dash">&mdash;</span></td><td><span class="dash">&mdash;</span></td><td><span class="check">&#10003;</span></td></tr>
+                <tr><td>Employee count</td><td><span class="dash">&mdash;</span></td><td><span class="dash">&mdash;</span></td><td><span class="check">&#10003;</span></td></tr>
+                <tr><td>Org chart level</td><td><span class="dash">&mdash;</span></td><td><span class="dash">&mdash;</span></td><td><span class="check">&#10003;</span></td></tr>
+                <tr><td>Account scoring</td><td><span class="dash">&mdash;</span></td><td><span class="dash">&mdash;</span></td><td><span class="check">&#10003;</span></td></tr>
+                <tr><td>Soporte dedicado</td><td><span class="dash">&mdash;</span></td><td><span class="dash">&mdash;</span></td><td><span class="check">&#10003;</span></td></tr>
+                <tr><td>Max créditos / lead</td><td>1</td><td>2</td><td>3</td></tr>
             </tbody>
         </table>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ -->
     <section class="faq-section">
         <div class="faq-container">
             <div class="section-label">FAQ</div>
@@ -1412,7 +1236,7 @@
                 </button>
                 <div class="faq-answer">
                     <div class="faq-answer-content">
-                        Los leads exclusivos se entregan a un solo cliente. Los compartidos pueden venderse hasta a 3 clientes, pero siempre con segmentación para minimizar solapamientos. Si necesitas cobertura total de tu mercado, elige exclusivo.
+                        Los leads exclusivos se entregan a un solo cliente (max_resells: 1). Los compartidos pueden venderse hasta a 3 clientes, pero siempre con segmentación para minimizar solapamientos. Si necesitas cobertura total de tu mercado, elige exclusivo.
                     </div>
                 </div>
             </div>
@@ -1424,7 +1248,7 @@
                 </button>
                 <div class="faq-answer">
                     <div class="faq-answer-content">
-                        CSV, Excel, JSON o integración directa a tu CRM (Salesforce, HubSpot, Pipedrive). Todos los archivos con campos estandarizados y verificados.
+                        CSV, JSON o integración directa a tu CRM (Salesforce, HubSpot, Pipedrive). Todos los archivos con campos estandarizados y verificados. Los campos incluidos dependen del tier elegido.
                     </div>
                 </div>
             </div>
@@ -1474,7 +1298,7 @@
         <p class="cta-banner-sub">Armamos paquetes a medida para cualquier industria, geografía o criterio.</p>
         <div class="cta-banner-buttons">
             <a href="/#contacto" class="btn btn-primary">Contactar equipo</a>
-            <button class="btn btn-secondary" onclick="document.querySelector('.packages-section').scrollIntoView({behavior: 'smooth'})">Ver paquetes</button>
+            <button class="btn btn-secondary" onclick="document.querySelector('.packages-section').scrollIntoView({behavior:'smooth'})">Ver paquetes</button>
         </div>
     </section>
 
@@ -1525,20 +1349,31 @@
     </footer>
 
     <script>
-        // Filter functionality
-        const filterPills = document.querySelectorAll('.pill');
-        const packageCards = document.querySelectorAll('.package-card');
+        /**
+         * BAKU Leads Marketplace — Filter Engine
+         * data-attributes match backend keys in packages.json:
+         *   data-package  = package key (starter_saas, growth_tech, etc.)
+         *   data-industry = industry key (saas, technology, fintech, etc.)
+         *   data-tier     = tier key (standard, premium, enterprise)
+         *   data-exclusivity = exclusivity key (shared, exclusive)
+         *   data-leads    = lead count (number)
+         *   data-price    = price USD (number)
+         */
 
-        let activeFilters = {
-            industria: [],
-            calidad: [],
-            tipo: []
+        const pills = document.querySelectorAll('.pill');
+        const cards = document.querySelectorAll('.package-card');
+        const noResults = document.getElementById('no-results');
+
+        const activeFilters = {
+            industry: [],
+            tier: [],
+            exclusivity: []
         };
 
-        filterPills.forEach(pill => {
+        pills.forEach(pill => {
             pill.addEventListener('click', function() {
-                const filterType = this.getAttribute('data-filter');
-                const filterValue = this.getAttribute('data-value');
+                const filterType = this.dataset.filter;
+                const filterValue = this.dataset.value;
 
                 if (this.classList.contains('active')) {
                     this.classList.remove('active');
@@ -1555,27 +1390,30 @@
         function filterPackages() {
             let visibleCount = 0;
 
-            packageCards.forEach(card => {
+            cards.forEach(card => {
                 let show = true;
 
-                if (activeFilters.industria.length > 0) {
-                    const cardIndustria = card.getAttribute('data-industria');
-                    if (!activeFilters.industria.includes(cardIndustria)) show = false;
-                }
-
-                if (activeFilters.calidad.length > 0) {
-                    const cardCalidad = card.getAttribute('data-calidad');
-                    if (!activeFilters.calidad.includes(cardCalidad)) show = false;
-                }
-
-                if (activeFilters.tipo.length > 0) {
-                    const cardTipo = card.getAttribute('data-tipo');
-                    if (!activeFilters.tipo.includes(cardTipo)) show = false;
+                for (const [key, values] of Object.entries(activeFilters)) {
+                    if (values.length > 0) {
+                        const cardValue = card.dataset[key];
+                        if (!values.includes(cardValue)) {
+                            show = false;
+                            break;
+                        }
+                    }
                 }
 
                 card.classList.toggle('hidden', !show);
                 if (show) visibleCount++;
             });
+
+            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function clearFilters() {
+            pills.forEach(p => p.classList.remove('active'));
+            Object.keys(activeFilters).forEach(k => activeFilters[k] = []);
+            filterPackages();
         }
 
         // FAQ accordion
