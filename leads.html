@@ -3,630 +3,775 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
     <title>Paquetes de Leads B2B — BAKU</title>
-    <meta name="description" content="Paquetes de prospectos B2B segmentados por industria. Leads verificados, enriquecidos y listos para activar en tu CRM.">
+    <meta name="description" content="Paquetes de leads B2B listos para activar: filtros por industria, exclusividad y nivel de enriquecimiento con entrega en 24-48h.">
 
-    <!-- Open Graph -->
     <meta property="og:title" content="Paquetes de Leads B2B — BAKU">
-    <meta property="og:description" content="Leads B2B verificados, segmentados por industria. Elige tu paquete y activa en 24-48h.">
+    <meta property="og:description" content="Leads B2B verificados, segmentados y enriquecidos para cargar directo en tu CRM.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.agenciabaku.com/leads.html">
+    <meta property="og:image" content="https://www.agenciabaku.com/assets/brand/baku-monogram-silver-clean.png">
 
-    <!-- Fonts: Space Grotesk + Space Mono -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Paquetes de Leads B2B — BAKU">
+    <meta name="twitter:description" content="Leads B2B verificados, segmentados y enriquecidos para cargar directo en tu CRM.">
+
+    <link rel="canonical" href="https://www.agenciabaku.com/leads.html">
+
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
     <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            /* Monochrome palette */
-            --black: #0a0a0a;
-            --surface: #111111;
-            --surface-hover: #161616;
-            --surface-elevated: #1a1a1a;
-            --border: rgba(255,255,255,0.06);
-            --border-hover: rgba(255,255,255,0.12);
-            --border-strong: rgba(255,255,255,0.20);
+            --midnight: #0D1B2A;
+            --midnight-light: #132234;
+            --midnight-lighter: #1A2D40;
+            --panel: rgba(19,34,52,0.82);
+            --panel-strong: rgba(26,45,64,0.96);
+            --panel-soft: rgba(255,255,255,0.03);
+            --border: rgba(255,255,255,0.08);
+            --border-strong: rgba(255,255,255,0.16);
             --white: #ffffff;
-            --off-white: #d4d4d4;
-            --muted: #777777;
-            --dim: #555555;
-            --accent: #ffffff;
-            --accent-dim: rgba(255,255,255,0.06);
-            --accent-glow: rgba(255,255,255,0.10);
-
-            /* 8px spacing grid */
-            --sp-1: 4px; --sp-2: 8px; --sp-3: 16px; --sp-4: 24px;
-            --sp-5: 32px; --sp-6: 48px; --sp-7: 64px; --sp-8: 96px;
-
-            /* Radii */
-            --radius: 16px;
-            --radius-sm: 10px;
-            --radius-xs: 6px;
-            --radius-full: 100px;
+            --off-white: #e8e8e8;
+            --muted: #8899AA;
+            --electric: #2563EB;
+            --electric-hover: #3B82F6;
+            --electric-glow: rgba(37,99,235,0.18);
+            --cream: #F5F0E8;
+            --cream-muted: rgba(245,240,232,0.12);
+            --success: #B9D7C5;
+            --radius: 18px;
+            --radius-sm: 12px;
+            --radius-xs: 8px;
+            --radius-pill: 999px;
+            --shadow: 0 28px 90px rgba(0,0,0,0.28);
+            --max: 1220px;
         }
 
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Space Grotesk', sans-serif;
-            background-color: var(--black);
+            font-family: 'Switzer', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--white);
-            line-height: 1.6;
+            background:
+                radial-gradient(circle at top left, rgba(59,130,246,0.10) 0%, transparent 34%),
+                radial-gradient(circle at 88% 10%, rgba(245,240,232,0.10) 0%, transparent 24%),
+                linear-gradient(180deg, var(--midnight) 0%, #0A1622 100%);
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
         }
 
-        /* ===== NAV ===== */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background:
+                linear-gradient(rgba(255,255,255,0.016) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.016) 1px, transparent 1px);
+            background-size: 52px 52px;
+            mask-image: radial-gradient(circle at center, #000 34%, transparent 100%);
+            opacity: 0.18;
+            z-index: -2;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        button, input, textarea, select { font: inherit; }
+
+        .container {
+            width: min(var(--max), calc(100% - 40px));
+            margin: 0 auto;
+        }
+
         nav {
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             z-index: 100;
-            padding: 0 var(--sp-6);
-            height: 64px;
+            height: 68px;
+            padding: 0 32px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(10,10,10,0.88);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
+            background: rgba(13,27,42,0.88);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
         }
 
         .nav-logo {
             display: flex;
             align-items: center;
-            gap: var(--sp-2);
-            text-decoration: none;
+            gap: 10px;
         }
 
         .nav-logo-mark {
-            width: 32px; height: 32px;
+            width: 32px;
+            height: 32px;
             border: 1.5px solid rgba(255,255,255,0.25);
-            border-radius: 8px;
+            border-radius: var(--radius-xs);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
+            font-weight: 800;
             font-size: 13px;
             letter-spacing: -0.5px;
-            color: var(--white);
         }
 
         .nav-brand {
             font-weight: 700;
             font-size: 15px;
-            letter-spacing: 0.08em;
-            color: var(--white);
+            letter-spacing: 0.05em;
         }
 
         .nav-tagline {
-            font-size: 10px;
+            font-size: 11px;
             color: var(--muted);
-            letter-spacing: 0.14em;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            font-weight: 500;
+            font-weight: 400;
         }
 
         .nav-links {
             display: flex;
             align-items: center;
-            gap: var(--sp-5);
+            gap: 30px;
             list-style: none;
         }
 
         .nav-links a {
             color: var(--muted);
-            text-decoration: none;
             font-size: 14px;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: color 0.2s ease;
         }
 
-        .nav-links a:hover { color: var(--white); }
+        .nav-links a:hover,
         .nav-links a.active { color: var(--white); }
 
         .nav-cta {
-            background: var(--white);
-            color: var(--black) !important;
-            padding: 8px 20px;
-            border-radius: var(--radius-full);
+            background: var(--electric);
+            color: var(--white) !important;
+            padding: 9px 18px;
+            border-radius: var(--radius-pill);
             font-size: 13px !important;
             font-weight: 600 !important;
-            transition: opacity 0.2s !important;
+            transition: background 0.2s ease, transform 0.2s ease;
         }
 
-        .nav-cta:hover { opacity: 0.85; }
+        .nav-cta:hover {
+            background: var(--electric-hover);
+            transform: translateY(-1px);
+        }
 
-        /* ===== HERO ===== */
         .hero {
-            padding: 160px var(--sp-6) var(--sp-8);
-            text-align: center;
             position: relative;
+            padding: 150px 0 72px;
+            overflow: hidden;
         }
 
-        .hero-label {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.8rem;
+        .hero::before {
+            content: "PACKAGES";
+            position: absolute;
+            top: 46%;
+            right: -24px;
+            transform: translateY(-50%);
+            font-size: clamp(92px, 17vw, 240px);
+            font-weight: 900;
+            letter-spacing: -0.08em;
+            color: rgba(255,255,255,0.025);
+            pointer-events: none;
+            line-height: 0.9;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+            gap: 32px;
+            align-items: end;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             color: var(--muted);
-            font-weight: 700;
-            letter-spacing: 0.18em;
+            font-size: 11px;
+            letter-spacing: 0.16em;
             text-transform: uppercase;
-            margin-bottom: var(--sp-4);
+            font-weight: 600;
+            margin-bottom: 28px;
         }
 
-        .hero-headline {
-            font-size: clamp(2.4rem, 5vw, 4rem);
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: var(--sp-4);
-            letter-spacing: -0.03em;
+        .eyebrow::before {
+            content: "";
+            width: 24px;
+            height: 1px;
+            background: var(--electric);
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 8vw, 84px);
+            line-height: 0.94;
+            letter-spacing: -0.04em;
+            font-weight: 900;
+            max-width: 760px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--muted);
+        }
+
+        .hero-copy p {
+            max-width: 620px;
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--muted);
+        }
+
+        .hero-actions {
+            margin-top: 36px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 52px;
+            padding: 0 22px;
+            border-radius: var(--radius-pill);
+            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .btn-primary {
+            background: var(--electric);
+            color: var(--white);
+            box-shadow: 0 12px 30px var(--electric-glow);
+        }
+
+        .btn-primary:hover {
+            background: var(--electric-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border-strong);
+            background: rgba(255,255,255,0.02);
             color: var(--white);
         }
 
-        .hero-subtitle {
-            font-size: 1.15rem;
-            color: var(--muted);
-            max-width: 560px;
-            margin: 0 auto;
-            font-weight: 400;
-            line-height: 1.7;
+        .btn-secondary:hover {
+            border-color: rgba(255,255,255,0.28);
+            transform: translateY(-1px);
         }
 
-        /* ===== STATS BAR ===== */
-        .stats-bar {
+        .hero-aside {
+            display: grid;
+            gap: 14px;
+        }
+
+        .hero-panel {
+            background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+            border: 1px solid var(--border);
+            border-radius: calc(var(--radius) + 2px);
+            padding: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-panel-kicker {
+            font-size: 11px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 14px;
+        }
+
+        .hero-panel-title {
+            font-size: 22px;
+            line-height: 1.15;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+        }
+
+        .hero-panel-list {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+            color: var(--off-white);
+        }
+
+        .hero-panel-list li {
             display: flex;
-            justify-content: center;
-            gap: var(--sp-7);
-            padding: var(--sp-6) var(--sp-6);
+            gap: 10px;
+            align-items: flex-start;
+            font-size: 14px;
+            line-height: 1.55;
+        }
+
+        .hero-panel-list li::before {
+            content: "•";
+            color: var(--electric);
+            line-height: 1;
+            margin-top: 1px;
+        }
+
+        .stats-strip {
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
+            background: rgba(255,255,255,0.02);
         }
 
-        .stat { text-align: center; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            padding: 26px 0;
+        }
+
+        .stat {
+            text-align: center;
+        }
 
         .stat-value {
-            font-family: 'Space Mono', monospace;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--white);
-            letter-spacing: -0.02em;
+            font-size: clamp(24px, 3vw, 34px);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin-bottom: 6px;
         }
 
         .stat-label {
-            font-size: 0.8rem;
-            color: var(--muted);
-            margin-top: var(--sp-1);
-            letter-spacing: 0.06em;
+            font-size: 11px;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
+            color: var(--muted);
         }
 
-        /* ===== FILTER BAR ===== */
-        .filter-section {
-            padding: var(--sp-6) var(--sp-6);
-            border-bottom: 1px solid var(--border);
+        .section-shell {
+            padding: 84px 0;
         }
 
-        .filter-container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .section-head {
+            max-width: 760px;
+            margin-bottom: 34px;
         }
 
-        .filter-group { margin-bottom: var(--sp-4); }
-        .filter-group:last-child { margin-bottom: 0; }
-
-        .filter-label {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.7rem;
-            font-weight: 700;
-            margin-bottom: var(--sp-3);
-            color: var(--dim);
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--muted);
+            font-size: 11px;
             letter-spacing: 0.16em;
             text-transform: uppercase;
-            display: block;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .section-label::before {
+            content: "";
+            width: 24px;
+            height: 1px;
+            background: var(--electric);
+        }
+
+        .section-title {
+            font-size: clamp(30px, 4vw, 46px);
+            line-height: 1.02;
+            letter-spacing: -0.04em;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            color: var(--muted);
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .filters-wrap {
+            display: grid;
+            gap: 20px;
+            padding: 28px;
+            border-radius: calc(var(--radius) + 2px);
+            border: 1px solid var(--border);
+            background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+            box-shadow: var(--shadow);
+        }
+
+        .filter-row {
+            display: grid;
+            gap: 12px;
+        }
+
+        .filter-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--muted);
         }
 
         .filter-pills {
             display: flex;
             flex-wrap: wrap;
-            gap: var(--sp-2);
+            gap: 10px;
         }
 
         .pill {
-            padding: 10px 20px;
-            border: 1px solid var(--border-hover);
-            background-color: transparent;
+            padding: 10px 18px;
+            border-radius: var(--radius-pill);
+            border: 1px solid rgba(255,255,255,0.14);
+            background: rgba(255,255,255,0.02);
             color: var(--off-white);
-            border-radius: var(--radius-full);
             cursor: pointer;
-            font-size: 0.85rem;
-            font-weight: 500;
             transition: all 0.2s ease;
-            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
         }
 
         .pill:hover {
-            border-color: var(--white);
-            color: var(--white);
-            background-color: var(--accent-dim);
+            border-color: rgba(255,255,255,0.26);
+            background: rgba(255,255,255,0.04);
         }
 
         .pill.active {
-            background-color: var(--white);
-            color: var(--black);
-            border-color: var(--white);
-            font-weight: 600;
-        }
-
-        /* ===== PACKAGES GRID ===== */
-        .packages-section {
-            padding: var(--sp-8) var(--sp-6);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .packages-header { margin-bottom: var(--sp-7); }
-
-        .packages-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: var(--sp-2);
-            letter-spacing: -0.02em;
-        }
-
-        .packages-subtitle {
-            color: var(--muted);
-            font-size: 0.95rem;
+            background: var(--electric);
+            color: var(--white);
+            border-color: var(--electric);
+            box-shadow: 0 10px 24px var(--electric-glow);
         }
 
         .packages-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--sp-4);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
         }
 
-        /* ===== PACKAGE CARD ===== */
         .package-card {
-            background-color: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: var(--sp-5);
             position: relative;
-            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
-            height: 100%;
+            min-height: 100%;
+            padding: 28px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+            border: 1px solid var(--border);
+            border-radius: calc(var(--radius) + 2px);
+            box-shadow: var(--shadow);
+            transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
         }
 
         .package-card:hover {
-            background-color: var(--surface-hover);
-            border-color: var(--border-hover);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            border-color: rgba(255,255,255,0.18);
+            background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
         }
 
         .package-card.featured {
-            border-color: var(--border-strong);
-            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, var(--surface) 40%);
-        }
-
-        .package-card.featured:hover {
-            border-color: rgba(255,255,255,0.30);
+            border-color: rgba(37,99,235,0.4);
+            box-shadow: 0 20px 60px rgba(37,99,235,0.10), var(--shadow);
         }
 
         .package-card.hidden { display: none; }
 
         .package-badge {
             position: absolute;
-            top: var(--sp-4);
-            right: var(--sp-4);
-            font-family: 'Space Mono', monospace;
-            font-size: 0.65rem;
-            font-weight: 700;
+            top: 18px;
+            right: 18px;
             padding: 6px 12px;
-            border-radius: var(--radius-full);
-            letter-spacing: 0.08em;
+            border-radius: var(--radius-pill);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
         }
 
         .badge-exclusive {
-            background-color: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.20);
-            color: var(--white);
+            background: rgba(37,99,235,0.16);
+            border: 1px solid rgba(37,99,235,0.3);
+            color: var(--cream);
         }
 
         .badge-shared {
-            background-color: rgba(255,255,255,0.03);
-            border: 1px solid var(--border-hover);
+            background: rgba(245,240,232,0.08);
+            border: 1px solid rgba(245,240,232,0.16);
             color: var(--off-white);
         }
 
         .package-header {
-            margin-bottom: var(--sp-3);
-            padding-top: var(--sp-2);
+            margin-bottom: 18px;
+            padding-top: 8px;
         }
 
         .package-name {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: var(--sp-2);
-            letter-spacing: -0.01em;
+            font-size: 26px;
+            line-height: 1;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin-bottom: 12px;
         }
 
         .package-industry {
-            display: inline-block;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.7rem;
+            display: inline-flex;
+            align-items: center;
+            min-height: 30px;
+            padding: 0 12px;
+            border-radius: var(--radius-pill);
+            background: rgba(255,255,255,0.04);
             color: var(--muted);
-            background-color: rgba(255,255,255,0.04);
-            padding: 5px 10px;
-            border-radius: var(--radius-xs);
-            letter-spacing: 0.04em;
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            font-weight: 700;
         }
 
         .package-meta {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: var(--sp-3);
-            padding-bottom: var(--sp-3);
+            gap: 12px;
+            margin-bottom: 18px;
+            padding-bottom: 18px;
             border-bottom: 1px solid var(--border);
         }
 
         .lead-count {
-            font-family: 'Space Mono', monospace;
+            font-size: 14px;
             font-weight: 700;
-            color: var(--white);
-            font-size: 0.9rem;
+            letter-spacing: 0.02em;
         }
 
         .quality-indicator {
             display: flex;
-            gap: 3px;
-            align-items: center;
+            gap: 4px;
         }
 
         .quality-bar {
-            width: 4px;
+            width: 5px;
             height: 18px;
-            background-color: rgba(255,255,255,0.08);
             border-radius: 2px;
+            background: rgba(255,255,255,0.08);
         }
 
-        .quality-bar.active {
-            background-color: var(--white);
-        }
+        .quality-bar.active { background: var(--electric); }
 
         .package-includes {
             list-style: none;
-            margin-bottom: var(--sp-4);
+            display: grid;
+            gap: 10px;
+            margin-bottom: 24px;
             flex-grow: 1;
         }
 
         .package-includes li {
-            font-size: 0.85rem;
-            color: var(--off-white);
-            margin-bottom: 10px;
-            padding-left: var(--sp-4);
             position: relative;
-            line-height: 1.4;
+            padding-left: 18px;
+            color: var(--off-white);
+            font-size: 14px;
+            line-height: 1.5;
         }
 
-        .package-includes li:before {
-            content: "→";
+        .package-includes li::before {
+            content: "";
             position: absolute;
+            top: 8px;
             left: 0;
-            color: var(--muted);
-            font-weight: 700;
-            font-size: 0.8rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--electric);
+            box-shadow: 0 0 0 4px rgba(37,99,235,0.12);
         }
 
         .package-footer {
             border-top: 1px solid var(--border);
-            padding-top: var(--sp-4);
+            padding-top: 20px;
         }
 
-        .package-price { margin-bottom: var(--sp-3); }
-
         .package-price-label {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.65rem;
-            color: var(--muted);
             display: block;
-            margin-bottom: 2px;
-            letter-spacing: 0.08em;
+            color: var(--muted);
+            font-size: 11px;
+            letter-spacing: 0.16em;
             text-transform: uppercase;
+            margin-bottom: 6px;
         }
 
         .package-price-value {
-            font-size: 2rem;
-            font-weight: 700;
-            letter-spacing: -0.03em;
+            font-size: 40px;
+            line-height: 1;
+            letter-spacing: -0.05em;
+            font-weight: 800;
         }
 
         .package-price-unit {
-            font-size: 0.85rem;
+            font-size: 14px;
             color: var(--muted);
-            font-weight: 400;
+            font-weight: 500;
         }
 
         .package-cta {
+            margin-top: 18px;
             width: 100%;
-            padding: 14px;
-            background-color: var(--white);
-            color: var(--black);
-            border: none;
-            border-radius: var(--radius-sm);
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: opacity 0.2s ease;
-            font-family: 'Space Grotesk', sans-serif;
-            text-decoration: none;
-            display: block;
-            text-align: center;
-            letter-spacing: -0.01em;
-        }
-
-        .package-cta:hover { opacity: 0.85; }
-
-        /* ===== HOW IT WORKS ===== */
-        .how-it-works {
-            padding: var(--sp-8) var(--sp-6);
-            border-top: 1px solid var(--border);
-        }
-
-        .how-it-works-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-label {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--dim);
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
+            min-height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-pill);
+            background: var(--electric);
+            color: var(--white);
+            font-size: 14px;
             font-weight: 700;
-            text-align: center;
-            margin-bottom: var(--sp-3);
+            transition: background 0.2s ease, transform 0.2s ease;
         }
 
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: var(--sp-7);
-            text-align: center;
-            letter-spacing: -0.02em;
+        .package-cta:hover {
+            background: var(--electric-hover);
+            transform: translateY(-1px);
         }
 
-        .steps-grid {
+        .empty-state {
+            display: none;
+            margin-top: 28px;
+            padding: 28px;
+            text-align: center;
+            border: 1px dashed rgba(255,255,255,0.18);
+            border-radius: var(--radius);
+            color: var(--muted);
+            background: rgba(255,255,255,0.02);
+        }
+
+        .empty-state p {
+            margin-bottom: 14px;
+            font-size: 16px;
+        }
+
+        .steps-grid,
+        .proof-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--sp-5);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
         }
 
-        .step {
-            text-align: center;
-            padding: var(--sp-5);
+        .step-card,
+        .proof-card {
+            padding: 26px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,0.025);
+        }
+
+        .step-num {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--electric);
+            margin-bottom: 14px;
+        }
+
+        .step-title,
+        .proof-title {
+            font-size: 22px;
+            line-height: 1.08;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 10px;
+        }
+
+        .step-desc,
+        .proof-desc {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+        .comparison-wrap {
+            overflow-x: auto;
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            background: var(--surface);
-            transition: border-color 0.2s;
+            background: rgba(255,255,255,0.02);
+            box-shadow: var(--shadow);
         }
 
-        .step:hover { border-color: var(--border-hover); }
-
-        .step-number {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--muted);
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            margin-bottom: var(--sp-3);
-        }
-
-        .step-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: var(--sp-2);
-        }
-
-        .step-description {
-            color: var(--muted);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        /* ===== COMPARISON TABLE ===== */
-        .comparison-section {
-            padding: var(--sp-8) var(--sp-6);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .comparison-table {
+        table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: var(--sp-4);
+            min-width: 720px;
         }
 
-        .comparison-table th,
-        .comparison-table td {
-            padding: var(--sp-3) var(--sp-4);
-            text-align: left;
+        th, td {
+            padding: 18px 20px;
             border-bottom: 1px solid var(--border);
         }
 
-        .comparison-table th {
-            background-color: rgba(255,255,255,0.02);
-            font-weight: 700;
-            font-size: 0.85rem;
-            color: var(--white);
-            letter-spacing: 0.02em;
+        th {
+            background: rgba(255,255,255,0.03);
+            text-align: left;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--muted);
         }
 
-        .comparison-table th:not(:first-child),
-        .comparison-table td:not(:first-child) {
-            text-align: center;
-        }
+        th:not(:first-child),
+        td:not(:first-child) { text-align: center; }
 
-        .comparison-table td {
-            font-size: 0.85rem;
+        td {
+            font-size: 14px;
             color: var(--off-white);
         }
 
-        .comparison-table tbody tr { transition: background-color 0.15s; }
-        .comparison-table tbody tr:hover { background-color: rgba(255,255,255,0.02); }
+        tbody tr:hover { background: rgba(255,255,255,0.02); }
+        .check { color: var(--success); font-weight: 700; }
+        .dash { color: rgba(255,255,255,0.25); }
 
-        .check { color: var(--white); font-weight: 700; }
-        .dash { color: rgba(255,255,255,0.15); }
-
-        /* ===== FAQ ===== */
-        .faq-section {
-            padding: var(--sp-8) var(--sp-6);
-            border-top: 1px solid var(--border);
-        }
-
-        .faq-container {
-            max-width: 720px;
-            margin: 0 auto;
+        .faq-list {
+            display: grid;
+            gap: 12px;
+            max-width: 860px;
         }
 
         .faq-item {
-            margin-bottom: var(--sp-2);
             border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
+            border-radius: var(--radius);
+            background: rgba(255,255,255,0.02);
             overflow: hidden;
-            transition: border-color 0.2s;
         }
-
-        .faq-item:hover { border-color: var(--border-hover); }
 
         .faq-question {
-            padding: var(--sp-4);
-            background-color: var(--surface);
-            cursor: pointer;
+            width: 100%;
+            border: 0;
+            background: transparent;
+            color: var(--white);
+            padding: 22px 24px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            transition: background-color 0.2s;
-            border: none;
-            width: 100%;
+            gap: 16px;
             text-align: left;
-            font-family: 'Space Grotesk', sans-serif;
-            color: var(--white);
-            font-size: 0.95rem;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
         }
 
-        .faq-question:hover { background-color: var(--surface-hover); }
+        .faq-question:hover { background: rgba(255,255,255,0.02); }
 
         .faq-toggle {
-            font-size: 0.9rem;
-            transition: transform 0.3s ease;
             color: var(--muted);
+            transition: transform 0.22s ease;
+            flex-shrink: 0;
         }
 
         .faq-toggle.open { transform: rotate(180deg); }
@@ -634,218 +779,224 @@
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
+            transition: max-height 0.24s ease;
         }
 
-        .faq-answer.open { max-height: 300px; }
+        .faq-answer.open { max-height: 280px; }
 
         .faq-answer-content {
-            padding: 0 var(--sp-4) var(--sp-4);
-            color: var(--off-white);
-            font-size: 0.9rem;
+            padding: 0 24px 24px;
+            color: var(--muted);
+            font-size: 15px;
             line-height: 1.7;
         }
 
-        /* ===== CTA BANNER ===== */
         .cta-banner {
-            padding: var(--sp-8) var(--sp-6);
+            padding: 84px 0 96px;
+        }
+
+        .cta-shell {
+            padding: 40px;
+            border-radius: calc(var(--radius) + 4px);
+            background:
+                radial-gradient(circle at top right, rgba(59,130,246,0.16), transparent 34%),
+                linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+            border: 1px solid rgba(255,255,255,0.12);
+            box-shadow: var(--shadow);
             text-align: center;
-            border-top: 1px solid var(--border);
         }
 
-        .cta-banner-label {
-            font-family: 'Space Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--dim);
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            font-weight: 700;
-            margin-bottom: var(--sp-3);
+        .cta-shell h2 {
+            font-size: clamp(34px, 5vw, 56px);
+            line-height: 0.98;
+            letter-spacing: -0.04em;
+            font-weight: 800;
+            margin-bottom: 14px;
         }
 
-        .cta-banner-headline {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: var(--sp-4);
-            letter-spacing: -0.02em;
-        }
-
-        .cta-banner-sub {
+        .cta-shell p {
             color: var(--muted);
-            font-size: 0.95rem;
-            margin-bottom: var(--sp-5);
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 680px;
+            margin: 0 auto 24px;
         }
 
-        .cta-banner-buttons {
+        .cta-actions {
             display: flex;
-            gap: var(--sp-3);
             justify-content: center;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
-        .btn {
-            padding: 14px 32px;
-            border-radius: var(--radius-sm);
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            font-family: 'Space Grotesk', sans-serif;
-            border: none;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background-color: var(--white);
-            color: var(--black);
-        }
-
-        .btn-primary:hover { opacity: 0.85; }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--white);
-            border: 1px solid var(--border-hover);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--white);
-            background-color: var(--accent-dim);
-        }
-
-        /* ===== FOOTER ===== */
         footer {
-            padding: var(--sp-7) var(--sp-6) var(--sp-5);
+            padding: 0 0 42px;
+        }
+
+        .footer-shell {
             border-top: 1px solid var(--border);
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-content {
+            padding-top: 32px;
             display: grid;
-            grid-template-columns: 1.5fr repeat(3, 1fr);
-            gap: var(--sp-5);
-            margin-bottom: var(--sp-5);
+            gap: 26px;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, 0.7fr));
+            gap: 26px;
         }
 
         .footer-brand {
             display: flex;
             align-items: center;
-            gap: var(--sp-2);
-            margin-bottom: var(--sp-3);
+            gap: 10px;
+            margin-bottom: 14px;
         }
 
         .footer-brand-mark {
-            width: 28px; height: 28px;
-            border: 1.5px solid rgba(255,255,255,0.2);
-            border-radius: 6px;
+            width: 30px;
+            height: 30px;
+            border: 1.5px solid rgba(255,255,255,0.24);
+            border-radius: var(--radius-xs);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            font-size: 11px;
-            color: var(--white);
+            font-weight: 800;
+            font-size: 12px;
         }
 
         .footer-brand-name {
-            font-weight: 700;
             font-size: 14px;
+            font-weight: 700;
             letter-spacing: 0.08em;
         }
 
-        .footer-description {
-            font-size: 0.8rem;
+        .footer-copytext {
+            max-width: 340px;
+            font-size: 14px;
+            line-height: 1.7;
             color: var(--muted);
-            line-height: 1.6;
-            max-width: 280px;
         }
 
-        .footer-column h4 {
-            font-size: 0.75rem;
-            font-weight: 700;
-            margin-bottom: var(--sp-3);
-            letter-spacing: 0.1em;
+        .footer-col h4 {
+            font-size: 11px;
+            letter-spacing: 0.16em;
             text-transform: uppercase;
-        }
-
-        .footer-column ul { list-style: none; }
-
-        .footer-column a {
             color: var(--muted);
-            text-decoration: none;
-            font-size: 0.85rem;
-            margin-bottom: 10px;
-            display: block;
-            transition: color 0.2s;
+            margin-bottom: 12px;
         }
 
-        .footer-column a:hover { color: var(--white); }
+        .footer-col ul { list-style: none; }
 
-        .footer-divider {
+        .footer-col li + li { margin-top: 10px; }
+
+        .footer-col a {
+            color: var(--off-white);
+            font-size: 14px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-col a:hover { color: var(--electric); }
+
+        .footer-bottom {
+            padding-top: 18px;
             border-top: 1px solid var(--border);
-            padding-top: var(--sp-4);
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            gap: 18px;
             color: var(--muted);
-            font-size: 0.75rem;
+            font-size: 13px;
         }
 
         .footer-legal {
             display: flex;
-            gap: var(--sp-4);
+            gap: 18px;
         }
 
-        .footer-legal a {
-            color: var(--muted);
-            text-decoration: none;
-            transition: color 0.2s;
+        @media (max-width: 1100px) {
+            .hero-grid,
+            .packages-grid,
+            .steps-grid,
+            .proof-grid,
+            .footer-top {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
         }
 
-        .footer-legal a:hover { color: var(--white); }
+        @media (max-width: 820px) {
+            nav {
+                padding: 0 18px;
+                height: auto;
+                min-height: 68px;
+                flex-wrap: wrap;
+                gap: 12px;
+                justify-content: center;
+            }
 
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .packages-grid { grid-template-columns: repeat(2, 1fr); }
-        }
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 18px;
+                padding-bottom: 12px;
+            }
 
-        @media (max-width: 768px) {
-            nav { padding: 0 var(--sp-4); }
-            .hero { padding: 130px var(--sp-4) var(--sp-7); }
-            .hero-headline { font-size: 2rem; }
-            .stats-bar { gap: var(--sp-5); padding: var(--sp-5) var(--sp-4); }
-            .stat-value { font-size: 1.4rem; }
-            .nav-links { gap: var(--sp-3); }
             .nav-tagline { display: none; }
-            .packages-grid { grid-template-columns: 1fr; }
-            .packages-section, .comparison-section { padding: var(--sp-7) var(--sp-4); }
-            .steps-grid { grid-template-columns: 1fr; }
-            .footer-content { grid-template-columns: 1fr 1fr; }
-            .filter-section { padding: var(--sp-5) var(--sp-4); }
-            .cta-banner-buttons { flex-direction: column; align-items: center; }
-            .btn { width: 100%; max-width: 320px; text-align: center; }
+            .hero { padding-top: 168px; }
+            .hero-grid,
+            .packages-grid,
+            .steps-grid,
+            .proof-grid,
+            .stats-grid,
+            .footer-top,
+            .footer-bottom {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                display: grid;
+                text-align: center;
+            }
+
+            .footer-legal {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .cta-shell,
+            .filters-wrap {
+                padding: 28px;
+            }
+
+            .section-shell,
+            .cta-banner {
+                padding: 68px 0;
+            }
         }
 
-        @media (max-width: 480px) {
-            nav { height: auto; flex-direction: column; gap: var(--sp-2); padding: var(--sp-2) var(--sp-3); }
-            .nav-links { flex-wrap: wrap; justify-content: center; gap: var(--sp-2); }
-            .hero-headline { font-size: 1.7rem; }
-            .stats-bar { flex-wrap: wrap; gap: var(--sp-4); }
-            .stat { flex: 1 1 40%; }
-            .footer-content { grid-template-columns: 1fr; }
-            .footer-divider { flex-direction: column; gap: var(--sp-2); text-align: center; }
-            .comparison-table th, .comparison-table td { padding: var(--sp-2); font-size: 0.75rem; }
+        @media (max-width: 560px) {
+            .container { width: min(var(--max), calc(100% - 24px)); }
+            .hero h1 { font-size: 38px; }
+            .btn-primary,
+            .btn-secondary,
+            .package-cta {
+                width: 100%;
+            }
+
+            .hero-actions,
+            .cta-actions {
+                display: grid;
+            }
+
+            th, td {
+                padding: 14px 16px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Nav -->
     <nav>
-        <a href="/" class="nav-logo">
+        <a href="/" class="nav-logo" aria-label="BAKU home">
             <div class="nav-logo-mark">B</div>
             <div>
                 <div class="nav-brand">BAKU</div>
@@ -856,465 +1007,511 @@
             <li><a href="/">Inicio</a></li>
             <li><a href="/#servicios">Servicios</a></li>
             <li><a href="/leads.html" class="active">Paquetes</a></li>
+            <li><a href="/#modelo">Modelo</a></li>
             <li><a href="/#contacto">Contacto</a></li>
-            <li><a href="/#contacto" class="nav-cta">Agendar llamada</a></li>
+            <li><a href="/#contacto" class="nav-cta">Agendar conversación</a></li>
         </ul>
     </nav>
 
-    <!-- Hero -->
     <section class="hero">
-        <div class="hero-label">Marketplace de Leads B2B</div>
-        <h1 class="hero-headline">Elige. Compra. Cierra.</h1>
-        <p class="hero-subtitle">Paquetes de prospectos B2B armados con criterio, segmentados por industria y listos para cargar en tu CRM.</p>
-    </section>
-
-    <!-- Stats -->
-    <section class="stats-bar">
-        <div class="stat">
-            <div class="stat-value">95%+</div>
-            <div class="stat-label">Deliverabilidad</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value">24-48h</div>
-            <div class="stat-label">Entrega</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value">9</div>
-            <div class="stat-label">Industrias</div>
-        </div>
-        <div class="stat">
-            <div class="stat-value">3</div>
-            <div class="stat-label">Niveles de calidad</div>
-        </div>
-    </section>
-
-    <!-- Filters -->
-    <section class="filter-section">
-        <div class="filter-container">
-            <div class="filter-group">
-                <label class="filter-label">Industria</label>
-                <div class="filter-pills">
-                    <button class="pill" data-filter="industry" data-value="saas">SaaS</button>
-                    <button class="pill" data-filter="industry" data-value="technology">Tecnología</button>
-                    <button class="pill" data-filter="industry" data-value="retail">Retail</button>
-                    <button class="pill" data-filter="industry" data-value="real_estate">Real Estate</button>
-                    <button class="pill" data-filter="industry" data-value="fintech">Fintech</button>
-                    <button class="pill" data-filter="industry" data-value="healthcare">Salud</button>
-                    <button class="pill" data-filter="industry" data-value="logistics">Logística</button>
-                    <button class="pill" data-filter="industry" data-value="education">Educación</button>
-                    <button class="pill" data-filter="industry" data-value="multi">Multi-industria</button>
+        <div class="container hero-grid">
+            <div class="hero-copy">
+                <div class="eyebrow">Marketplace de leads B2B</div>
+                <h1>Paquetes listos para <em>activar, filtrar y cerrar</em>.</h1>
+                <p>
+                    Explora paquetes segmentados por industria, nivel de enriquecimiento y exclusividad.
+                    Compara opciones, entiende qué incluye cada tier y activa una base lista para pasar
+                    a CRM, outreach o prospección comercial.
+                </p>
+                <div class="hero-actions">
+                    <a href="#paquetes" class="btn-primary">Ver paquetes</a>
+                    <a href="/#contacto" class="btn-secondary">Pedir paquete a medida</a>
                 </div>
             </div>
-            <div class="filter-group">
-                <label class="filter-label">Calidad</label>
-                <div class="filter-pills">
-                    <button class="pill" data-filter="tier" data-value="standard">Estándar</button>
-                    <button class="pill" data-filter="tier" data-value="premium">Premium</button>
-                    <button class="pill" data-filter="tier" data-value="enterprise">Enterprise</button>
+
+            <aside class="hero-aside">
+                <div class="hero-panel">
+                    <div class="hero-panel-kicker">Listo para operar</div>
+                    <div class="hero-panel-title">Cada paquete sale con criterio comercial, no como planilla genérica.</div>
+                    <ul class="hero-panel-list">
+                        <li>Campos definidos por tier para elegir calidad y profundidad con claridad.</li>
+                        <li>Entrega compatible con CRM en CSV, JSON o integración asistida.</li>
+                        <li>Exclusividad, enriquecimiento y volumen visibles desde el primer scroll.</li>
+                    </ul>
                 </div>
+            </aside>
+        </div>
+    </section>
+
+    <section class="stats-strip">
+        <div class="container stats-grid">
+            <div class="stat">
+                <div class="stat-value">95%+</div>
+                <div class="stat-label">Deliverabilidad</div>
             </div>
-            <div class="filter-group">
-                <label class="filter-label">Exclusividad</label>
-                <div class="filter-pills">
-                    <button class="pill" data-filter="exclusivity" data-value="exclusive">Exclusivo</button>
-                    <button class="pill" data-filter="exclusivity" data-value="shared">Compartido</button>
-                </div>
+            <div class="stat">
+                <div class="stat-value">24-48h</div>
+                <div class="stat-label">Tiempo de entrega</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">6</div>
+                <div class="stat-label">Paquetes activos</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Niveles de calidad</div>
             </div>
         </div>
     </section>
 
-    <!-- Packages -->
-    <section class="packages-section">
-        <div class="packages-header">
-            <h2 class="packages-title">Paquetes disponibles</h2>
-            <p class="packages-subtitle">Filtra por industria, calidad o exclusividad para encontrar el paquete ideal</p>
-        </div>
-
-        <div class="packages-grid" id="packages-grid">
-            <!-- starter_saas: standard / shared / 250 / $297 -->
-            <div class="package-card"
-                 data-package="starter_saas"
-                 data-industry="saas"
-                 data-tier="standard"
-                 data-exclusivity="shared"
-                 data-leads="250"
-                 data-price="297">
-                <div class="package-badge badge-shared">Compartido</div>
-                <div class="package-header">
-                    <h3 class="package-name">Starter SaaS</h3>
-                    <span class="package-industry">SaaS</span>
-                </div>
-                <div class="package-meta">
-                    <span class="lead-count">250 leads</span>
-                    <div class="quality-indicator">
-                        <div class="quality-bar active"></div>
-                        <div class="quality-bar"></div>
-                        <div class="quality-bar"></div>
-                    </div>
-                </div>
-                <ul class="package-includes">
-                    <li>Nombre + email corporativo</li>
-                    <li>Cargo y empresa</li>
-                    <li>País y tamaño de empresa</li>
-                    <li>Verificación básica de email</li>
-                </ul>
-                <div class="package-footer">
-                    <div class="package-price">
-                        <span class="package-price-label">desde</span>
-                        <span class="package-price-value">$297</span>
-                        <span class="package-price-unit"> USD</span>
-                    </div>
-                    <a href="/#contacto" class="package-cta">Solicitar paquete</a>
-                </div>
+    <section class="section-shell">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-label">Filtrado</div>
+                <h2 class="section-title">Explora el catálogo sin perder claridad.</h2>
+                <p class="section-subtitle">La estructura funcional del marketplace sigue intacta: puedes combinar industria, tier y exclusividad para ver solo los paquetes que tienen sentido para tu operación.</p>
             </div>
 
-            <!-- growth_tech: premium / exclusive / 500 / $697 -->
-            <div class="package-card featured"
-                 data-package="growth_tech"
-                 data-industry="technology"
-                 data-tier="premium"
-                 data-exclusivity="exclusive"
-                 data-leads="500"
-                 data-price="697">
-                <div class="package-badge badge-exclusive">Exclusivo</div>
-                <div class="package-header">
-                    <h3 class="package-name">Growth Tech</h3>
-                    <span class="package-industry">Tecnología</span>
-                </div>
-                <div class="package-meta">
-                    <span class="lead-count">500 leads</span>
-                    <div class="quality-indicator">
-                        <div class="quality-bar active"></div>
-                        <div class="quality-bar active"></div>
-                        <div class="quality-bar"></div>
+            <div class="filters-wrap">
+                <div class="filter-row">
+                    <label class="filter-label">Industria</label>
+                    <div class="filter-pills">
+                        <button class="pill" data-filter="industry" data-value="saas">SaaS</button>
+                        <button class="pill" data-filter="industry" data-value="technology">Tecnología</button>
+                        <button class="pill" data-filter="industry" data-value="retail">Retail</button>
+                        <button class="pill" data-filter="industry" data-value="real_estate">Real Estate</button>
+                        <button class="pill" data-filter="industry" data-value="fintech">Fintech</button>
+                        <button class="pill" data-filter="industry" data-value="multi">Multi-industria</button>
                     </div>
                 </div>
-                <ul class="package-includes">
-                    <li>Todo Starter +</li>
-                    <li>LinkedIn verificado</li>
-                    <li>Teléfono directo</li>
-                    <li>Señales de intención de compra</li>
-                    <li>Dominio de empresa</li>
-                </ul>
-                <div class="package-footer">
-                    <div class="package-price">
-                        <span class="package-price-label">desde</span>
-                        <span class="package-price-value">$697</span>
-                        <span class="package-price-unit"> USD</span>
+
+                <div class="filter-row">
+                    <label class="filter-label">Nivel</label>
+                    <div class="filter-pills">
+                        <button class="pill" data-filter="tier" data-value="standard">Estándar</button>
+                        <button class="pill" data-filter="tier" data-value="premium">Premium</button>
+                        <button class="pill" data-filter="tier" data-value="enterprise">Enterprise</button>
                     </div>
-                    <a href="/#contacto" class="package-cta">Solicitar paquete</a>
+                </div>
+
+                <div class="filter-row">
+                    <label class="filter-label">Exclusividad</label>
+                    <div class="filter-pills">
+                        <button class="pill" data-filter="exclusivity" data-value="exclusive">Exclusivo</button>
+                        <button class="pill" data-filter="exclusivity" data-value="shared">Compartido</button>
+                    </div>
                 </div>
             </div>
-
-            <!-- enterprise_pack: enterprise / exclusive / 1000 / $1497 -->
-            <div class="package-card featured"
-                 data-package="enterprise_pack"
-                 data-industry="multi"
-                 data-tier="enterprise"
-                 data-exclusivity="exclusive"
-                 data-leads="1000"
-                 data-price="1497">
-                <div class="package-badge badge-exclusive">Exclusivo</div>
-                <div class="package-header">
-                    <h3 class="package-name">Enterprise Pack</h3>
-                    <span class="package-industry">Multi-industria</span>
-                </div>
-                <div class="package-meta">
-                    <span class="lead-count">1,000 leads</span>
-                    <div class="quality-indicator">
-                        <div class="quality-bar active"></div>
-                        <div class="quality-bar active"></div>
-                        <div class="quality-bar active"></div>
-                    </div>
-                </div>
-                <ul class="package-includes">
-                    <li>Todo Growth +</li>
-                    <li>Tecnografía completa</li>
-                    <li>Org chart parcial</li>
-                    <li>Trigger events recientes</li>
-                    <li>Account scoring + soporte dedicado</li>
-                </ul>
-                <div class="package-footer">
-                    <div class="package-price">
-                        <span class="package-price-label">desde</span>
-                        <span class="package-price-value">$1,497</span>
-                        <span class="package-price-unit"> USD</span>
-                    </div>
-                    <a href="/#contacto" class="package-cta">Solicitar paquete</a>
-                </div>
-            </div>
-
-            <!-- retail_essentials: standard / shared / 300 / $347 -->
-            <div class="package-card"
-                 data-package="retail_essentials"
-                 data-industry="retail"
-                 data-tier="standard"
-                 data-exclusivity="shared"
-                 data-leads="300"
-                 data-price="347">
-                <div class="package-badge badge-shared">Compartido</div>
-                <div class="package-header">
-                    <h3 class="package-name">Retail Essentials</h3>
-                    <span class="package-industry">Retail</span>
-                </div>
-                <div class="package-meta">
-                    <span class="lead-count">300 leads</span>
-                    <div class="quality-indicator">
-                        <div class="quality-bar active"></div>
-                        <div class="quality-bar"></div>
-                        <div class="quality-bar"></div>
-                    </div>
-                </div>
-                <ul class="package-includes">
-                    <li>Nombre + email corporativo</li>
-                    <li>Cargo y empresa</li>
-                    <li>País y tamaño de empresa</li>
-                    <li>Verificación básica de email</li>
-                </ul>
-                <div class="package-footer">
-                    <div class="package-price">
-                        <span class="package-price-label">desde</span>
-                        <span class="package-price-value">$347</span>
-                        <span class="package-price-unit"> USD</span>
-                    </div>
-                    <a href="/#contacto" class="package-cta">Solicitar paquete</a>
-                </div>
-            </div>
-
-            <!-- real_estate_pro: premium / exclusive / 400 / $597 -->
-            <div class="package-card"
-                 data-package="real_estate_pro"
-                 data-industry="real_estate"
-                 data-tier="premium"
-                 data-exclusivity="exclusive"
-                 data-leads="400"
-                 data-price="597">
-                <div class="package-badge badge-exclusive">Exclusivo</div>
-                <div class="package-header">
-                    <h3 class="package-name">Real Estate Pro</h3>
-                    <span class="package-industry">Real Estate</span>
-                </div>
-                <div class="package-meta">
-                    <span class="lead-count">400 leads</span>
-                    <div class="quality-indicator">
-                        <div class="quality-bar active"></div>
-                        <div class="quality-bar active"></div>
-                        <div class="quality-bar"></div>
-                    </div>
-                </div>
-                <ul class="package-includes">
-                    <li>Contacto directo verificado</li>
-                    <li>LinkedIn verificado</li>
-                    <li>Teléfono directo</li>
-                    <li>Señales de intención de compra</li>
-                    <li>Dominio de empresa</li>
-                </ul>
-                <div class="package-footer">
-                    <div class="package-price">
-                        <span class="package-price-label">desde</span>
-                        <span class="package-price-value">$597</span>
-                        <span class="package-price-unit"> USD</span>
-                    </div>
-                    <a href="/#contacto" class="package-cta">Solicitar paquete</a>
-                </div>
-            </div>
-
-            <!-- fintech_growth: premium / shared / 500 / $797 -->
-            <div class="package-card"
-                 data-package="fintech_growth"
-                 data-industry="fintech"
-                 data-tier="premium"
-                 data-exclusivity="shared"
-                 data-leads="500"
-                 data-price="797">
-                <div class="package-badge badge-shared">Compartido</div>
-                <div class="package-header">
-                    <h3 class="package-name">Fintech Growth</h3>
-                    <span class="package-industry">Fintech</span>
-                </div>
-                <div class="package-meta">
-                    <span class="lead-count">500 leads</span>
-                    <div class="quality-indicator">
-                        <div class="quality-bar active"></div>
-                        <div class="quality-bar active"></div>
-                        <div class="quality-bar"></div>
-                    </div>
-                </div>
-                <ul class="package-includes">
-                    <li>Decision makers verificados</li>
-                    <li>LinkedIn verificado</li>
-                    <li>Teléfono directo</li>
-                    <li>Señales de intención de compra</li>
-                    <li>Dominio de empresa</li>
-                </ul>
-                <div class="package-footer">
-                    <div class="package-price">
-                        <span class="package-price-label">desde</span>
-                        <span class="package-price-value">$797</span>
-                        <span class="package-price-unit"> USD</span>
-                    </div>
-                    <a href="/#contacto" class="package-cta">Solicitar paquete</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- No results message -->
-        <div id="no-results" style="display:none; text-align:center; padding:var(--sp-7) 0; color:var(--muted);">
-            <p style="font-size:1.1rem; margin-bottom:var(--sp-2);">No hay paquetes con esa combinación de filtros.</p>
-            <button onclick="clearFilters()" style="background:none; border:1px solid var(--border-hover); color:var(--white); padding:10px 24px; border-radius:var(--radius-full); cursor:pointer; font-family:'Space Grotesk',sans-serif; font-size:0.85rem; font-weight:600; transition:all 0.2s;">Limpiar filtros</button>
         </div>
     </section>
 
-    <!-- How it Works -->
-    <section class="how-it-works">
-        <div class="how-it-works-container">
-            <div class="section-label">Proceso</div>
-            <h2 class="section-title">Tres pasos. Sin fricción.</h2>
+    <section class="section-shell" id="paquetes" style="padding-top: 0;">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-label">Catálogo</div>
+                <h2 class="section-title">Paquetes disponibles.</h2>
+                <p class="section-subtitle">Filtra por industria, exclusividad y nivel de enriquecimiento para encontrar el paquete que mejor calza con tu pipeline.</p>
+            </div>
+
+            <div class="packages-grid" id="packages-grid">
+                <div class="package-card"
+                     data-package="starter_saas"
+                     data-industry="saas"
+                     data-tier="standard"
+                     data-exclusivity="shared"
+                     data-leads="250"
+                     data-price="297">
+                    <div class="package-badge badge-shared">Compartido</div>
+                    <div class="package-header">
+                        <h3 class="package-name">Starter SaaS</h3>
+                        <span class="package-industry">SaaS</span>
+                    </div>
+                    <div class="package-meta">
+                        <span class="lead-count">250 leads</span>
+                        <div class="quality-indicator">
+                            <div class="quality-bar active"></div>
+                            <div class="quality-bar"></div>
+                            <div class="quality-bar"></div>
+                        </div>
+                    </div>
+                    <ul class="package-includes">
+                        <li>Nombre, empresa y correo corporativo verificado.</li>
+                        <li>Cargo, país y tamaño estimado de compañía.</li>
+                        <li>Formato base listo para CRM y outreach inicial.</li>
+                        <li>Validación estándar de entregabilidad.</li>
+                    </ul>
+                    <div class="package-footer">
+                        <span class="package-price-label">Desde</span>
+                        <span class="package-price-value">$297 <span class="package-price-unit">USD</span></span>
+                        <a href="/#contacto" class="package-cta">Solicitar paquete</a>
+                    </div>
+                </div>
+
+                <div class="package-card featured"
+                     data-package="growth_tech"
+                     data-industry="technology"
+                     data-tier="premium"
+                     data-exclusivity="exclusive"
+                     data-leads="500"
+                     data-price="697">
+                    <div class="package-badge badge-exclusive">Exclusivo</div>
+                    <div class="package-header">
+                        <h3 class="package-name">Growth Tech</h3>
+                        <span class="package-industry">Tecnología</span>
+                    </div>
+                    <div class="package-meta">
+                        <span class="lead-count">500 leads</span>
+                        <div class="quality-indicator">
+                            <div class="quality-bar active"></div>
+                            <div class="quality-bar active"></div>
+                            <div class="quality-bar"></div>
+                        </div>
+                    </div>
+                    <ul class="package-includes">
+                        <li>Todo Starter, más LinkedIn y teléfono directo.</li>
+                        <li>Señales de intención y dominio de empresa.</li>
+                        <li>Mayor contexto para outreach consultivo.</li>
+                        <li>Reservado para un solo cliente.</li>
+                    </ul>
+                    <div class="package-footer">
+                        <span class="package-price-label">Desde</span>
+                        <span class="package-price-value">$697 <span class="package-price-unit">USD</span></span>
+                        <a href="/#contacto" class="package-cta">Solicitar paquete</a>
+                    </div>
+                </div>
+
+                <div class="package-card featured"
+                     data-package="enterprise_pack"
+                     data-industry="multi"
+                     data-tier="enterprise"
+                     data-exclusivity="exclusive"
+                     data-leads="1000"
+                     data-price="1497">
+                    <div class="package-badge badge-exclusive">Exclusivo</div>
+                    <div class="package-header">
+                        <h3 class="package-name">Enterprise Pack</h3>
+                        <span class="package-industry">Multi-industria</span>
+                    </div>
+                    <div class="package-meta">
+                        <span class="lead-count">1,000 leads</span>
+                        <div class="quality-indicator">
+                            <div class="quality-bar active"></div>
+                            <div class="quality-bar active"></div>
+                            <div class="quality-bar active"></div>
+                        </div>
+                    </div>
+                    <ul class="package-includes">
+                        <li>Todo Growth, más tecnografía y org chart parcial.</li>
+                        <li>Trigger events recientes y scoring de cuentas.</li>
+                        <li>Mayor profundidad para equipos de venta complejos.</li>
+                        <li>Soporte dedicado para definición de criterios.</li>
+                    </ul>
+                    <div class="package-footer">
+                        <span class="package-price-label">Desde</span>
+                        <span class="package-price-value">$1,497 <span class="package-price-unit">USD</span></span>
+                        <a href="/#contacto" class="package-cta">Solicitar paquete</a>
+                    </div>
+                </div>
+
+                <div class="package-card"
+                     data-package="retail_essentials"
+                     data-industry="retail"
+                     data-tier="standard"
+                     data-exclusivity="shared"
+                     data-leads="300"
+                     data-price="347">
+                    <div class="package-badge badge-shared">Compartido</div>
+                    <div class="package-header">
+                        <h3 class="package-name">Retail Essentials</h3>
+                        <span class="package-industry">Retail</span>
+                    </div>
+                    <div class="package-meta">
+                        <span class="lead-count">300 leads</span>
+                        <div class="quality-indicator">
+                            <div class="quality-bar active"></div>
+                            <div class="quality-bar"></div>
+                            <div class="quality-bar"></div>
+                        </div>
+                    </div>
+                    <ul class="package-includes">
+                        <li>Base comercial limpia para activación rápida.</li>
+                        <li>Leads verificados con estructura estándar.</li>
+                        <li>Buen fit para campañas de volumen controlado.</li>
+                        <li>Entrega lista para secuencias o CRM.</li>
+                    </ul>
+                    <div class="package-footer">
+                        <span class="package-price-label">Desde</span>
+                        <span class="package-price-value">$347 <span class="package-price-unit">USD</span></span>
+                        <a href="/#contacto" class="package-cta">Solicitar paquete</a>
+                    </div>
+                </div>
+
+                <div class="package-card"
+                     data-package="real_estate_pro"
+                     data-industry="real_estate"
+                     data-tier="premium"
+                     data-exclusivity="exclusive"
+                     data-leads="400"
+                     data-price="597">
+                    <div class="package-badge badge-exclusive">Exclusivo</div>
+                    <div class="package-header">
+                        <h3 class="package-name">Real Estate Pro</h3>
+                        <span class="package-industry">Real Estate</span>
+                    </div>
+                    <div class="package-meta">
+                        <span class="lead-count">400 leads</span>
+                        <div class="quality-indicator">
+                            <div class="quality-bar active"></div>
+                            <div class="quality-bar active"></div>
+                            <div class="quality-bar"></div>
+                        </div>
+                    </div>
+                    <ul class="package-includes">
+                        <li>Contacto directo verificado y LinkedIn.</li>
+                        <li>Teléfono directo y señales de oportunidad.</li>
+                        <li>Mejor contexto para venta consultiva sectorial.</li>
+                        <li>Exclusividad para proteger el territorio comercial.</li>
+                    </ul>
+                    <div class="package-footer">
+                        <span class="package-price-label">Desde</span>
+                        <span class="package-price-value">$597 <span class="package-price-unit">USD</span></span>
+                        <a href="/#contacto" class="package-cta">Solicitar paquete</a>
+                    </div>
+                </div>
+
+                <div class="package-card"
+                     data-package="fintech_growth"
+                     data-industry="fintech"
+                     data-tier="premium"
+                     data-exclusivity="shared"
+                     data-leads="500"
+                     data-price="797">
+                    <div class="package-badge badge-shared">Compartido</div>
+                    <div class="package-header">
+                        <h3 class="package-name">Fintech Growth</h3>
+                        <span class="package-industry">Fintech</span>
+                    </div>
+                    <div class="package-meta">
+                        <span class="lead-count">500 leads</span>
+                        <div class="quality-indicator">
+                            <div class="quality-bar active"></div>
+                            <div class="quality-bar active"></div>
+                            <div class="quality-bar"></div>
+                        </div>
+                    </div>
+                    <ul class="package-includes">
+                        <li>Decision makers verificados y contexto de cuenta.</li>
+                        <li>LinkedIn, teléfono y señales de intención.</li>
+                        <li>Ideal para campañas de captación outbound.</li>
+                        <li>Segmentación optimizada para minimizar solapamientos.</li>
+                    </ul>
+                    <div class="package-footer">
+                        <span class="package-price-label">Desde</span>
+                        <span class="package-price-value">$797 <span class="package-price-unit">USD</span></span>
+                        <a href="/#contacto" class="package-cta">Solicitar paquete</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="no-results" class="empty-state">
+                <p>No hay paquetes con esa combinación de filtros.</p>
+                <button class="btn-secondary" type="button" onclick="clearFilters()">Limpiar filtros</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-shell">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-label">Proceso</div>
+                <h2 class="section-title">Tres pasos. Sin fricción.</h2>
+                <p class="section-subtitle">Un flujo simple para pasar de necesidad comercial a base activable, sin fricción ni ambiguedad.</p>
+            </div>
+
             <div class="steps-grid">
-                <div class="step">
-                    <div class="step-number">01</div>
-                    <h3 class="step-title">Elige tu paquete</h3>
-                    <p class="step-description">Selecciona industria, nivel de enriquecimiento y cantidad de leads.</p>
+                <div class="step-card">
+                    <div class="step-num">01</div>
+                    <div class="step-title">Elige el paquete correcto</div>
+                    <div class="step-desc">Selecciona industria, calidad y exclusividad según el tipo de cuenta que necesitas activar.</div>
                 </div>
-                <div class="step">
-                    <div class="step-number">02</div>
-                    <h3 class="step-title">Validamos y enriquecemos</h3>
-                    <p class="step-description">Verificamos cada lead contra fuentes activas y enriquecemos según el tier elegido.</p>
+                <div class="step-card">
+                    <div class="step-num">02</div>
+                    <div class="step-title">Validamos y enriquecemos</div>
+                    <div class="step-desc">Validamos contactos, enriquecemos los datos y priorizamos calidad antes de la entrega.</div>
                 </div>
-                <div class="step">
-                    <div class="step-number">03</div>
-                    <h3 class="step-title">Recibe y activa</h3>
-                    <p class="step-description">CSV, JSON o integración directa a tu CRM. Listo para prospectar en 24-48h.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Comparison Table -->
-    <section class="comparison-section">
-        <div class="section-label">Niveles</div>
-        <h2 class="section-title">Qué incluye cada nivel</h2>
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Campo</th>
-                    <th>Estándar</th>
-                    <th>Premium</th>
-                    <th>Enterprise</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>Email verificado</td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
-                <tr><td>Cargo + empresa</td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
-                <tr><td>País + tamaño empresa</td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
-                <tr><td>Estado del email</td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
-                <tr><td>LinkedIn verificado</td><td><span class="dash">&mdash;</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
-                <tr><td>Teléfono directo</td><td><span class="dash">&mdash;</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
-                <tr><td>Señales de intención</td><td><span class="dash">&mdash;</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
-                <tr><td>Dominio de empresa</td><td><span class="dash">&mdash;</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
-                <tr><td>Tecnografía</td><td><span class="dash">&mdash;</span></td><td><span class="dash">&mdash;</span></td><td><span class="check">&#10003;</span></td></tr>
-                <tr><td>Funding + revenue range</td><td><span class="dash">&mdash;</span></td><td><span class="dash">&mdash;</span></td><td><span class="check">&#10003;</span></td></tr>
-                <tr><td>Employee count</td><td><span class="dash">&mdash;</span></td><td><span class="dash">&mdash;</span></td><td><span class="check">&#10003;</span></td></tr>
-                <tr><td>Org chart level</td><td><span class="dash">&mdash;</span></td><td><span class="dash">&mdash;</span></td><td><span class="check">&#10003;</span></td></tr>
-                <tr><td>Account scoring</td><td><span class="dash">&mdash;</span></td><td><span class="dash">&mdash;</span></td><td><span class="check">&#10003;</span></td></tr>
-                <tr><td>Soporte dedicado</td><td><span class="dash">&mdash;</span></td><td><span class="dash">&mdash;</span></td><td><span class="check">&#10003;</span></td></tr>
-                <tr><td>Max créditos / lead</td><td>1</td><td>2</td><td>3</td></tr>
-            </tbody>
-        </table>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq-section">
-        <div class="faq-container">
-            <div class="section-label">FAQ</div>
-            <h2 class="section-title">Preguntas frecuentes</h2>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>¿Qué significa "exclusivo" vs "compartido"?</span>
-                    <span class="faq-toggle">&#9660;</span>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        Los leads exclusivos se entregan a un solo cliente (max_resells: 1). Los compartidos pueden venderse hasta a 3 clientes, pero siempre con segmentación para minimizar solapamientos. Si necesitas cobertura total de tu mercado, elige exclusivo.
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>¿En qué formato recibo los leads?</span>
-                    <span class="faq-toggle">&#9660;</span>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        CSV, JSON o integración directa a tu CRM (Salesforce, HubSpot, Pipedrive). Todos los archivos con campos estandarizados y verificados. Los campos incluidos dependen del tier elegido.
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>¿Tienen garantía de deliverabilidad?</span>
-                    <span class="faq-toggle">&#9660;</span>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        Garantizamos 95%+ de deliverabilidad en emails. Todos los leads son verificados antes de entrega. Si hay problemas, re-verificamos sin costo.
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>¿Puedo pedir un paquete personalizado?</span>
-                    <span class="faq-toggle">&#9660;</span>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        Sí. Armamos paquetes a medida con criterios específicos: industrias, geografías, tamaño de empresa, tecnologías o cualquier otro parámetro. Contacta al equipo para un quote.
-                    </div>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    <span>¿Cuánto demora la entrega?</span>
-                    <span class="faq-toggle">&#9660;</span>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        Estándar: 3-5 días hábiles. Premium: 2-3 días. Enterprise: 24-48 horas. Incluye validación, enriquecimiento y preparación completa.
-                    </div>
+                <div class="step-card">
+                    <div class="step-num">03</div>
+                    <div class="step-title">Recibes y activas</div>
+                    <div class="step-desc">Entrega en CSV, JSON o integración guiada, lista para pasar a CRM y activar outreach.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Banner -->
+    <section class="section-shell" style="padding-top: 0;">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-label">Ventajas</div>
+                <h2 class="section-title">Diseñado para comprar con más claridad.</h2>
+                <p class="section-subtitle">La experiencia prioriza lectura rápida, comparación simple y señales claras para tomar una decisión comercial con confianza.</p>
+            </div>
+
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <div class="proof-title">Lectura comercial inmediata</div>
+                    <div class="proof-desc">Jerarquías más claras, precios legibles y badges visibles para entender valor, exclusividad y volumen sin esfuerzo.</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-title">Comparación sin fricción</div>
+                    <div class="proof-desc">Filtros activos, comparativa por tier, FAQ y CTA repartidos en la página para reducir dudas y acelerar la decisión.</div>
+                </div>
+                <div class="proof-card">
+                    <div class="proof-title">Consistencia de marca</div>
+                    <div class="proof-desc">La página mantiene el mismo tono visual del resto del sitio para que el recorrido se sienta continuo y premium de principio a fin.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-shell" id="niveles" style="padding-top: 0;">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-label">Niveles</div>
+                <h2 class="section-title">Qué incluye cada tier.</h2>
+                <p class="section-subtitle">La tabla comparativa sigue presente para dejar explícita la diferencia entre estándar, premium y enterprise.</p>
+            </div>
+
+            <div class="comparison-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Campo</th>
+                            <th>Estándar</th>
+                            <th>Premium</th>
+                            <th>Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Email verificado</td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
+                        <tr><td>Cargo + empresa</td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
+                        <tr><td>País + tamaño empresa</td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
+                        <tr><td>Estado del email</td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
+                        <tr><td>LinkedIn verificado</td><td><span class="dash">—</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
+                        <tr><td>Teléfono directo</td><td><span class="dash">—</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
+                        <tr><td>Señales de intención</td><td><span class="dash">—</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
+                        <tr><td>Dominio de empresa</td><td><span class="dash">—</span></td><td><span class="check">&#10003;</span></td><td><span class="check">&#10003;</span></td></tr>
+                        <tr><td>Tecnografía</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">&#10003;</span></td></tr>
+                        <tr><td>Funding + revenue range</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">&#10003;</span></td></tr>
+                        <tr><td>Employee count</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">&#10003;</span></td></tr>
+                        <tr><td>Org chart level</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">&#10003;</span></td></tr>
+                        <tr><td>Account scoring</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">&#10003;</span></td></tr>
+                        <tr><td>Soporte dedicado</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">&#10003;</span></td></tr>
+                        <tr><td>Max créditos / lead</td><td>1</td><td>2</td><td>3</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-shell" id="faq" style="padding-top: 0;">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-label">FAQ</div>
+                <h2 class="section-title">Preguntas frecuentes.</h2>
+                <p class="section-subtitle">La capa educativa del marketplace sigue presente para resolver exclusividad, formatos, entregabilidad y personalización sin sacar a la persona del flujo.</p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Qué significa “exclusivo” vs “compartido”?</span>
+                        <span class="faq-toggle">&#9660;</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Los leads exclusivos se entregan a un solo cliente. Los compartidos pueden venderse a más de una cuenta, pero se segmentan para minimizar solapamientos. Si tu prioridad es proteger territorio comercial, elige exclusivo.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿En qué formato recibo los leads?</span>
+                        <span class="faq-toggle">&#9660;</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Entregamos CSV, JSON o integración directa a CRM. Los campos varían según el tier, pero mantenemos consistencia para que el traspaso a operación sea inmediato.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Hay garantía de deliverabilidad?</span>
+                        <span class="faq-toggle">&#9660;</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Sí. La entrega apunta a 95%+ de deliverabilidad en emails verificados. Si aparece un problema de calidad, revalidamos sin costo adicional.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Puedo pedir un paquete personalizado?</span>
+                        <span class="faq-toggle">&#9660;</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Sí. Podemos construir paquetes a medida por industria, geografía, tamaño de empresa, tecnologías, señales o cualquier criterio comercial relevante.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cuánto demora la entrega?</span>
+                        <span class="faq-toggle">&#9660;</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Estándar: 3 a 5 días hábiles. Premium: 2 a 3 días. Enterprise: 24 a 48 horas. El plazo incluye búsqueda, validación, enrichment y preparación final.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="cta-banner">
-        <div class="cta-banner-label">Personalizado</div>
-        <h2 class="cta-banner-headline">¿Necesitas algo más específico?</h2>
-        <p class="cta-banner-sub">Armamos paquetes a medida para cualquier industria, geografía o criterio.</p>
-        <div class="cta-banner-buttons">
-            <a href="/#contacto" class="btn btn-primary">Contactar equipo</a>
-            <button class="btn btn-secondary" onclick="document.querySelector('.packages-section').scrollIntoView({behavior:'smooth'})">Ver paquetes</button>
+        <div class="container">
+            <div class="cta-shell">
+                <div class="section-label" style="justify-content:center;">A medida</div>
+                <h2>¿Necesitas una mezcla más específica?</h2>
+                <p>Armamos paquetes por vertical, geografía, tamaño de empresa, señales o stack tecnológico. Si el catálogo no alcanza, diseñamos uno contigo.</p>
+                <div class="cta-actions">
+                    <a href="/#contacto" class="btn-primary">Contactar equipo</a>
+                    <a href="#paquetes" class="btn-secondary">Volver al catálogo</a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-column">
+        <div class="container footer-shell">
+            <div class="footer-top">
+                <div>
                     <div class="footer-brand">
                         <div class="footer-brand-mark">B</div>
-                        <span class="footer-brand-name">BAKU</span>
+                        <div class="footer-brand-name">BAKU</div>
                     </div>
-                    <p class="footer-description">Leads B2B verificados, enriquecidos y listos para activar. Sin improvisaciones.</p>
+                    <div class="footer-copytext">Paquetes de leads B2B diseñados con criterio comercial y presentados con la misma precisión visual del landing principal.</div>
                 </div>
-                <div class="footer-column">
-                    <h4>Producto</h4>
+
+                <div class="footer-col">
+                    <h4>Navegación</h4>
                     <ul>
                         <li><a href="/">Inicio</a></li>
                         <li><a href="/#servicios">Servicios</a></li>
@@ -1322,44 +1519,37 @@
                         <li><a href="/#contacto">Contacto</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h4>Recursos</h4>
+
+                <div class="footer-col">
+                    <h4>Producto</h4>
                     <ul>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Casos de uso</a></li>
-                        <li><a href="#">Documentación</a></li>
+                        <li><a href="#paquetes">Catálogo</a></li>
+                        <li><a href="#niveles">Comparativa</a></li>
+                        <li><a href="#faq">Preguntas frecuentes</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h4>Compañía</h4>
+
+                <div class="footer-col">
+                    <h4>Social</h4>
                     <ul>
-                        <li><a href="#">Sobre nosotros</a></li>
-                        <li><a href="#">Carreras</a></li>
+                        <li><a href="https://www.instagram.com/agenciabaku/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=100081577189903&sk=directory_links" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                        <li><a href="https://www.linkedin.com/company/agenciabaku" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-divider">
-                <span>&copy; 2026 BAKU. Todos los derechos reservados.</span>
+
+            <div class="footer-bottom">
+                <span>© 2026 BAKU. Todos los derechos reservados.</span>
                 <div class="footer-legal">
-                    <a href="#">Privacidad</a>
-                    <a href="#">Términos</a>
+                    <a href="/#contacto">Contacto</a>
+                    <a href="/leads.html">Paquetes</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        /**
-         * BAKU Leads Marketplace — Filter Engine
-         * data-attributes match backend keys in packages.json:
-         *   data-package  = package key (starter_saas, growth_tech, etc.)
-         *   data-industry = industry key (saas, technology, fintech, etc.)
-         *   data-tier     = tier key (standard, premium, enterprise)
-         *   data-exclusivity = exclusivity key (shared, exclusive)
-         *   data-leads    = lead count (number)
-         *   data-price    = price USD (number)
-         */
-
         const pills = document.querySelectorAll('.pill');
         const cards = document.querySelectorAll('.package-card');
         const noResults = document.getElementById('no-results');
@@ -1370,14 +1560,14 @@
             exclusivity: []
         };
 
-        pills.forEach(pill => {
-            pill.addEventListener('click', function() {
+        pills.forEach((pill) => {
+            pill.addEventListener('click', function () {
                 const filterType = this.dataset.filter;
                 const filterValue = this.dataset.value;
 
                 if (this.classList.contains('active')) {
                     this.classList.remove('active');
-                    activeFilters[filterType] = activeFilters[filterType].filter(v => v !== filterValue);
+                    activeFilters[filterType] = activeFilters[filterType].filter((value) => value !== filterValue);
                 } else {
                     this.classList.add('active');
                     activeFilters[filterType].push(filterValue);
@@ -1390,42 +1580,40 @@
         function filterPackages() {
             let visibleCount = 0;
 
-            cards.forEach(card => {
+            cards.forEach((card) => {
                 let show = true;
 
                 for (const [key, values] of Object.entries(activeFilters)) {
-                    if (values.length > 0) {
-                        const cardValue = card.dataset[key];
-                        if (!values.includes(cardValue)) {
-                            show = false;
-                            break;
-                        }
+                    if (values.length > 0 && !values.includes(card.dataset[key])) {
+                        show = false;
+                        break;
                     }
                 }
 
                 card.classList.toggle('hidden', !show);
-                if (show) visibleCount++;
+                if (show) visibleCount += 1;
             });
 
             noResults.style.display = visibleCount === 0 ? 'block' : 'none';
         }
 
         function clearFilters() {
-            pills.forEach(p => p.classList.remove('active'));
-            Object.keys(activeFilters).forEach(k => activeFilters[k] = []);
+            pills.forEach((pill) => pill.classList.remove('active'));
+            Object.keys(activeFilters).forEach((key) => {
+                activeFilters[key] = [];
+            });
             filterPackages();
         }
 
-        // FAQ accordion
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', function() {
+        document.querySelectorAll('.faq-question').forEach((question) => {
+            question.addEventListener('click', function () {
                 const answer = this.nextElementSibling;
                 const toggle = this.querySelector('.faq-toggle');
 
-                document.querySelectorAll('.faq-question').forEach(q => {
-                    if (q !== question) {
-                        q.nextElementSibling.classList.remove('open');
-                        q.querySelector('.faq-toggle').classList.remove('open');
+                document.querySelectorAll('.faq-question').forEach((other) => {
+                    if (other !== question) {
+                        other.nextElementSibling.classList.remove('open');
+                        other.querySelector('.faq-toggle').classList.remove('open');
                     }
                 });
 
