@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Carrito - BAKU</title>
+    <meta name="description" content="Revisa el paquete de leads personalizado, confirma criterios, volumen y total estimado antes de avanzar al pago.">
+    <link rel="canonical" href="https://www.agenciabaku.com/cart.html">
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/checkout-flow.css">
+</head>
+<body data-page="cart">
+    <nav>
+        <a href="/leads.html" class="nav-logo" aria-label="BAKU paquetes">
+            <div class="nav-logo-mark">B</div>
+            <div>
+                <div class="nav-brand">BAKU</div>
+                <div class="nav-tagline">Cart review</div>
+            </div>
+        </a>
+        <div class="nav-actions">
+            <a href="/leads.html" class="nav-link">Paquetes</a>
+            <a href="/payment.html" class="nav-cta">Ir al pago</a>
+        </div>
+    </nav>
+
+    <section class="flow-hero" data-watermark="CART">
+        <div class="container hero-grid">
+            <div class="hero-copy">
+                <div class="eyebrow">Revision antes del pago</div>
+                <h1 class="hero-title">Confirma tu brief, el volumen final y el <em>alcance real del pedido</em>.</h1>
+                <p>
+                    Este carrito no es solo una suma. Es la ultima vista completa del pedido:
+                    package base, filtros ICP, exclusiones, formato de entrega y extras operativos.
+                </p>
+            </div>
+
+            <aside class="hero-panel">
+                <div class="hero-panel-kicker">Que revisar aqui</div>
+                <ul class="hero-panel-list">
+                    <li>Que la segmentacion represente exactamente a tu buyer persona.</li>
+                    <li>Que volumen, exclusividad y plazo coincidan con tu capacidad de activacion.</li>
+                    <li>Que el formato de entrega y las exclusiones queden cerradas antes del pago.</li>
+                </ul>
+            </aside>
+        </div>
+    </section>
+
+    <section class="progress-strip">
+        <div class="container progress-grid">
+            <div class="progress-step done">
+                <div class="progress-label">Paso 1</div>
+                <div class="progress-title">Personalizacion final</div>
+            </div>
+            <div class="progress-step active">
+                <div class="progress-label">Paso 2</div>
+                <div class="progress-title">Carrito y confirmacion</div>
+            </div>
+            <div class="progress-step">
+                <div class="progress-label">Paso 3</div>
+                <div class="progress-title">Pago</div>
+            </div>
+        </div>
+    </section>
+
+    <main class="page-shell">
+        <div class="container">
+            <div id="cart-empty" class="empty-state" style="display:none;">
+                <p>No hay un paquete configurado todavia.</p>
+                <div class="cta-row" style="justify-content:center;">
+                    <a class="btn-primary" href="/leads.html">Elegir paquete</a>
+                </div>
+            </div>
+
+            <div id="cart-content" class="editor-grid">
+                <div class="stack">
+                    <section class="panel">
+                        <div class="section-kicker">Resumen del producto</div>
+                        <h2 id="cart-package-name">Growth Tech</h2>
+                        <p class="panel-intro" id="cart-package-copy">500 leads de tecnologia enriquecidos con LinkedIn, telefono y senales de intencion.</p>
+
+                        <div class="summary-section">
+                            <div class="summary-pills" id="cart-pill-list"></div>
+                        </div>
+
+                        <div class="summary-section">
+                            <div class="detail-list" id="cart-targeting-details"></div>
+                        </div>
+                    </section>
+
+                    <section class="panel">
+                        <div class="section-kicker">Operacion</div>
+                        <h3>Como se va a preparar la entrega.</h3>
+                        <div class="detail-list" id="cart-ops-details"></div>
+                    </section>
+                </div>
+
+                <aside class="sticky-panel stack">
+                    <section class="panel">
+                        <div class="summary-head">
+                            <div>
+                                <div class="summary-tag" id="cart-package-meta">Tecnologia / Premium / 500 leads base</div>
+                                <div class="summary-title" id="cart-total">$697</div>
+                                <div class="summary-subtitle">Total estimado con la configuracion actual.</div>
+                            </div>
+                        </div>
+
+                        <div class="summary-section">
+                            <div class="price-table">
+                                <div class="price-row"><span>Volumen final</span><strong id="cart-count">500 leads</strong></div>
+                                <div class="price-row"><span>Turnaround</span><strong id="cart-turnaround">3 a 5 dias habiles</strong></div>
+                            </div>
+                        </div>
+
+                        <div class="summary-section">
+                            <div class="summary-label">Desglose</div>
+                            <div id="cart-pricing" class="price-table"></div>
+                        </div>
+
+                        <div class="cta-row">
+                            <a href="/payment.html" class="btn-primary">Continuar al pago</a>
+                            <a id="edit-customization" href="/customize.html" class="btn-secondary">Editar configuracion</a>
+                        </div>
+                    </section>
+
+                    <section class="panel">
+                        <div class="section-kicker">Siguiente paso</div>
+                        <h3>En pago cierras el pedido.</h3>
+                        <ul class="summary-list">
+                            <li>Completa tus datos de compra y facturacion.</li>
+                            <li>Elige tarjeta, transferencia o invoice.</li>
+                            <li>Confirma el pedido y dejamos registrado el brief final.</li>
+                        </ul>
+                    </section>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-shell">
+            <span>BAKU / Carrito de compra</span>
+            <span><a href="/customize.html">Personalizacion</a> / <a href="/payment.html">Pago</a></span>
+        </div>
+    </footer>
+
+    <script src="/checkout-flow.js"></script>
+</body>
+</html>

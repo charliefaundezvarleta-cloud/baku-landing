@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Personaliza tu paquete de leads - BAKU</title>
+    <meta name="description" content="Ultimo paso antes del carrito: define ICP, geografia, cargos, tamano de empresa, filtros, enriquecimiento y formato de entrega para tu paquete de leads B2B.">
+    <link rel="canonical" href="https://www.agenciabaku.com/customize.html">
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/checkout-flow.css">
+</head>
+<body data-page="customize">
+    <nav>
+        <a href="/leads.html" class="nav-logo" aria-label="BAKU paquetes">
+            <div class="nav-logo-mark">B</div>
+            <div>
+                <div class="nav-brand">BAKU</div>
+                <div class="nav-tagline">Lead packages</div>
+            </div>
+        </a>
+        <div class="nav-actions">
+            <a href="/leads.html" class="nav-link">Volver a paquetes</a>
+            <a href="/cart.html" class="nav-cta">Ir al carrito</a>
+        </div>
+    </nav>
+
+    <section class="flow-hero" data-watermark="CUSTOM">
+        <div class="container hero-grid">
+            <div class="hero-copy">
+                <div class="eyebrow">Ultimo paso antes del carrito</div>
+                <h1 class="hero-title">Afina el paquete con el <em>nivel exacto de segmentacion</em> que necesita tu equipo.</h1>
+                <p>
+                    Aqui defines el brief comercial fino: ICP, geografia, volumen final, seniority,
+                    filtros de cuenta, tecnografia, exclusiones y formato de entrega. Despues confirmas
+                    en carrito y pasas al pago.
+                </p>
+            </div>
+
+            <aside class="hero-panel">
+                <div class="hero-panel-kicker">Paquete seleccionado</div>
+                <div class="hero-panel-title" id="selected-package-name">Growth Tech</div>
+                <div class="summary-subtitle" id="selected-package-meta">Tecnologia / Premium / 500 leads base</div>
+                <div class="summary-subtitle" id="selected-package-copy" style="margin-top:12px;">500 leads de tecnologia enriquecidos con LinkedIn, telefono y senales de intencion.</div>
+                <div class="summary-section">
+                    <div class="summary-label">Incluye</div>
+                    <ul class="hero-panel-list" id="selected-package-includes"></ul>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <section class="progress-strip">
+        <div class="container progress-grid">
+            <div class="progress-step active">
+                <div class="progress-label">Paso 1</div>
+                <div class="progress-title">Personalizacion final</div>
+            </div>
+            <div class="progress-step">
+                <div class="progress-label">Paso 2</div>
+                <div class="progress-title">Carrito y confirmacion</div>
+            </div>
+            <div class="progress-step">
+                <div class="progress-label">Paso 3</div>
+                <div class="progress-title">Pago</div>
+            </div>
+        </div>
+    </section>
+
+    <main class="page-shell">
+        <div class="container editor-grid">
+            <form id="customize-form" class="stack">
+                <section class="panel">
+                    <div class="section-kicker">Contexto</div>
+                    <h2>Define el brief comercial.</h2>
+                    <p class="panel-intro">El objetivo es que el paquete llegue con el nivel de precision suficiente para entrar directo a activacion comercial, no para re-trabajarlo internamente.</p>
+
+                    <div class="field-grid two-col">
+                        <div class="field">
+                            <label for="campaignName">Nombre interno del pedido</label>
+                            <input id="campaignName" class="input" type="text" name="campaignName" placeholder="Ej: ABM fintech Mexico Q2">
+                        </div>
+                        <div class="field">
+                            <label for="teamName">Equipo o owner comercial</label>
+                            <input id="teamName" class="input" type="text" name="teamName" placeholder="Ej: SDR team Latam">
+                        </div>
+                    </div>
+
+                    <div class="field-grid">
+                        <fieldset class="field">
+                            <legend>Objetivo del paquete</legend>
+                            <div class="option-grid two-col">
+                                <div class="choice-card">
+                                    <input type="radio" id="objective-pipeline" name="objective" value="pipeline">
+                                    <label for="objective-pipeline">
+                                        <span class="choice-title">Pipeline nuevo</span>
+                                        <span class="choice-desc">Prospeccion outbound para abrir conversaciones nuevas con velocidad.</span>
+                                    </label>
+                                </div>
+                                <div class="choice-card">
+                                    <input type="radio" id="objective-abm" name="objective" value="abm">
+                                    <label for="objective-abm">
+                                        <span class="choice-title">ABM / named accounts</span>
+                                        <span class="choice-desc">Segmentacion mas cerrada para cuentas prioritarias y comites de compra.</span>
+                                    </label>
+                                </div>
+                                <div class="choice-card">
+                                    <input type="radio" id="objective-territory" name="objective" value="territory">
+                                    <label for="objective-territory">
+                                        <span class="choice-title">Expansion geografica</span>
+                                        <span class="choice-desc">Apertura de un nuevo territorio o cluster regional.</span>
+                                    </label>
+                                </div>
+                                <div class="choice-card">
+                                    <input type="radio" id="objective-enterprise" name="objective" value="enterprise">
+                                    <label for="objective-enterprise">
+                                        <span class="choice-title">Prospeccion enterprise</span>
+                                        <span class="choice-desc">Mas profundidad, mas capas de cuenta y foco en stakeholders senior.</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </section>
+
+                <section class="panel">
+                    <div class="section-kicker">ICP y geografia</div>
+                    <h3>Recorta el mercado objetivo.</h3>
+                    <p class="panel-intro">Mientras mas claro quede este bloque, mas accionable sera la entrega final.</p>
+
+                    <div class="field-grid">
+                        <fieldset class="field">
+                            <legend>Regiones prioritarias</legend>
+                            <div class="chip-grid">
+                                <div class="chip"><input type="checkbox" id="region-latam" name="regions" value="latam"><label for="region-latam">LATAM</label></div>
+                                <div class="chip"><input type="checkbox" id="region-na" name="regions" value="north_america"><label for="region-na">North America</label></div>
+                                <div class="chip"><input type="checkbox" id="region-europe" name="regions" value="europe"><label for="region-europe">Europa</label></div>
+                                <div class="chip"><input type="checkbox" id="region-me" name="regions" value="middle_east"><label for="region-me">Middle East</label></div>
+                                <div class="chip"><input type="checkbox" id="region-remote" name="regions" value="remote"><label for="region-remote">Global / remoto</label></div>
+                            </div>
+                        </fieldset>
+
+                        <div class="field-grid two-col">
+                            <div class="field">
+                                <label for="countries">Paises o mercados especificos</label>
+                                <textarea id="countries" class="textarea" name="countries" placeholder="Ej: Mexico, Chile, Colombia, US Hispanic market"></textarea>
+                            </div>
+                            <div class="field">
+                                <label for="cities">Ciudades o hubs prioritarios</label>
+                                <textarea id="cities" class="textarea" name="cities" placeholder="Ej: CDMX, Bogota, Miami, Madrid"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="subVerticals">Industria, subverticales o use cases</label>
+                            <textarea id="subVerticals" class="textarea" name="subVerticals" placeholder="Ej: SaaS de RRHH, fintech B2B, retail omnicanal, proptech comercial"></textarea>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="panel">
+                    <div class="section-kicker">Cuenta ideal</div>
+                    <h3>Define el tipo de empresa que quieres recibir.</h3>
+
+                    <div class="field-grid">
+                        <fieldset class="field">
+                            <legend>Tamano de empresa</legend>
+                            <div class="chip-grid">
+                                <div class="chip"><input type="checkbox" id="size-smb" name="companySizes" value="smb"><label for="size-smb">1-50 empleados</label></div>
+                                <div class="chip"><input type="checkbox" id="size-mid" name="companySizes" value="midmarket"><label for="size-mid">51-200 empleados</label></div>
+                                <div class="chip"><input type="checkbox" id="size-upper" name="companySizes" value="upper_midmarket"><label for="size-upper">201-1000 empleados</label></div>
+                                <div class="chip"><input type="checkbox" id="size-ent" name="companySizes" value="enterprise"><label for="size-ent">1000+ empleados</label></div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="field">
+                            <legend>Revenue / stage</legend>
+                            <div class="chip-grid">
+                                <div class="chip"><input type="checkbox" id="rev-early" name="revenueBands" value="early"><label for="rev-early">Pre-seed a Series A</label></div>
+                                <div class="chip"><input type="checkbox" id="rev-growth" name="revenueBands" value="growth"><label for="rev-growth">Series B-C</label></div>
+                                <div class="chip"><input type="checkbox" id="rev-mature" name="revenueBands" value="mature"><label for="rev-mature">Scale-up / profitable</label></div>
+                                <div class="chip"><input type="checkbox" id="rev-public" name="revenueBands" value="public"><label for="rev-public">Publicas o corporates</label></div>
+                            </div>
+                        </fieldset>
+
+                        <div class="field">
+                            <label for="technologyKeywords">Stack, tecnologias o atributos de cuenta</label>
+                            <textarea id="technologyKeywords" class="textarea" name="technologyKeywords" placeholder="Ej: usa HubSpot, Shopify Plus, Salesforce, AWS, active outbound team, marketplace model"></textarea>
+                        </div>
+
+                        <div class="field">
+                            <label for="namedAccounts">Named accounts o listas foco</label>
+                            <textarea id="namedAccounts" class="textarea" name="namedAccounts" placeholder="Si ya tienes cuentas target, pegarlas aqui ayuda a priorizar y excluir overlaps."></textarea>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="panel">
+                    <div class="section-kicker">Buyer persona</div>
+                    <h3>Filtra por rol, area y nivel de decision.</h3>
+
+                    <div class="field-grid">
+                        <fieldset class="field">
+                            <legend>Seniority</legend>
+                            <div class="chip-grid">
+                                <div class="chip"><input type="checkbox" id="level-founder" name="jobLevels" value="founder"><label for="level-founder">Founder / C-Level</label></div>
+                                <div class="chip"><input type="checkbox" id="level-vp" name="jobLevels" value="vp"><label for="level-vp">VP / Head</label></div>
+                                <div class="chip"><input type="checkbox" id="level-director" name="jobLevels" value="director"><label for="level-director">Director</label></div>
+                                <div class="chip"><input type="checkbox" id="level-manager" name="jobLevels" value="manager"><label for="level-manager">Manager</label></div>
+                                <div class="chip"><input type="checkbox" id="level-specialist" name="jobLevels" value="icp_specialist"><label for="level-specialist">Specialist</label></div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="field">
+                            <legend>Departamentos</legend>
+                            <div class="chip-grid">
+                                <div class="chip"><input type="checkbox" id="dept-sales" name="departments" value="sales"><label for="dept-sales">Sales</label></div>
+                                <div class="chip"><input type="checkbox" id="dept-marketing" name="departments" value="marketing"><label for="dept-marketing">Marketing</label></div>
+                                <div class="chip"><input type="checkbox" id="dept-revops" name="departments" value="revenue_ops"><label for="dept-revops">Revenue Ops</label></div>
+                                <div class="chip"><input type="checkbox" id="dept-partnerships" name="departments" value="partnerships"><label for="dept-partnerships">Partnerships</label></div>
+                                <div class="chip"><input type="checkbox" id="dept-product" name="departments" value="product"><label for="dept-product">Product</label></div>
+                                <div class="chip"><input type="checkbox" id="dept-finance" name="departments" value="finance"><label for="dept-finance">Finance</label></div>
+                            </div>
+                        </fieldset>
+
+                        <div class="field">
+                            <label for="titleKeywords">Titulos, keywords o combinaciones de cargo</label>
+                            <textarea id="titleKeywords" class="textarea" name="titleKeywords" placeholder="Ej: VP Sales, Head of Growth, Director Revenue Operations, Country Manager, Demand Gen"></textarea>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="panel">
+                    <div class="section-kicker">Senales y calidad</div>
+                    <h3>Agrega capas de enrich y filtros de compra.</h3>
+
+                    <div class="field-grid">
+                        <fieldset class="field">
+                            <legend>Senales prioritarias</legend>
+                            <div class="chip-grid">
+                                <div class="chip"><input type="checkbox" id="signal-hiring" name="intentSignals" value="hiring"><label for="signal-hiring">Hiring activo</label></div>
+                                <div class="chip"><input type="checkbox" id="signal-funding" name="intentSignals" value="new_funding"><label for="signal-funding">Funding reciente</label></div>
+                                <div class="chip"><input type="checkbox" id="signal-tech" name="intentSignals" value="tech_change"><label for="signal-tech">Cambio de stack</label></div>
+                                <div class="chip"><input type="checkbox" id="signal-expansion" name="intentSignals" value="expansion"><label for="signal-expansion">Expansion geografica</label></div>
+                                <div class="chip"><input type="checkbox" id="signal-outbound" name="intentSignals" value="outbound_ready"><label for="signal-outbound">Equipo outbound activo</label></div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="field">
+                            <legend>Campos minimos por lead</legend>
+                            <div class="chip-grid">
+                                <div class="chip"><input type="checkbox" id="field-email" name="requiredFields" value="work_email"><label for="field-email">Work email verificado</label></div>
+                                <div class="chip"><input type="checkbox" id="field-linkedin" name="requiredFields" value="linkedin"><label for="field-linkedin">LinkedIn</label></div>
+                                <div class="chip"><input type="checkbox" id="field-phone" name="requiredFields" value="direct_dial"><label for="field-phone">Telefono directo</label></div>
+                                <div class="chip"><input type="checkbox" id="field-intent" name="requiredFields" value="intent"><label for="field-intent">Intent signals</label></div>
+                                <div class="chip"><input type="checkbox" id="field-domain" name="requiredFields" value="company_domain"><label for="field-domain">Dominio empresa</label></div>
+                                <div class="chip"><input type="checkbox" id="field-tech" name="requiredFields" value="technologies"><label for="field-tech">Tecnografia</label></div>
+                                <div class="chip"><input type="checkbox" id="field-org" name="requiredFields" value="org_chart"><label for="field-org">Org chart level</label></div>
+                            </div>
+                        </fieldset>
+
+                        <div class="field">
+                            <label for="exclusions">Exclusiones o suppression list</label>
+                            <textarea id="exclusions" class="textarea" name="exclusions" placeholder="Ej: excluir clientes actuales, partners, competidores, paises no target o dominios especificos"></textarea>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="panel">
+                    <div class="section-kicker">Volumen y entrega</div>
+                    <h3>Deja listo el pedido para operacion.</h3>
+
+                    <div class="field-grid">
+                        <fieldset class="field">
+                            <legend>Volumen adicional sobre el paquete base</legend>
+                            <div class="option-grid two-col">
+                                <div class="choice-card">
+                                    <input type="radio" id="extra-0" name="leadCountExtra" value="0">
+                                    <label for="extra-0">
+                                        <span class="choice-title">Sin extra</span>
+                                        <span class="choice-desc">Mantener volumen base del paquete.</span>
+                                        <span class="choice-price">+ $0</span>
+                                    </label>
+                                </div>
+                                <div class="choice-card">
+                                    <input type="radio" id="extra-100" name="leadCountExtra" value="100">
+                                    <label for="extra-100">
+                                        <span class="choice-title">+100 leads</span>
+                                        <span class="choice-desc">Ideal para ampliar cobertura sin cambiar demasiado el scope.</span>
+                                    </label>
+                                </div>
+                                <div class="choice-card">
+                                    <input type="radio" id="extra-250" name="leadCountExtra" value="250">
+                                    <label for="extra-250">
+                                        <span class="choice-title">+250 leads</span>
+                                        <span class="choice-desc">Buen punto para outbound multisegmento.</span>
+                                    </label>
+                                </div>
+                                <div class="choice-card">
+                                    <input type="radio" id="extra-500" name="leadCountExtra" value="500">
+                                    <label for="extra-500">
+                                        <span class="choice-title">+500 leads</span>
+                                        <span class="choice-desc">Pensado para equipos con mayor capacidad de activacion.</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="field">
+                            <legend>Turnaround</legend>
+                            <div class="option-grid three-col">
+                                <div class="choice-card">
+                                    <input type="radio" id="turn-standard" name="turnaround" value="standard">
+                                    <label for="turn-standard">
+                                        <span class="choice-title">Normal</span>
+                                        <span class="choice-desc">3 a 5 dias habiles</span>
+                                        <span class="choice-price">Incluido</span>
+                                    </label>
+                                </div>
+                                <div class="choice-card">
+                                    <input type="radio" id="turn-priority" name="turnaround" value="priority">
+                                    <label for="turn-priority">
+                                        <span class="choice-title">Prioridad</span>
+                                        <span class="choice-desc">48 a 72 horas</span>
+                                        <span class="choice-price">+ $149</span>
+                                    </label>
+                                </div>
+                                <div class="choice-card">
+                                    <input type="radio" id="turn-rush" name="turnaround" value="rush">
+                                    <label for="turn-rush">
+                                        <span class="choice-title">Rush</span>
+                                        <span class="choice-desc">24 a 48 horas</span>
+                                        <span class="choice-price">+ $299</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="field" id="exclusive-upgrade-block">
+                            <legend>Exclusividad</legend>
+                            <div class="option-grid two-col">
+                                <div class="choice-card">
+                                    <input type="radio" id="exclusive-shared" name="exclusivityChoice" value="shared">
+                                    <label for="exclusive-shared">
+                                        <span class="choice-title">Compartido</span>
+                                        <span class="choice-desc">Opcion base para volumen controlado con mejor costo.</span>
+                                    </label>
+                                </div>
+                                <div class="choice-card">
+                                    <input type="radio" id="exclusive-exclusive" name="exclusivityChoice" value="exclusive">
+                                    <label for="exclusive-exclusive">
+                                        <span class="choice-title">Upgrade a exclusivo</span>
+                                        <span class="choice-desc">Reserva ese universo para un solo cliente.</span>
+                                        <span class="choice-price">Precio estimado adicional variable</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div id="exclusive-locked-note" class="success-note" style="display:none;">
+                            Este paquete ya es exclusivo por defecto. No necesitas agregar upgrade adicional.
+                        </div>
+
+                        <fieldset class="field">
+                            <legend>Add-ons operativos</legend>
+                            <div class="chip-grid">
+                                <div class="chip"><input type="checkbox" id="addon-dials" name="addOns" value="direct_dials_plus"><label for="addon-dials">Refuerzo de telefonos</label></div>
+                                <div class="chip"><input type="checkbox" id="addon-intent" name="addOns" value="intent_boost"><label for="addon-intent">Intent boost</label></div>
+                                <div class="chip"><input type="checkbox" id="addon-techno" name="addOns" value="technographics_plus"><label for="addon-techno">Technographics+</label></div>
+                                <div class="chip"><input type="checkbox" id="addon-crm" name="addOns" value="crm_mapping"><label for="addon-crm">Mapeo para CRM</label></div>
+                                <div class="chip"><input type="checkbox" id="addon-scoring" name="addOns" value="scoring"><label for="addon-scoring">Scoring custom</label></div>
+                                <div class="chip"><input type="checkbox" id="addon-suppression" name="addOns" value="suppression_review"><label for="addon-suppression">Suppression review</label></div>
+                            </div>
+                        </fieldset>
+
+                        <div class="field-grid two-col">
+                            <div class="field">
+                                <label for="outputFormat">Formato de entrega</label>
+                                <select id="outputFormat" class="select" name="outputFormat">
+                                    <option value="csv">CSV listo para cargar</option>
+                                    <option value="sheets">Google Sheets compartido</option>
+                                    <option value="hubspot">Plantilla HubSpot</option>
+                                    <option value="salesforce">Plantilla Salesforce</option>
+                                    <option value="json">JSON / webhook</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="crmSync">Destino o stack comercial</label>
+                                <select id="crmSync" class="select" name="crmSync">
+                                    <option value="none">Sin stack especifico</option>
+                                    <option value="hubspot">HubSpot</option>
+                                    <option value="salesforce">Salesforce</option>
+                                    <option value="pipedrive">Pipedrive</option>
+                                    <option value="apollo">Apollo</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="field-grid two-col">
+                            <div class="field">
+                                <label for="freshnessWindow">Freshness window</label>
+                                <select id="freshnessWindow" class="select" name="freshnessWindow">
+                                    <option value="30">Ultimos 30 dias</option>
+                                    <option value="60">Ultimos 60 dias</option>
+                                    <option value="90">Ultimos 90 dias</option>
+                                    <option value="180">Ultimos 180 dias</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="dedupeAgainstCrm">Deduplicar contra base existente</label>
+                                <select id="dedupeAgainstCrm" class="select" name="dedupeAgainstCrm">
+                                    <option value="yes">Si, evitar overlaps</option>
+                                    <option value="no">No, entregar universo completo</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="notes">Notas especiales para el analista</label>
+                            <textarea id="notes" class="textarea" name="notes" placeholder="Agrega aqui cualquier criterio fino: lenguaje, compliance, exclusions complejas, buyer committee, filtros por tecnologia o segmentacion por pain point."></textarea>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="panel">
+                    <div class="section-kicker">Listo para confirmar</div>
+                    <h3>Cuando sigas, este brief pasa a carrito.</h3>
+                    <p class="panel-intro">En el carrito vas a revisar el resumen completo, el total estimado y los detalles del pedido antes del pago.</p>
+                    <div class="cta-row">
+                        <button class="btn-primary" type="submit">Guardar configuracion e ir al carrito</button>
+                        <button class="btn-ghost" id="reset-brief" type="button">Restaurar defaults</button>
+                        <a class="btn-secondary" href="/leads.html">Elegir otro paquete</a>
+                    </div>
+                </section>
+            </form>
+
+            <aside class="sticky-panel stack">
+                <section class="panel">
+                    <div class="summary-head">
+                        <div>
+                            <div class="summary-tag" id="summary-package-tag">Premium / Exclusivo</div>
+                            <div class="summary-title" id="summary-package-name">Growth Tech</div>
+                            <div class="summary-subtitle" id="summary-package-copy">500 leads de tecnologia enriquecidos con LinkedIn, telefono y senales de intencion.</div>
+                        </div>
+                        <div>
+                            <div class="summary-label">Desde</div>
+                            <div class="choice-title" id="selected-package-price">$697</div>
+                            <div class="choice-desc" id="selected-package-count">500 leads base</div>
+                        </div>
+                    </div>
+
+                    <div class="summary-section">
+                        <div class="summary-label">Targeting destacado</div>
+                        <div class="summary-pills" id="summary-targeting-pills"></div>
+                    </div>
+
+                    <div class="summary-section">
+                        <div class="summary-label">Campos y enrich</div>
+                        <div class="summary-pills" id="summary-field-pills"></div>
+                    </div>
+
+                    <div class="summary-section">
+                        <div class="summary-label">Operacion</div>
+                        <div class="price-table">
+                            <div class="price-row"><span>Volumen final</span><strong id="summary-volume">500 leads</strong></div>
+                            <div class="price-row"><span>Turnaround</span><strong id="summary-turnaround">3 a 5 dias habiles</strong></div>
+                        </div>
+                    </div>
+
+                    <div class="summary-section">
+                        <div class="summary-label">Total estimado</div>
+                        <div id="summary-pricing" class="price-table"></div>
+                    </div>
+                </section>
+
+                <section class="panel">
+                    <div class="section-kicker">Consejo</div>
+                    <h3>No intentes resolverlo todo con volumen.</h3>
+                    <ul class="summary-list">
+                        <li>Conviene cerrar primero geografia, seniority y subvertical antes de subir la cantidad.</li>
+                        <li>Si el objetivo es ABM, usa named accounts y exclusiones para proteger calidad.</li>
+                        <li>Si la base se conecta a CRM, activa mapeo o define formato exacto desde ya.</li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-shell">
+            <span>BAKU / Configuracion final de paquete</span>
+            <span><a href="/leads.html">Paquetes</a> / <a href="/cart.html">Carrito</a></span>
+        </div>
+    </footer>
+
+    <script src="/checkout-flow.js"></script>
+</body>
+</html>

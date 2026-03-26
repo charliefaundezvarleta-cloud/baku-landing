@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Pago - BAKU</title>
+    <meta name="description" content="Completa tus datos de contacto, facturacion y metodo de pago para confirmar tu paquete de leads B2B personalizado.">
+    <link rel="canonical" href="https://www.agenciabaku.com/payment.html">
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/checkout-flow.css">
+</head>
+<body data-page="payment">
+    <nav>
+        <a href="/leads.html" class="nav-logo" aria-label="BAKU paquetes">
+            <div class="nav-logo-mark">B</div>
+            <div>
+                <div class="nav-brand">BAKU</div>
+                <div class="nav-tagline">Payment</div>
+            </div>
+        </a>
+        <div class="nav-actions">
+            <a href="/cart.html" class="nav-link">Volver al carrito</a>
+            <a href="/leads.html" class="nav-cta">Ver paquetes</a>
+        </div>
+    </nav>
+
+    <section class="flow-hero" data-watermark="PAY">
+        <div class="container hero-grid">
+            <div class="hero-copy">
+                <div class="eyebrow">Paso final</div>
+                <h1 class="hero-title">Cierra el pedido y deja lista la <em>activacion comercial</em>.</h1>
+                <p>
+                    Completa contacto, facturacion y metodo de pago. El brief que armaste en el paso
+                    anterior se mantiene intacto y viaja junto al pedido.
+                </p>
+            </div>
+
+            <aside class="hero-panel">
+                <div class="hero-panel-kicker">Al confirmar</div>
+                <ul class="hero-panel-list">
+                    <li>El equipo recibe el pedido con el brief completo y el alcance validado.</li>
+                    <li>Se bloquea el slot operativo segun el turnaround seleccionado.</li>
+                    <li>Te llega confirmacion con codigo de pedido y proximo contacto.</li>
+                </ul>
+            </aside>
+        </div>
+    </section>
+
+    <section class="progress-strip">
+        <div class="container progress-grid">
+            <div class="progress-step done">
+                <div class="progress-label">Paso 1</div>
+                <div class="progress-title">Personalizacion final</div>
+            </div>
+            <div class="progress-step done">
+                <div class="progress-label">Paso 2</div>
+                <div class="progress-title">Carrito y confirmacion</div>
+            </div>
+            <div class="progress-step active">
+                <div class="progress-label">Paso 3</div>
+                <div class="progress-title">Pago</div>
+            </div>
+        </div>
+    </section>
+
+    <main class="page-shell">
+        <div class="container">
+            <div id="payment-empty" class="empty-state" style="display:none;">
+                <p>No hay un pedido activo para pagar.</p>
+                <div class="cta-row" style="justify-content:center;">
+                    <a class="btn-primary" href="/leads.html">Elegir paquete</a>
+                </div>
+            </div>
+
+            <div id="payment-content" class="editor-grid">
+                <div class="stack">
+                    <div id="payment-success" class="success-state">
+                        <div class="section-kicker">Pedido confirmado</div>
+                        <h3>Tu pedido quedo reservado.</h3>
+                        <p class="panel-intro">Codigo <strong id="success-order-code">BK-XXXXXX</strong>. Te enviaremos la confirmacion a <strong id="success-contact-email">tu correo</strong> y seguiremos con <strong id="success-payment-method">tarjeta</strong> como metodo elegido.</p>
+                        <div class="price-row total">
+                            <span>Total confirmado</span>
+                            <strong id="success-order-total">$0</strong>
+                        </div>
+                    </div>
+
+                    <form id="payment-form" class="stack">
+                        <section class="panel">
+                            <div class="section-kicker">Contacto</div>
+                            <h2>Quien compra y quien recibe.</h2>
+                            <div class="field-grid two-col">
+                                <div class="field">
+                                    <label for="fullName">Nombre completo</label>
+                                    <input id="fullName" class="input" type="text" name="fullName" placeholder="Nombre y apellido" required>
+                                </div>
+                                <div class="field">
+                                    <label for="email">Email de confirmacion</label>
+                                    <input id="email" class="input" type="email" name="email" placeholder="nombre@empresa.com" required>
+                                </div>
+                            </div>
+                            <div class="field-grid two-col">
+                                <div class="field">
+                                    <label for="company">Empresa</label>
+                                    <input id="company" class="input" type="text" name="company" placeholder="Nombre legal o comercial" required>
+                                </div>
+                                <div class="field">
+                                    <label for="phone">Telefono</label>
+                                    <input id="phone" class="input" type="text" name="phone" placeholder="+56 9 1234 5678">
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="panel">
+                            <div class="section-kicker">Facturacion</div>
+                            <h3>Datos administrativos</h3>
+                            <div class="field-grid two-col">
+                                <div class="field">
+                                    <label for="billingName">Razon social</label>
+                                    <input id="billingName" class="input" type="text" name="billingName" placeholder="Empresa facturada">
+                                </div>
+                                <div class="field">
+                                    <label for="taxId">Tax ID / RUT</label>
+                                    <input id="taxId" class="input" type="text" name="taxId" placeholder="Identificador tributario">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="billingAddress">Direccion de facturacion</label>
+                                <textarea id="billingAddress" class="textarea" name="billingAddress" placeholder="Direccion completa, ciudad, pais"></textarea>
+                            </div>
+                        </section>
+
+                        <section class="panel">
+                            <div class="section-kicker">Metodo</div>
+                            <h3>Selecciona como quieres cerrar el pedido.</h3>
+                            <div class="option-grid three-col">
+                                <div class="choice-card">
+                                    <input type="radio" id="pay-card" name="paymentMethod" value="card" checked>
+                                    <label for="pay-card">
+                                        <span class="choice-title">Tarjeta</span>
+                                        <span class="choice-desc">Checkout directo para confirmar al instante.</span>
+                                    </label>
+                                </div>
+                                <div class="choice-card">
+                                    <input type="radio" id="pay-wire" name="paymentMethod" value="wire">
+                                    <label for="pay-wire">
+                                        <span class="choice-title">Transferencia</span>
+                                        <span class="choice-desc">Reservas el pedido y te enviamos instrucciones bancarias.</span>
+                                    </label>
+                                </div>
+                                <div class="choice-card">
+                                    <input type="radio" id="pay-invoice" name="paymentMethod" value="invoice">
+                                    <label for="pay-invoice">
+                                        <span class="choice-title">Invoice</span>
+                                        <span class="choice-desc">Para equipos que necesitan aprobacion administrativa o procurement.</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="field-grid two-col">
+                                <div class="field">
+                                    <label for="purchaseOrder">PO / referencia interna</label>
+                                    <input id="purchaseOrder" class="input" type="text" name="purchaseOrder" placeholder="Opcional">
+                                </div>
+                                <div class="field">
+                                    <label for="billingEmail">Email de cuentas por pagar</label>
+                                    <input id="billingEmail" class="input" type="email" name="billingEmail" placeholder="ap@empresa.com">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label for="paymentNotes">Notas de pago o compliance</label>
+                                <textarea id="paymentNotes" class="textarea" name="paymentNotes" placeholder="Ej: necesitamos invoice proforma, condiciones net 30, validacion legal, etc."></textarea>
+                            </div>
+
+                            <div class="warning-note">
+                                Este flujo es una experiencia de pago frontend. Si luego quieres, conectamos esta vista a Stripe, Mercado Pago o a tu stack real de checkout.
+                            </div>
+                        </section>
+
+                        <section class="panel">
+                            <div class="section-kicker">Confirmacion</div>
+                            <h3>Listo para cerrar.</h3>
+                            <div class="field">
+                                <label for="terms">
+                                    <input id="terms" type="checkbox" name="terms" required>
+                                    Acepto que el pedido se procese con el brief y configuracion revisados en el carrito.
+                                </label>
+                            </div>
+                            <div class="cta-row">
+                                <button id="submit-payment" class="btn-primary" type="submit">Pagar y confirmar pedido</button>
+                                <a class="btn-secondary" href="/cart.html">Volver al carrito</a>
+                            </div>
+                        </section>
+                    </form>
+                </div>
+
+                <aside class="sticky-panel stack">
+                    <section class="panel">
+                        <div class="summary-head">
+                            <div>
+                                <div class="summary-tag" id="payment-package-meta">Tecnologia / Premium / 500 leads base</div>
+                                <div class="summary-title" id="payment-package-name">Growth Tech</div>
+                                <div class="summary-subtitle">Pedido listo para confirmacion y slot operativo.</div>
+                            </div>
+                        </div>
+
+                        <div class="summary-section">
+                            <div class="price-table">
+                                <div class="price-row"><span>Volumen final</span><strong id="payment-volume">500 leads</strong></div>
+                                <div class="price-row total"><span>Total estimado</span><strong id="payment-total">$697</strong></div>
+                            </div>
+                        </div>
+
+                        <div class="summary-section">
+                            <div class="summary-label">Desglose</div>
+                            <div id="payment-pricing" class="price-table"></div>
+                        </div>
+                    </section>
+
+                    <section class="panel">
+                        <div class="section-kicker">Despues del pago</div>
+                        <h3>Que deberia pasar.</h3>
+                        <ul class="summary-list">
+                            <li>Confirmacion de pedido y alcance por correo.</li>
+                            <li>Revisión interna del brief con criterios y exclusions.</li>
+                            <li>Inicio del armado segun el turnaround elegido.</li>
+                        </ul>
+                    </section>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-shell">
+            <span>BAKU / Pago</span>
+            <span><a href="/cart.html">Carrito</a> / <a href="/leads.html">Paquetes</a></span>
+        </div>
+    </footer>
+
+    <script src="/checkout-flow.js"></script>
+</body>
+</html>
